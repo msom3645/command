@@ -1,0 +1,362 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset204 Calibri;}}
+{\colortbl ;\red255\green255\blue0;\red255\green0\blue0;\red0\green0\blue255;\red0\green255\blue0;\red0\green255\blue255;\red255\green0\blue255;}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\sl240\slmult1\highlight1\f0\fs16\lang9 npm install react-icons\par
+\highlight2 &nbsp;    \par
+&times:                x\par
+\highlight0\par
+\par
+BOOTSTRAP INSTALLATION\par
+1. npm install react-bootstrap bootstrap\par
+2. \highlight1 src/index.js\highlight0       import 'bootstrap/dist/css/bootstrap.min.css';\par
+3. \highlight1 public/index.html\highlight0  \par
+  <link\par
+  rel="stylesheet"\par
+  href="{{\field{\*\fldinst{HYPERLINK https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css }}{\fldrslt{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css\ul0\cf0}}}}\f0\fs16 "\par
+  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"\par
+  crossorigin="anonymous"\par
+/>\par
+\par
+\par
+\par
+@import url('{{\field{\*\fldinst{HYPERLINK https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap }}{\fldrslt{https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap\ul0\cf0}}}}\f0\fs16 ');\par
+a.brand-logo, h2  \{\par
+    font-family: 'Dancing Script', cursive;                                       // GOOGLE FONTS\par
+\}\par
+\par
+\highlight4 &:hover \{\par
+            transform: translateY(-2px)                                                       //  move up image\par
+        \}\par
+\highlight5\par
+       margin-left: auto;                                                         horizontal line at center\par
+        margin-right:auto;\par
+        width: 70%;\par
+\highlight0\par
+\highlight4 * \{\par
+padding:0;\par
+margin:0;\par
+box-sizing:border-box                                                             //remove basic styles\par
+\}\par
+\highlight0\par
+\par
+\par
+\highlight6\fs24 @media (min-width:700px)\{ \}\par
+                         or           \par
+flex-wrap:wrap \par
+\par
+\highlight0\fs16 .\highlight1 a1 \{\par
+    background: red;                                                                                 FLEX\par
+\b     display: flex;\par
+\highlight5 align-items: flex-end;\par
+\highlight1\b0\}\par
+.x1 \{\par
+\b     flex:1;\par
+\b0     background: yellow;\par
+\}\par
+.x2 \{\par
+\b     flex:3;\par
+\b0     background: violet;\par
+    margin: 0 20px 0 20px;\par
+\}\par
+.x3 \{\par
+\b     flex:1;\par
+\b0     background: rgb(137, 130, 238);\par
+\}\par
+\highlight0\par
+<\highlight5 div style=\{\{display:'grid', gridTemplateColumns:'1fr 1fr 1fr 1fr' \}\}>                                             \f1\lang1049                                      \f0\lang9  grid\par
+                           or                                                              \par
+    <div style=\{\{display:'grid', \b\fs18 gridTemplateColumns:'repeat(4, 1fr\b0\fs16 )' \}\}> \par
+    \{x.map(e=> (\par
+      <div style=\{\{border:'1px solid red', margin:'5px\b ', textAlign:'center\b0 '\}\} >\{e\}</div>    ))\}\par
+    </div>\f1\lang1049                  \par
+                                  \par
+     \f0\lang1033 grid-template-columns: minmax(\b auto-fill,\b0 150px, 250px) 1fr 1fr                   auto-fit           auto-fill  -  pereskakivat \f1\lang1049\par
+     \f0\lang1033 grid-auto-rows: minmax(150px,auto)                                                               \par
+    grid-auto-flow: row(column)                     order of  items                 \par
+justify-items\par
+align-items   \par
+text-align\par
+margin: 0 auto\par
+justify content\f1\lang1049\par
+\f0\lang9\par
+\highlight1 div.innactive \{\par
+    opacity: 0;                                                                                      hide\par
+    pointer-events: none;\par
+    transform: translate(-50%, 50%);\par
+\}\par
+\par
+div.active \{\par
+    opacity: 1;\par
+    pointer-events: all;\par
+    transform: translate(-50%, -50%);\par
+\}\par
+\highlight0\par
+\highlight4 .center \{\par
+    margin: 21px auto 36px;\par
+    display: flex;\par
+    align-items: center;\par
+    border: solid 1px rgb(0, 200, 0);                                                             center frame                               \par
+    width: fit-content;\par
+    padding: 25px;\par
+\}\par
+\highlight0 .first \{\par
+  background: brown;                                                                          // \highlight1 center div\par
+\highlight0   position: fixed;\par
+  left: 50%;\par
+  top: 50%;\par
+  transform: translate(-50%, -50%);\par
+\}\par
+\par
+\par
+\highlight4     width: fit-content;                                                                    fit in frame                       \par
+\par
+\par
+\highlight0 img \{\par
+width: 100%;                                                                              \highlight1 fit in window\highlight0\par
+height: 100vh;\par
+object-fit: cover;\par
+\}\par
+\par
+or\par
+\par
+*,\par
+*::before,\par
+*::after \{\par
+    margin:0;\par
+    padding:0;\par
+    box-sizing: inherit;\par
+    overflow-x: hidden;\par
+\}\par
+\par
+\par
+---\par
+    min-height: 20vh;   \highlight1  20% of screen height\par
+\par
+\highlight0 -------\par
+\highlight5 @media screen and (max-width: 768px)\{                                 responsive\par
+    .nav-links \{\par
+        position: fixed;\par
+        background:black;\par
+\highlight0     \}\}\par
+----------------------------------------------------------------------------------------------\par
+\highlight1\par
+\}    text-decoration: none;                                         remove underscore\par
+\highlight0\}--------------------------------------------------------------------------------\par
+\highlight4\par
+.\b\fs28 button \b0\fs16\{\par
+    height: 3.5rem;\par
+    width: 36rem;\par
+    font-size: 1.6rem;\par
+    font-weight: 600;\par
+    background-color: #1dace3;\par
+    color: white;\par
+    border-radius: 10rem;\par
+    border:none;\par
+    outline: none;\par
+    cursor:pointer;\par
+    transition: all 0.9s ease;\par
+\}\par
+.button:hover \{\par
+    color: #1dace3 ;\par
+    background-color: #f7f7f7;\par
+\}\par
+.btn:active \{\par
+    background-color: #3e8e41;                             press effect\par
+    box-shadow: 5px 5px #666;\par
+    transform: translateY(4px);\par
+  \}\par
+\highlight1 ------------------------------------------------------------------------------------------------GLASS TEMPLATE       \par
+{\highlight4{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=O7WbVj5apxU }}{\fldrslt{https://www.youtube.com/watch?v=O7WbVj5apxU\ul0\cf0}}}}\highlight4\f0\fs16\par
+ \highlight0\b <main class='main' >\par
+    <section class="glass " > </section>\par
+    <div class='circle1'></div>\par
+    <div class='circle2'></div>\par
+    </main>\par
+ \highlight4\b0\par
+\highlight0 * \{\par
+    margin:0;\par
+    padding:0;\par
+    box-sizing: border-box;\par
+\}\par
+main \{\par
+    min-height: 100vh;\par
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);\par
+    display:flex;\par
+    align-items: center;\par
+    justify-content: center;\par
+\}\par
+\par
+.glass \{\par
+    background: white;\par
+    min-height: 80vh;\par
+    width: 60%;\par
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1) );\par
+    border-radius: 20px;\par
+\b     z-index:2;\par
+\b0     backdrop-filter: blur(2rem);\par
+    display: flex;\par
+\}\par
+.circle1,\par
+.circle2 \{\par
+    background: white;\par
+\b     background: linear-gradient(to right bottom, rgba(255,255,255, 1), rgba(255,255,255,0.5));\par
+\b0     height: 20rem;\par
+    width: 20rem;\par
+    position:absolute;\par
+    border-radius: 50%;\par
+\}\par
+.circle1 \{\par
+    top:5%;\par
+    right:15%;\par
+\}\par
+.circle2 \{\par
+    bottom: 5%;\par
+    left:10%;\par
+\}\par
+\highlight5\par
+    letter-spacing: 5px;\par
+    text-transform: uppercase;                                                              TEXT TO UPPERCASE && SPACE BETWEEN LETTERS\par
+    line-height: 1.6                                                                                    \par
+\highlight0 ----------------------------------------------------------------------------------------------------------------------------------------------\par
+.\highlight4 a1 \{\par
+    display: flex;\par
+    flex-direction: column;\par
+    text-align: center;\par
+    max-width: 300px;\par
+    width: 100%;                                                                                                  IMAGE CARD                                \par
+    border: solid 3px;\par
+\}\par
+img \{\par
+    width: 300px;\par
+    height: 200px;\par
+\}\par
+.card-body \{\par
+    background: red;\par
+\}\par
+\highlight5\par
+ white-space: nowrap;                                                                                            TEXT OVERFLOW WITH ...\par
+    overflow: hidden;\par
+    text-overflow: ellipsis;\par
+\par
+\highlight6 ::-webkit-scrollbar \{                                                                       \highlight1\b\fs20 SCROLLBAR\highlight6\b0\fs16\par
+    width: 35px;\par
+\}\par
+::-webkit-scrollbar-track \{\par
+    background: pink;\par
+    box-shadow: 0 0 2px rgba(0,0,0,.2) inset;\par
+\}\par
+\par
+::-webkit-scrollbar-thumb \{\par
+    background: linear-gradient(to bottom, black, green);\par
+    border-radius: 25px;\par
+    border: 2px solid red;\par
+\}\par
+\par
+::-webkit-scrollbar-thumb:hover \{\par
+    background: yellow;\par
+\}\par
+\par
+\highlight1 container\highlight6 ::-webkit-scrollbar-thumb:hover \{               to certin div container\par
+    background: yellow;\par
+\}\par
+\par
+\par
+\highlight1\fs44 animation                                                   \par
+\highlight0\fs16 .prf \{\par
+    color: rgb(153, 0, 204);\par
+    font-weight: 700;\par
+    animation-name: prf;\par
+    animation-duration: 4s;\par
+    animation-delay: 1s;\par
+\}\par
+.prf:hover \{\par
+    color: orange !important;\par
+    font-weight: 600;\par
+\}\par
+  @keyframes prf \{\par
+      /* 0% \{transform: scale(1);\}\par
+      50%\{transform: scale(-1, 1);\}\par
+      100% \{transform: scale(1); \} */\par
+      /* 0% \{transform: rotate(360deg);\} */\par
+      /* 0% \{transform: skew(50deg, 0deg);\}\par
+      100% \{transform: skew(0deg, 0deg);\} */\par
+      /* 0% \{transform: scale(1.3) rotate(360deg);\} */\par
+      0% \{perspective: 0px;\}\par
+      100% \{perspective: 400px;\}\par
+  \}\par
+\highlight5\fs44 bootstrap                                                   \par
+\highlight0\fs16                <img className='img-fluid img-thumbnail' src='/uploads/nails.png' alt='img' />\highlight1\fs44\par
+\highlight0\fs16\par
+texr-center\par
+display-5\par
+\par
+\highlight3\fs44 navbar      scroll                                              \highlight0\fs16\par
+\par
+.cont \{\par
+    width:100%;\par
+    height:100%;\par
+    color: white;\par
+    background:black;\par
+    line-height: 1.2;\par
+    /* overflow:hidden; */\par
+    /* overflow-y: scroll;\par
+    scroll-behavior: smooth; */\par
+\}\par
+\par
+.nvbr \{\par
+    position:fixed;\par
+    top:0;\par
+    z-index:1;\par
+    display: flex;\par
+    background:rgba(233, 122, 122, 0.7);\par
+    width:100%;\par
+    height:60px;\par
+\}\par
+.nvbr ul \{\par
+    display: flex;\par
+    list-style: none;\par
+    width:100%;\par
+    justify-content: center;\par
+\}\par
+.nvbr ul li\{\par
+    margin: 0 1rem;\par
+    padding: 1rem;\par
+\}\par
+\par
+section \{\par
+    display: flex;\par
+    flex-direction: column;\par
+    align-items: center;\par
+    justify-content: center;\par
+    text-align:center;\par
+    width:100%;\par
+    height:100vh;\par
+\}\par
+\par
+section#home \{\par
+    background: url('images/nails2.jpg') no-repeat center center/cover;\par
+    \} \par
+\b\par
+<div className='cont' >\par
+            <nav className='nvbr'>\par
+                <ul>\par
+                    <li><a href='#home'>Home</a></li>\par
+                    <li><a href='#about'>About</a></li>\par
+                    <li><a href='#service'>Service</a></li>\par
+                    <li><a href='#contacts'>Contact</a></li>\par
+                </ul>\par
+            </nav>\par
+            <section id='home'>\par
+            <h1>Welcom</h1>\par
+            <p>tttttt tttttttttt y u iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii\par
+                ppppppppppppppp iii h t 6 g 7ppppppppppppppppppppppppp\par
+            </p>\par
+            </section>\par
+            <section id='about'>\par
+            <h1>About</h1>\par
+            <p>tttttt tttttttttt y u iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii\par
+                ppppppppppppppp iii h t 6 g 7ppppppppppppppppppppppppp\par
+            </p>\par
+            </section>\par
+}
+ 
