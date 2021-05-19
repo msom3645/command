@@ -19,6 +19,11 @@ BOOTSTRAP INSTALLATION\par
 \par
 \par
 \par
+MATERIAL UI INSTALLATION\par
+1. @material-ui\par
+2. @material-ui/icons\par
+\par
+\par
 @import url('{{\field{\*\fldinst{HYPERLINK https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap }}{\fldrslt{https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap\ul0\cf0}}}}\f0\fs16 ');\par
 a.brand-logo, h2  \{\par
     font-family: 'Dancing Script', cursive;                                       // GOOGLE FONTS\par
@@ -261,7 +266,7 @@ img \{\par
 \}\par
 \par
 \par
-\highlight1\fs44 animation                                                   \par
+\highlight1\fs44 #animation                                                   \par
 \highlight0\fs16 .prf \{\par
     color: rgb(153, 0, 204);\par
     font-weight: 700;\par
@@ -284,11 +289,114 @@ img \{\par
       0% \{perspective: 0px;\}\par
       100% \{perspective: 400px;\}\par
   \}\par
-\highlight5\fs44 bootstrap                                                   \par
-\highlight0\fs16                <img className='img-fluid img-thumbnail' src='/uploads/nails.png' alt='img' />\highlight1\fs44\par
-\highlight0\fs16\par
-texr-center\par
-display-5\par
+\par
+\highlight1 .x1 \{\par
+    display: inline-block;                                                                                                                           #rotation\par
+  \}\par
+    .x1:hover \{\par
+    animation: rotate-btn .9s linear 1;\par
+    -webkit-animation: rotate-btn .9s linear 1;\par
+  \}\par
+  @keyframes rotate-btn \{\par
+    0% \{\par
+      transform: rotate(0);\par
+    \}\par
+    100% \{\par
+      transform: rotate(-360deg);\par
+    \}\par
+  \}\par
+\highlight0  .glw \{\par
+      animation-name: g;                                                                                                     #glow\par
+      animation-duration: 3s;\par
+      color:blue;\par
+  \}\par
+\par
+@keyframes g \{\par
+    0% \{\par
+        color:white;\par
+    \}\par
+    50% \{\par
+        color:pink;\par
+    \}\par
+    100% \{\par
+        color:blue\par
+    \}\par
+\highlight1 .glw3 \{\par
+    width:100px;\par
+    height:100px;\par
+    border-radius: 50%;\par
+    animation-name: glx;\par
+    animation-duration: 5s;     \par
+    animation-iteration-count: infinite;\par
+\}\par
+\par
+@keyframes glx \{\par
+    0% \{\par
+        box-shadow: 0 0 13px 3px blue;\par
+    \}\par
+    \par
+    50% \{\par
+        box-shadow: 0 0 19px 5px blue;\par
+    \}\par
+    100% \{\par
+        box-shadow: 0 0 13px 3px blue;\par
+    \}\par
+\} \par
+\highlight4\b\fs20     box-shadow: 0 0 800px 90px green;        #box-shadow     1)x  2)y 3) blur-intensity   4)radius of blur\par
+    text-shadow: 0 0 10px blue,  0 0 75px red;           #text shadow 1)x 2)y 3) radius razmazki 4) color\par
+or        text-shadow: 0 0 4px red, 0 0 4px red, 0 0 4px red;            to intense shadow\par
+\highlight1 .glw \{\par
+    font-size: 80px;\par
+    color: #fff;\par
+    text-align: center;\par
+    animation: glw 1s ease-in-out infinite alternate;                                #text-shadow\par
+  \}\par
+  \par
+  @keyframes glw \{\par
+    from \{\par
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #c7b6be, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;\par
+    \}\par
+    \par
+    to \{\par
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;\par
+    \}\par
+  \}\b0\par
+\highlight5\fs44 #form                                                   \par
+\highlight1\fs16 css\par
+\highlight0\par
+.f1 \{\par
+\tab position: relative;\par
+\tab width: 50%;\par
+\}\par
+.f1 .i1\{\par
+\tab width: 100%;\par
+\tab outline: none;\par
+\tab border:none;\par
+\tab border-bottom: 1px solid #777;\par
+\}\par
+.f1 .i1:focus\{\par
+\tab border-color: blue;\par
+\tab border-width: medium medium 2px;\par
+\}\par
+.f1 .lbl \{\par
+\tab position: absolute;\par
+\tab pointer-events: none;\par
+\tab left: 10px;\par
+\tab transition: 0.2s ease all;\par
+\}\par
+\par
+.f1 input:focus ~ .lbl,\par
+.f1 input:not(:focus):valid ~ .lbl\{\par
+\tab top: -12px;\par
+\tab left: 10px;\par
+\tab font-size: 13px;\par
+    color:red;\par
+\}\par
+\highlight1 html\par
+\highlight0   <div className="f1">\par
+      <input className="i1" required/>\par
+      <span className="lbl">Your email address</span>                   \highlight1 // ORDER MATTERS!!!\highlight0\par
+    </div>\par
 \par
 \highlight3\fs44 navbar      scroll                                              \highlight0\fs16\par
 \par
@@ -358,5 +466,23 @@ section#home \{\par
                 ppppppppppppppp iii h t 6 g 7ppppppppppppppppppppppppp\par
             </p>\par
             </section>\par
+\highlight5\b0\fs24 #MODAL#CONFIRM                                                                             \par
+\highlight0\fs16 <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">\par
+  Launch demo modal\par
+</button>\par
+\par
+<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">\par
+  <div className="modal-dialog modal-sm">\par
+    <div className="modal-content">\par
+      <div className="modal-body text-center">\par
+        Are You Sure? \par
+      </div>\par
+      <div className="modal-footer d-flex justify-content-center" >\par
+            <button type="button" className="btn btn-danger btn-sm" data-bs-dismiss="modal">No</button>\par
+        <button type="button" onClick=\{() =>deleteUserHandler(id)\} data-bs-dismiss="modal" className="btn btn-success btn-sm">Yes</button>\par
+      </div>\par
+    </div>\par
+  </div>\par
+</div>\par
 }
  

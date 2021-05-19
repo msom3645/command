@@ -1332,7 +1332,7 @@ const LoadingBox = () => \{\par
 export default LoadingBox\par
 export default Loader\par
 \highlight3\par
-\highlight1\b\fs28 AUTH..\par
+\highlight1\b\fs28 #AUTH..\par
 \highlight3\b0\fs16 backend/index.js                                                     COOKIES\par
 \highlight0 const cookieParser = require('cookie-parser')\par
 app.use(cookieParser())\par
@@ -1902,7 +1902,7 @@ export default CreatePost\par
    \}\par
 \})\b\f0\fs22\lang9\par
 \b0\fs16\par
-\highlight6\b\fs28 useREf                                                                                                                                \par
+\highlight6\b\fs28 #useREf                                                                                                                                \par
 \highlight0\b0\fs16\par
 \b import React,\{useState, useEffect, useRef\} from 'react'\par
 \b0 const Title = () => \{\par
@@ -20346,5 +20346,185 @@ setTimeout(()=>\{\par
     )\par
 \}\par
 export default Scroll\par
+\highlight2\b\fs22 CITY LOCATION                                                                                                            \par
+{{\field{\*\fldinst{HYPERLINK https://www.bigdatacloud.com/geocoding-apis/reverse-geocode-to-city-api }}{\fldrslt{https://www.bigdatacloud.com/geocoding-apis/reverse-geocode-to-city-api\ul0\cf0}}}}\highlight0\b0\f0\fs16\par
+import React, \{useState\} from 'react'\par
+import axios from 'axios'\par
+const Scroll = () => \{\par
+const [err, setErr] = useState()\par
+const [city, setCity] = useState()\par
+const getPosition =async(e) => \{\par
+    const lat = e.coords.latitude\par
+    const lon = e.coords.longitude\par
+    const \{data\} = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode?latitude=$\{lat\}&longitude=$\{lon\}&localityLanguage=ru&key=cc258c1d8e1a4469b5fe888dba93bf2f`)\par
+    setCity(data.city)\par
+\}\par
+if (navigator.geolocation) \{\par
+    navigator.geolocation.getCurrentPosition(getPosition);\par
+  \}else\{\par
+      setErr('Location not Found')\par
+  \}\par
+return (\par
+        <div>\par
+            Your City is \{city\}\par
+        </div>\par
+    )\par
+\}\par
+export default Scroll\par
+\highlight6 #INPUT#CHECKBOX                                                                                                                                              \par
+\highlight0 // to find out if it's checked or not; returns true or false\par
+const checked = e.target.checked;\par
+\par
+// to get the checked value\par
+const checkedValue = e.target.value;\par
+\par
+// to get the checked name\par
+const checkedName = e.target.name;\par
+import React, \{useState, useEffect\} from 'react'\par
+const Table = () => \{\par
+  \par
+  const [items, setItems] = useState(\par
+    [\{id:'ann', age:5, city:'tver', sts:false\},\{id:'max', age:75, city:'pskov', sts:false\},\{id:'ala', age:35, city:'tulu', sts:false\}]\par
+  )\par
+  const [all, setAll] = useState(false)\par
+\par
+  const selAlls = (val) => \{\par
+    setAll(val)\par
+    setItems(prev =>\{\par
+      for(const i of prev)\{\par
+        i.sts = val\par
+      \}\par
+      return prev\par
+    \})    \par
+  \}\par
+\par
+  \par
+  const toggleItems = (itemname) => \{\par
+\par
+    setItems(prev =>\{\par
+\cf1\b\fs24       const newitems = [...prev]   // !!!!!!!!!!!!??????????????????\par
+\cf0\b0\fs16       for(const i in newitems)\{\par
+        if(newitems[i].id === itemname)\{\par
+          newitems[i].sts = !prev[i].sts\par
+        \}\par
+      \}\par
+      return newitems\par
+    \})\par
+  \} \par
+\par
+  const r = () => \{\par
+    console.log(items)\par
+  \}\par
+\par
+useEffect(()=>\{\par
+for(const i of items)\{\par
+  if(i.sts === false)\{\par
+    setAll(false)\par
+  \}\par
+\}\par
+\},[items])\par
+\par
+  return (\par
+    <div>\par
+      <button onClick=\{r\}>Add</button>\par
+      <div className='row'>\par
+      <div  className='col-1'><input checked=\{all\} onChange=\{t=>selAlls(t.target.checked)\} type='checkbox'/> All</div>\par
+      <div className='col'>Name</div>\par
+      <div className='col'>Age</div>\par
+      <div className='col'>City</div>\par
+      </div>\par
+      <br/>\par
+      \{items.map(e => (\par
+        <div className='row' key=\{e.id\}>\par
+        <div className='col-1'><input checked=\{e.sts\} onChange=\{() => toggleItems(e.id, e.sts) \} type='checkbox'/> </div>\par
+        <div className='col'>\{e.id\} </div>\par
+        <div className='col'>\{e.age\} </div>\par
+        <div className='col'>\{e.city\} </div>\par
+      </div>\par
+      ))\}\par
+      \par
+    </div>\par
+  )\par
+\}\par
+export default Table\par
+import React,\{useState, useEffect\} from 'react'\par
+import axios from 'axios'\par
+import \{useSelector\} from 'react-redux'\par
+\par
+\b const Table = () => \{\par
+  const token = useSelector(state=>state.loginReducer.user.token)\f1\lang1049                                        \highlight3  \f0\lang1033 axios variant\highlight0\lang9\par
+  const [users, setUsers] = useState([])\par
+  const [all, setAll] = useState(false)\par
+  useEffect(()=> \{\par
+  const fetch = async() =>\{\par
+    const config = \{headers:\{\par
+      'authorization':`Bearer $\{token\}`\par
+    \}\}  \par
+    const \{data\} = await axios.get('http://localhost:5000/api/users', config)\par
+    setUsers(data.map(e=>\{\par
+      return \{...e, sts:false\}\par
+    \}))\par
+  \}\par
+  fetch()\par
+  \par
+\},[token])\par
+\par
+useEffect(()=>\{\par
+  for(const i of users)\{\par
+    if(i.sts === false)\{\par
+      setAll(false)\par
+    \}\par
+  \}\par
+\},[users])\par
+\par
+const sellectAll = (status) =>\{\par
+  setAll(status)\par
+  if(users)\{\par
+  setUsers(\par
+    users.map((e)=>\{\par
+      e.sts = status\par
+      return e\par
+    \})\par
+  )\par
+\}\par
+\}\par
+\par
+const tooggleItem = (id)=>\{\par
+ if(users)\{\par
+  setUsers(users.map(e=>\{\par
+    if(e._id === id)\{\par
+      e.sts = !e.sts\par
+    \}\par
+    return e\par
+  \}))\par
+  \par
+ \}\par
+\}\par
+  return (\par
+    <div>\par
+      <div className="row">\par
+        <div className="col-1"><input checked=\{all\} onChange=\{t=>sellectAll(t.target.checked)\} type='checkbox' /> All</div>     \par
+\par
+        <div className="col">ID</div>\par
+        <div className="col">Name</div>\par
+        <div className="col">Email</div>\par
+      </div>\par
+      <br/>\par
+     \{users && users.map(e=>(\par
+        <div key=\{e._id\} className="row">\par
+        <div className="col-1"><input checked=\{e.sts\} onChange=\{() =>tooggleItem(e._id)\} type='checkbox' /> </div>\par
+\par
+        <div className="col">\{e._id\}</div>\par
+        <div className="col">\{e.name\}</div>\par
+        <div className="col">\{e.email\}</div>\par
+      </div>\par
+     ))\}\par
+      \par
+    </div>\par
+  )\par
+\}\par
+\par
+export default Table\par
+\b0\par
 }
  
