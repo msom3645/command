@@ -1,7 +1,7 @@
 {\rtf1\ansi\ansicpg1251\deff0\nouicompat\deflang1049{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset204 Calibri;}}
 {\colortbl ;\red255\green0\blue0;\red0\green255\blue255;\red255\green255\blue0;\red0\green0\blue255;\red255\green0\blue255;\red0\green255\blue0;\red192\green80\blue77;\red155\green0\blue211;\red0\green77\blue187;}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
-\pard\sl276\slmult1\highlight1\b\f0\fs16\lang9 require('crypto').randomBytes(35).toString('hex')                      print node in cmd\highlight2\par
+\pard\sl276\slmult1\highlight1\b\f0\fs16\lang9 rfc + tab\highlight2\par
 Within the directory of the package.json \b0 file, just run \b npm install\b0 . It will read package.json and install all dependencies. If you want to limit it to only non-dev dependencies, use \b npm install --only=production.\b0\par
 \par
 \par
@@ -17,10 +17,25 @@ npm i bcrypt validator  mongoose express-async-handler express axios dotenv json
 @import url('{{\field{\*\fldinst{HYPERLINK https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap }}{\fldrslt{https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap\ul0\cf0}}}}\f0\fs16 ');\par
 a.brand-logo\{\par
     font-family: 'Dancing Script', cursive;\}                      GOOGLE FONTS\par
-\par
+\highlight2\par
+npm i @material-ui/core                     #material ui \par
+npm i @material-ui/icons\par
 \highlight5 npx create-react-app frontend\par
 \par
 \par
+\highlight2 const f = () => \{\par
+        alert(0)\par
+    \}\par
+    const keyF = (e) => \{\par
+        if(e.key === 'ArrowRight')\{                                             # simple arrow key\par
+            console.log('right')\par
+        \}\par
+        if(e.key === 'ArrowLeft')\{\par
+            f()\par
+        \}\par
+    \}\par
+    document.addEventListener('keydown', keyF)\par
+\highlight5\par
 \highlight3 frontend/src\par
 \highlight5 import './bootstrap.min.css'\par
 \par
@@ -209,7 +224,7 @@ const ProductScreen = (props) => \{\par
 \par
 export default ProductScreen\highlight3\par
 \highlight0\par
-\highlight6\fs36 Router\par
+\highlight6\fs36 #Router\par
 \highlight3\fs16 App.js\par
 \highlight0 import Header from './components/Header'\par
 import Footer from './components/Footer'\par
@@ -387,8 +402,13 @@ exports.deleteProduct = async (req, res, next) => \{\par
 \par
 \highlight3\b\fs24 package.json / frontend\par
 \highlight2\b0\fs16   "name": "frontend",\par
-\b\fs24   "proxy":"{{\field{\*\fldinst{HYPERLINK http://127.0.0.1:5000 }}{\fldrslt{http://127.0.0.1:5000\ul0\cf0}}}}\f0\fs24 ", \b0\fs16              \i - to conect frontend running on 3000 and backend running on 5000       \highlight1 5000 + api/products/1\highlight2\par
-\highlight0\i0\par
+\b\fs24   "proxy":"{{\field{\*\fldinst{HYPERLINK http://127.0.0.1:5000 }}{\fldrslt{http://127.0.0.1:5000\ul0\cf0}}}}\f0\fs24 ", \b0\fs16              \i - to conect frontend running on 3000 and backend running on 5000       \highlight1 5000 + api/products/1\par
+\highlight0\par
+or \par
+npm i cors\par
+const cors = require('cors')\par
+app.use(cors()\par
+\i0\par
 \highlight3 =================================================================================\par
 \highlight6\fs36 DOTENV\par
 \highlight0\fs16 npm i dotenv\par
@@ -466,7 +486,7 @@ const HomeScreen = () => \{\par
     )\}\par
 export default HomeScreen\par
 \highlight3\par
-\highlight6\fs44 MONGO..\highlight3\fs16\par
+\highlight6\fs44 #MONGO..\highlight3\fs16\par
 backend/config/db.js\par
 \highlight0 import mongoose from 'mongoose'\par
 \par
@@ -936,99 +956,7 @@ export \{ notFound, errorHandler \}\par
 \cf1\fs22         throw new Error('Product not Found..')\par
 \cf0\fs16     \}\par
 \}))\par
-\par
-\par
-\par
-\par
-\highlight2\fs28 REDUX\par
-\highlight0\fs16\par
-\highlight3 index.js(main)\par
-\highlight0 import React from 'react';\par
-import ReactDOM from 'react-dom';\par
-import './index.css';\par
-import App from './App';\par
-import reportWebVitals from './reportWebVitals';\par
-import './bootstrap.min.css'\par
-\highlight5 import \{ Provider \} from 'react-redux' \par
-import allReducers from './reducers'\par
-import \{ createStore \} from 'redux'\par
-\highlight0\par
-const store = createStore(allReducers,\par
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()\par
-)\par
-ReactDOM.render(\par
-  <Provider store=\{store\}>\par
-    <App />\par
-  </Provider>,\par
-  document.getElementById('root')\par
-);\par
-reportWebVitals();\par
-\highlight3 src/actions/index.js                                                       \par
-\highlight0 export const increment = nr =>\{\par
-    return \{\par
-        type: 'INCREMENT',\par
-        payload: nr\par
-    \}\}\par
-export const decrement = () => \{\par
-    return \{\par
-        type: 'DECREMENT'\par
-    \}\}\par
-export const turn = () => \{\par
-    return \{\par
-        type: 'SIGN_IN'\par
-    \}\}\par
-\highlight3 src/reducers/isLogged.js                                                      \par
-\highlight0 const loggedReducers = (state=false, action) => \{\par
-    switch(action.type)\{\par
-        case 'SIGN_IN':\par
-            return !state\par
-        default: return state\par
-    \}\}\par
-export default loggedReducers\par
-\highlight3\par
-src/reducers/counter.js                                                             \par
-\highlight0 const counterReducer = (state = 0, action)=>\{\par
-    switch(action.type)\{\par
-        case 'INCREMENT':\par
-            return state + 1\par
-        case 'DECREMENT':\par
-            return state -1\par
-        default: return state\par
-    \}\}\par
-export default counterReducer\par
-\highlight3 src/reducers/index.js                                                           \par
-\highlight0 import counterReducer from './counter'\par
-import loggedReducer from './isLogged'\par
-import \{ combineReducers \} from 'redux'\par
-\par
-const allReducers = combineReducers(\{\par
-    counter: counterReducer,\par
-    isLogged: loggedReducer\par
-\})\par
-export default allReducers\par
-\par
-\highlight3 src/App.js\par
-\highlight0 import \{useSelector, useDispatch\} from 'react-redux'\par
-import \{ increment, decrement, turn \} from './actions'\par
-\par
-const App = () => \{\par
-const counter = useSelector(state => state.counter)\par
-const isLogged = useSelector(state => state.isLogged)\par
-const dispatch = useDispatch()\par
-  return (\par
-    <>\par
-    <h1> Counter: \{counter\} </h1>\par
-    \{isLogged? <h1> Yes</h1>: <h1>No</h1>\}\par
-    <button onClick=\{() => dispatch(increment(5))\}> + </button>\par
-    <button onClick=\{() => dispatch(decrement())\}> - </button>\par
-    <button onClick=\{()=>dispatch(turn())\}> Turn  </button>\par
-    </>\par
-  );\par
-\}\par
-export default App;\par
-\par
-\highlight3 =====================================================================================================\par
-\highlight6\fs40 REDUX TRAVERSY   5\par
+\highlight6\fs40 #REDUX TRAVERSY   5\par
 \highlight2\fs16 npm i redux react-redux redux-thunk redux-devtools-extension                     FRONTEND PACKAGE.JSON\fs40\par
 \highlight0\fs16\par
 \highlight3 frontend/src/store.js\par
@@ -1042,11 +970,10 @@ const reducer = combineReducers(\{\par
 \})\par
 const initialState =\{\}\par
 \par
-const middleware = thunk\par
 const store = createStore(\par
     reducer,\par
     initialState,\par
-    composeWithDevTools(applyMiddleware(middleware))\par
+    composeWithDevTools(applyMiddleware(thunk))\par
 )\par
 export default store\par
 \highlight2 import \{createStore, combineReducers, applyMiddleware, compose\} from 'redux'                                //var 2 store\par
@@ -20307,7 +20234,7 @@ exports.getProducts =async (req, res, next) => \{\par
 \}\par
 module.exports = APIFeatures\par
 \highlight6\b\fs28\par
-SLIDER                                                                                 \par
+#SLIDER                                                                                 \par
 \highlight0\b0\fs16 const Scroll = () => \{\par
     const [number, setNumber] = useState(0)\par
     const f = Fotos.length\par
@@ -20460,7 +20387,7 @@ import \{useSelector\} from 'react-redux'\par
     const config = \{headers:\{\par
       'authorization':`Bearer $\{token\}`\par
     \}\}  \par
-    const \{data\} = await axios.get('http://localhost:5000/api/users', config)\par
+    const \{data\} = await axios.get('{{\field{\*\fldinst{HYPERLINK http://localhost:5000/api/users }}{\fldrslt{http://localhost:5000/api/users\ul0\cf0}}}}\f0\fs16 ', config)\par
     setUsers(data.map(e=>\{\par
       return \{...e, sts:false\}\par
     \}))\par
@@ -20525,6 +20452,196 @@ const tooggleItem = (id)=>\{\par
 \}\par
 \par
 export default Table\par
+\highlight6\b0\fs20 #PAGINATION                                                                                                                                                                         \par
+\highlight0\fs16 import React, \{useState, useEffect\} from 'react'\par
+import axios from 'axios'\par
+const Pagination = () => \{\par
+    const [loading, setLoading] = useState(false)\par
+    const [data, setData] = useState([])\par
+    const [currentPage, setcurrentPage] = useState(1);\par
+    const [itemsPerPage, setitemsPerPage] = useState(5);\par
+\par
+    const [maxPageLimit, setmaxPageLimit] = useState(5);\par
+    const [minPageLimit, setminPageLimit] = useState(1 );\par
+\par
+    const pages = []\par
+\par
+    const indexOfLast = currentPage * itemsPerPage\par
+    const indexOfFirst = indexOfLast - itemsPerPage\par
+    const current = data.slice(indexOfFirst, indexOfLast)\par
+\par
+    for(let i = 1; i<=Math.ceil(data.length/itemsPerPage);i++)\{\par
+        pages.push(i)\par
+    \}\par
+        useEffect(()=>\{\par
+        const fetch =async () => \{\par
+            setLoading(true)\par
+            try\{\par
+                const \{data\} = await axios.get('{{\field{\*\fldinst{HYPERLINK https://jsonplaceholder.typicode.com/todos }}{\fldrslt{https://jsonplaceholder.typicode.com/todos\ul0\cf0}}}}\f0\fs16 ')\par
+                setData(data)\par
+            \}catch(error)\{\par
+                console.log(error)\par
+            \}\par
+            setLoading(false)\par
+        \}\par
+        fetch()\par
+    \},[])\par
+\par
+    useEffect(()=>\{\par
+        if(currentPage === maxPageLimit && currentPage !== indexOfLast)\{\par
+            setmaxPageLimit(maxPageLimit+4)\par
+            setminPageLimit(minPageLimit+4)\par
+        \}\par
+        if(currentPage === minPageLimit && currentPage !== 1)\{\par
+            setmaxPageLimit(maxPageLimit-4)\par
+            setminPageLimit(minPageLimit-4)\par
+        \}\par
+    \},[currentPage])\par
+\par
+    const currentData = (val) => \{\par
+        setcurrentPage(val)\par
+        \par
+    \}\par
+    const handleNextbtn =() => \{\par
+        setcurrentPage(currentPage + 1)\par
+        if(currentPage+2 > maxPageLimit)\{\par
+            setmaxPageLimit(maxPageLimit+4)\par
+            setminPageLimit(minPageLimit+4)\par
+        \}\par
+    \}\par
+\par
+    const handlePrevbtn =() => \{\par
+        setcurrentPage(currentPage -1)\par
+        if(currentPage-1 < minPageLimit)\{\par
+            setmaxPageLimit(maxPageLimit-4)\par
+            setminPageLimit(minPageLimit-4)\par
+        \}\par
+    \}\par
+    \par
+    const loadMore = () => \{\par
+        setitemsPerPage(itemsPerPage + 5)\par
+    \}\par
+\par
+    return (\par
+        <div>\par
+            <ul>\par
+                \{current.map(e => (\par
+                    <li key=\{e.id\}>\{e.title\}</li>\par
+                ))\}\par
+            </ul>\par
+                    <button onClick=\{loadMore\}>Load More</button>\par
+            <ul  className='page-numbers'>\par
+                <button disabled=\{currentPage<2\} onClick=\{handlePrevbtn\} >Prev</button>\par
+                    \{pages.length > maxPageLimit && <button>&hellip;</button>\}\par
+                \{pages.map(e=>\par
+                   e < maxPageLimit+1 && e > minPageLimit-1 ? \par
+                        <li className=\{currentPage === e?'active':null\} onClick=\{() => currentData(e)\} key=\{e\}>\{e\}</li>\par
+                        : null\par
+                )\}\par
+                    <button disabled=\{currentPage === pages.length\} onClick=\{handleNextbtn\} >Next</button>\par
+            </ul>\par
+        </div>\par
+    )\par
+\}\par
+export default Pagination\highlight6\par
+#BOOTSTRAP-TABLE-PAGINATOR                                                                                                                   \par
+\highlight0 npm i react-bootstrap-table2-paginator react-bootstrap-table-next\par
+\highlight6 #\f1\lang1049\'c4\'c8\'cd\'c0\'cc\'c8\'d7\'c5\'d1\'ca\'c0\'df \'cf\'c0\'c3\'c8\'cd\'c0\'d6\'c8\'df \f0\lang9                                                                                                            \par
+{\highlight0{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=J2MWOhV8T6o }}{\fldrslt{https://www.youtube.com/watch?v=J2MWOhV8T6o\ul0\cf0}}}}\highlight0\f0\fs16\par
+import React, \{useEffect, useState\} from 'react'\par
+import axios from 'axios'\par
+\par
+const HomeScreen = () => \{\par
+    const [photos, setPhotos] = useState([])\par
+    const [currentPage, setCurrentPage] = useState()\par
+    const [fetching, setFetching] = useState(true)\par
+    useEffect(()=>\{\par
+        document.addEventListener('scroll', scrollF)    \par
+        return () => document.addEventListener('scroll',scrollF)\par
+    \},[])\par
+\par
+    useEffect(()=> \{\par
+      if(fetching)\{\par
+        axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=10&_page=$\{currentPage\}`)\par
+        .then(r=>\{setPhotos([...photos, ...r.data])\par
+                setCurrentPage(prev => prev +1)\par
+        \})\par
+        .finally(() => setFetching(false))\par
+      \}\par
+    \},[fetching])\par
+    console.log(photos)\par
+    const scrollF = (e) => \{\par
+        if(e.target.documentElement.scrollHeight -(e.target.documentElement.scrollTop + window.innerHeight) < 100) \{\par
+            console.log('scroll !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')\par
+            setFetching(true)\par
+        \}\par
+\b         console.log('scrollHeight',e.target.documentElement.scrollHeight)\par
+        console.log('scrollTop',e.target.documentElement.scrollTop)\par
+        console.log('innerHeight',window.innerHeight)\par
+\b0     \}\par
+    return (\par
+            <div>\par
+                \{photos.map(e => \par
+                <div key=\{e.id\}>\par
+                    <h5 >\{e.id\}</h5>\par
+                    <h5 >\{e.title\}</h5>\par
+                    <img src=\{e.thumbnailUrl\} alt='img...'/>\par
+                </div>\par
+                        )\}\par
+</div>\par
+    )\par
+\}\par
+\par
+export default HomeScreen\highlight2\fs22\par
+#scrollspy                                                                                                                 \par
+\highlight0\fs16\par
+import React from 'react'                      \par
+import \{Link\} from 'react-router-dom'                                # bootstrap 5 variant\par
+const HomeScreen = () => \{\par
+    return (\par
+\b <div style=\{\{overflowY: 'scroll', height:'100vh'\}\} data-bs-spy="scroll" data-bs-target="#navbar"\par
+ data-bs-offset="170" className="scrollspy-example" tabIndex="0">\par
 \b0\par
+<nav id="navbar" className="navbar bg-dark sticky-top justify-content-evenly">\par
+\{/* <nav id="navbar" style=\{\{width:'20%'\}\} className="navbar bg-dark fixed-top justify-content-evenly"> */\}\par
+  <Link to='/' className="navbar-brand" >Navbar</Link>\par
+  \{/* <ul className="nav flex-column nav-pills"> */\}\par
+  <ul className="nav nav-pills">\par
+    <li  className="nav-item">\par
+      <a className="nav-link" href="#scroll1">First</a>\par
+    </li>\par
+    <li className="nav-item">\par
+      <a className="nav-link" href="#scroll2">Second</a>\par
+    </li>\par
+    <li className="nav-item">\par
+      <a className="nav-link" href="#scroll3">Third</a>\par
+    </li>\par
+    <li className="nav-item">\par
+      <a className="nav-link" href="#scroll4">Fourth</a>\par
+    </li>\par
+    </ul>\par
+</nav>\par
+  \par
+  <div id='scroll1' style=\{\{height:'100vh', background:'orange'\}\}>1</div>\par
+  <div id='scroll2' style=\{\{height:'100vh', background:'yellow'\}\}>2</div>\par
+  <div id='scroll3' style=\{\{height:'100vh', background:'green'\}\}>3</div>\par
+  <div id='scroll4' style=\{\{height:'100vh', background:'pink'\}\}>4</div>\par
+</div>\par
+\par
+    )\par
+\}\par
+\par
+export default HomeScreen\par
+\highlight2\fs22\par
+\fs18 .nav-pills .nav-link.active \{                                                   # css active link styling\par
+    background: red;\par
+\}\par
+\fs22\par
+\par
+\par
+\par
+\par
+\par
+\par
 }
  

@@ -33,6 +33,8 @@ a.brand-logo, h2  \{\par
             transform: translateY(-2px)                                                       //  move up image\par
         \}\par
 \highlight5\par
+\highlight1            <div className='row align-items-center '>                                #vertical bootstrap\par
+\highlight5\par
        margin-left: auto;                                                         horizontal line at center\par
         margin-right:auto;\par
         width: 70%;\par
@@ -105,7 +107,7 @@ div.active \{\par
     padding: 25px;\par
 \}\par
 \highlight0 .first \{\par
-  background: brown;                                                                          // \highlight1 center div\par
+  background: brown;                                                                          #\highlight1 center div\par
 \highlight0   position: fixed;\par
   left: 50%;\par
   top: 50%;\par
@@ -170,53 +172,22 @@ or\par
     box-shadow: 5px 5px #666;\par
     transform: translateY(4px);\par
   \}\par
-\highlight1 ------------------------------------------------------------------------------------------------GLASS TEMPLATE       \par
-{\highlight4{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=O7WbVj5apxU }}{\fldrslt{https://www.youtube.com/watch?v=O7WbVj5apxU\ul0\cf0}}}}\highlight4\f0\fs16\par
- \highlight0\b <main class='main' >\par
-    <section class="glass " > </section>\par
-    <div class='circle1'></div>\par
-    <div class='circle2'></div>\par
-    </main>\par
- \highlight4\b0\par
-\highlight0 * \{\par
-    margin:0;\par
-    padding:0;\par
-    box-sizing: border-box;\par
-\}\par
-main \{\par
-    min-height: 100vh;\par
-    background: linear-gradient(to right top, #65dfc9, #6cdbeb);\par
+\par
+\highlight1 .nav-menu \{\par
+    background:#060b26;                                                                 #hide#sidebar\par
+    width:250px;\par
+    height:100vh;\par
     display:flex;\par
-    align-items: center;\par
-    justify-content: center;\par
+    justify-content:center;\par
+    position:fixed;\par
+    top:0;\par
+\cf2\b\fs20     left: -100%;\par
+\cf0\b0\fs16     transition: 3200ms\par
 \}\par
 \par
-.glass \{\par
-    background: white;\par
-    min-height: 80vh;\par
-    width: 60%;\par
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1) );\par
-    border-radius: 20px;\par
-\b     z-index:2;\par
-\b0     backdrop-filter: blur(2rem);\par
-    display: flex;\par
-\}\par
-.circle1,\par
-.circle2 \{\par
-    background: white;\par
-\b     background: linear-gradient(to right bottom, rgba(255,255,255, 1), rgba(255,255,255,0.5));\par
-\b0     height: 20rem;\par
-    width: 20rem;\par
-    position:absolute;\par
-    border-radius: 50%;\par
-\}\par
-.circle1 \{\par
-    top:5%;\par
-    right:15%;\par
-\}\par
-.circle2 \{\par
-    bottom: 5%;\par
-    left:10%;\par
+.nav-menu.active \{\par
+\cf2\b\fs20     left:0;\par
+\cf0\b0\fs16     transition:2000ms;\par
 \}\par
 \highlight5\par
     letter-spacing: 5px;\par
@@ -360,7 +331,7 @@ or        text-shadow: 0 0 4px red, 0 0 4px red, 0 0 4px red;            to inte
     to \{\par
       text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;\par
     \}\par
-  \}\b0\par
+  \} \b0\par
 \highlight5\fs44 #form                                                   \par
 \highlight1\fs16 css\par
 \highlight0\par
@@ -398,6 +369,58 @@ or        text-shadow: 0 0 4px red, 0 0 4px red, 0 0 4px red;            to inte
       <span className="lbl">Your email address</span>                   \highlight1 // ORDER MATTERS!!!\highlight0\par
     </div>\par
 \par
+\highlight5 import React,\{useState, useRef\} from 'react'\par
+import \{RiCloseCircleFill\} from 'react-icons/ri'                                                        REACT VARIANT FLOATING INPUT\par
+const Registration = () => \{\par
+    const [name, setName] = useState()\par
+    const [email, setEmail] = useState('')\par
+    const [password, setPassword] = useState()\par
+    const [inp1, setInp1] = useState('inp1')\par
+    const eref = useRef()\par
+    const f= () => \{\par
+      setInp1('inp2')\par
+      setEmail('')\par
+      eref.current.focus()\par
+    \}\par
+    const b = () => \{\par
+      email === '' && setInp1('inp1')\par
+    \}\par
+    return (\par
+          <div style=\{\{display:'flex', justifyContent:'center'\}\}>\par
+            <div style=\{\{marginTop:'5%'\}\}>\par
+            <div className=\{inp1\}>Email</div>\par
+            <input ref=\{eref\} style=\{\{width:'330px'\}\} value=\{email\} onFocus=\{f\} onChange=\{e=>setEmail(e.target.value)\} onBlur=\{b\}/>   \par
+            \{ email && <RiCloseCircleFill onClick=\{f\} style=\{\{color:'orange', position:'absolute',marginTop:'6px', marginLeft:'-23px'\}\}/>\}\par
+            </div>\par
+          </div>\par
+    )\par
+\}\par
+\par
+export default Registration\par
+\par
+.inp1 \{\par
+    position:absolute;\par
+    margin-left: 5px;\par
+    margin-top: 2px;\par
+    transition:0.5s;\par
+    color:rgba(0, 181, 204, 1)\par
+\}\par
+input\{\par
+    border: none;\par
+    border-bottom: 1px solid rgba(103, 128, 159, 0.4);\par
+    outline:none;\par
+    color: rgba(103, 128, 159, 1)\par
+\}\par
+\par
+.inp2 \{\par
+    position: absolute;\par
+    margin-top: -19px;\par
+    padding-left: 12px;\par
+    font-size: 12px;\par
+    color: orange;\par
+    transition: 0.5s ease all;\par
+\}\par
+\highlight0\par
 \highlight3\fs44 navbar      scroll                                              \highlight0\fs16\par
 \par
 .cont \{\par
