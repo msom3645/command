@@ -1,22 +1,10 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset204 Calibri;}}
-{\colortbl ;\red255\green255\blue0;\red255\green0\blue0;\red0\green0\blue255;\red0\green255\blue0;\red0\green255\blue255;\red255\green0\blue255;}
+{\colortbl ;\red255\green255\blue0;\red255\green0\blue0;\red0\green255\blue255;\red255\green0\blue255;\red0\green255\blue0;\red0\green0\blue255;}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\sl240\slmult1\highlight1\f0\fs16\lang9 npm install react-icons\par
 \highlight2 &nbsp;    \par
 &times:                x\par
 \highlight0\par
-\par
-BOOTSTRAP INSTALLATION\par
-1. npm install react-bootstrap bootstrap\par
-2. \highlight1 src/index.js\highlight0       import 'bootstrap/dist/css/bootstrap.min.css';\par
-3. \highlight1 public/index.html\highlight0  \par
-  <link\par
-  rel="stylesheet"\par
-  href="{{\field{\*\fldinst{HYPERLINK https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css }}{\fldrslt{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css\ul0\cf0}}}}\f0\fs16 "\par
-  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"\par
-  crossorigin="anonymous"\par
-/>\par
-\par
 \par
 \par
 MATERIAL UI INSTALLATION\par
@@ -24,22 +12,32 @@ MATERIAL UI INSTALLATION\par
 2. @material-ui/icons\par
 \par
 \par
-@import url('{{\field{\*\fldinst{HYPERLINK https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap }}{\fldrslt{https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap\ul0\cf0}}}}\f0\fs16 ');\par
-a.brand-logo, h2  \{\par
-    font-family: 'Dancing Script', cursive;                                       // GOOGLE FONTS\par
-\}\par
+\highlight3\par
+<ul>\par
+          <li style=\{\{display:'inline-block', width:'50%'\}\} >yyyyyyyyy</li>                                              qq        qq     #double row\par
+          <li style=\{\{display:'inline-block', width:'50%'\}\} >yyyyyyyyy</li>                                              qq       qq\par
+          <li style=\{\{display:'inline-block', width:'50%'\}\} >yyyyyyyyy</li>\par
+          <li style=\{\{display:'inline-block', width:'50%'\}\} >yyyyyyyyy</li>\par
+      </ul>\par
 \par
-\highlight4 &:hover \{\par
+\par
+\highlight4 .singlePostDesc::first-letter \{                                     #FIRST LETTER STYLING\par
+    margin-left: 20px;\par
+    font-size: 30px;\par
+    font-weight: 600;\par
+  \}\par
+\highlight0\par
+\par
+\highlight5 &:hover \{\par
             transform: translateY(-2px)                                                       //  move up image\par
         \}\par
-\highlight5\par
-\highlight1            <div className='row align-items-center '>                                #vertical bootstrap\par
-\highlight5\par
+\highlight3\par
+\par
        margin-left: auto;                                                         horizontal line at center\par
         margin-right:auto;\par
         width: 70%;\par
 \highlight0\par
-\highlight4 * \{\par
+\highlight5 * \{\par
 padding:0;\par
 margin:0;\par
 box-sizing:border-box                                                             //remove basic styles\par
@@ -47,14 +45,20 @@ box-sizing:border-box                                                           
 \highlight0\par
 \par
 \par
-\highlight6\fs24 @media (min-width:700px)\{ \}\par
+\highlight4\fs24 @media (min-width:700px)\{ \}\par
                          or           \par
-flex-wrap:wrap \par
-\par
+.test\{\par
+    display: flex;\par
+\b     flex-wrap: wrap;\par
+\b0\}\par
+.test div\{\par
+    border: 1px solid blue;\par
+    width: 400px;\par
+\}\par
 \highlight0\fs16 .\highlight1 a1 \{\par
-    background: red;                                                                                 FLEX\par
+    background: red;                                                                                 #FLEX\par
 \b     display: flex;\par
-\highlight5 align-items: flex-end;\par
+\highlight3 align-items: flex-end;\par
 \highlight1\b0\}\par
 .x1 \{\par
 \b     flex:1;\par
@@ -69,43 +73,87 @@ flex-wrap:wrap \par
 \b     flex:1;\par
 \b0     background: rgb(137, 130, 238);\par
 \}\par
+flex: basic                                - width/height\par
+flex-grow: 1;                            - occupy all width\par
+flex-grow: 1            - proportion\par
+flex-grow:2              - which shrink more\par
 \highlight0\par
-<\highlight5 div style=\{\{display:'grid', gridTemplateColumns:'1fr 1fr 1fr 1fr' \}\}>                                             \f1\lang1049                                      \f0\lang9  grid\par
+<\highlight3 div style=\{\{display:'grid', gridTemplateColumns:'\cf2\b\fs20 200px 1fr 1fr 1fr\cf0\b0\fs16 ' \}\}>                                             \f1\lang1049                                      \f0\lang9  grid\par
                            or                                                              \par
     <div style=\{\{display:'grid', \b\fs18 gridTemplateColumns:'repeat(4, 1fr\b0\fs16 )' \}\}> \par
     \{x.map(e=> (\par
       <div style=\{\{border:'1px solid red', margin:'5px\b ', textAlign:'center\b0 '\}\} >\{e\}</div>    ))\}\par
     </div>\f1\lang1049                  \par
                                   \par
-     \f0\lang1033 grid-template-columns: minmax(\b auto-fill,\b0 150px, 250px) 1fr 1fr                   auto-fit           auto-fill  -  pereskakivat \f1\lang1049\par
-     \f0\lang1033 grid-auto-rows: minmax(150px,auto)                                                               \par
+\par
+\f0\lang1033       grid-template-columns: 200px, 1fr                                              200 px and all remained space \f1\lang1049\par
+     \f0\lang1033 grid-template-columns: minmax(\b auto-fill,\b0 150px, 250px) 1fr 1fr                   auto-fit           auto-fill  -  pereskakivat \par
+{{\field{\*\fldinst{HYPERLINK https://youtu.be/vExgsxs9r-M?t=1196 }}{\fldrslt{https://youtu.be/vExgsxs9r-M?t=1196\ul0\cf0}}}}\f0\fs16                                                        auto-fit      stretch at full screen\par
+\cf2\highlight0\b\fs20 grid-template-columns: repeat(auto-fit, minmax(50px, 1fr))         50 - 1fr   or  jump into next row\par
+\cf0\highlight3\b0\fs16\par
+\f1\lang1049\par
+\b      \f0\lang1033 grid-auto-rows: minmax(150px,auto)       -  content fit to column  \par
+{{\field{\*\fldinst{HYPERLINK https://youtu.be/vExgsxs9r-M?t=643 }}{\fldrslt{https://youtu.be/vExgsxs9r-M?t=643\ul0\cf0}}}}\f0\fs16\par
+\par
+\f1\lang1049      \f0\lang1033 grid-template-columns: minmax(150px, 300px), 100px, 100px,       -rubber column  \par
+{{\field{\*\fldinst{HYPERLINK https://youtu.be/vExgsxs9r-M?t=565 }}{\fldrslt{https://youtu.be/vExgsxs9r-M?t=565\ul0\cf0}}}}\f0\fs16\par
+\par
+\b0     grid-auto rows: 30px;                                 height of row                                                      \par
     grid-auto-flow: row(column)                     order of  items                 \par
-justify-items\par
+grid-gap: 10px 20px\par
+justify-items                                       16 min          {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=M7m_3b1Jjzc }}{\fldrslt{https://www.youtube.com/watch?v=M7m_3b1Jjzc\ul0\cf0}}}}\f0\fs16\par
+align-self: start\par
 align-items   \par
+justify-self: end                                    18 min\par
 text-align\par
 margin: 0 auto\par
-justify content\f1\lang1049\par
-\f0\lang9\par
-\highlight1 div.innactive \{\par
-    opacity: 0;                                                                                      hide\par
-    pointer-events: none;\par
-    transform: translate(-50%, 50%);\par
+justify content                                    center div\par
+\par
+grid-column-start: 1\par
+grid-column-end: 3             {{\field{\*\fldinst{HYPERLINK https://youtu.be/vExgsxs9r-M?t=1288 }}{\fldrslt{https://youtu.be/vExgsxs9r-M?t=1288\ul0\cf0}}}}\f1\fs16\lang1049\par
+\f0\lang9             or                         \par
+\lang1033 grid-column: 1/3\par
+grid-row: 1/3                     \par
+{{\field{\*\fldinst{HYPERLINK https://youtu.be/M7m_3b1Jjzc?t=1399 }}{\fldrslt{https://youtu.be/M7m_3b1Jjzc?t=1399\ul0\cf0}}}}\f0\fs16                      overlap\par
+grid-area                    (header, main, footer etc.) {{\field{\*\fldinst{HYPERLINK https://youtu.be/vExgsxs9r-M?t=2129 }}{\fldrslt{https://youtu.be/vExgsxs9r-M?t=2129\ul0\cf0}}}}\f0\fs16\par
+\par
+.home \{\par
+    height: 100vh;\par
+    display: grid;\par
+    grid-gap: 20px;\par
+    grid-template-columns: 200px 1fr;\par
+    grid-template-rows: 100px 1fr 100px 500px;\par
+    grid-template-areas: \par
+    "header header"\par
+    "cards actions"\par
+    "map map"\par
+    "footer footer"\par
+    ;\par
 \}\par
 \par
-div.active \{\par
-    opacity: 1;\par
-    pointer-events: all;\par
-    transform: translate(-50%, -50%);\par
+\par
+.home div:nth-child(1) \{\par
+    background:pink;\par
+    grid-area: header;\par
 \}\par
-\highlight0\par
-\highlight4 .center \{\par
-    margin: 21px auto 36px;\par
-    display: flex;\par
-    align-items: center;\par
-    border: solid 1px rgb(0, 200, 0);                                                             center frame                               \par
-    width: fit-content;\par
-    padding: 25px;\par
+\par
+.home div:nth-child(2)\{\par
+    grid-area: cards;\par
 \}\par
+\par
+.home div:nth-child(3)\{\par
+    grid-area:actions;\par
+\}\par
+\par
+.home div:nth-child(4)\{\par
+    grid-area:map;\par
+\}\par
+\par
+.home div:nth-child(5)\{\par
+    grid-area:footer;\par
+\}\par
+\par
+\highlight5\lang9\par
 \highlight0 .first \{\par
   background: brown;                                                                          #\highlight1 center div\par
 \highlight0   position: fixed;\par
@@ -115,7 +163,7 @@ div.active \{\par
 \}\par
 \par
 \par
-\highlight4     width: fit-content;                                                                    fit in frame                       \par
+\highlight5     width: fit-content;                                                                    fit in frame                       \par
 \par
 \par
 \highlight0 img \{\par
@@ -126,52 +174,15 @@ object-fit: cover;\par
 \par
 or\par
 \par
-*,\par
-*::before,\par
-*::after \{\par
-    margin:0;\par
-    padding:0;\par
-    box-sizing: inherit;\par
-    overflow-x: hidden;\par
-\}\par
-\par
-\par
----\par
-    min-height: 20vh;   \highlight1  20% of screen height\par
-\par
-\highlight0 -------\par
-\highlight5 @media screen and (max-width: 768px)\{                                 responsive\par
-    .nav-links \{\par
-        position: fixed;\par
-        background:black;\par
-\highlight0     \}\}\par
-----------------------------------------------------------------------------------------------\par
-\highlight1\par
-\}    text-decoration: none;                                         remove underscore\par
-\highlight0\}--------------------------------------------------------------------------------\par
-\highlight4\par
-.\b\fs28 button \b0\fs16\{\par
-    height: 3.5rem;\par
-    width: 36rem;\par
-    font-size: 1.6rem;\par
-    font-weight: 600;\par
-    background-color: #1dace3;\par
-    color: white;\par
-    border-radius: 10rem;\par
-    border:none;\par
-    outline: none;\par
-    cursor:pointer;\par
-    transition: all 0.9s ease;\par
-\}\par
-.button:hover \{\par
-    color: #1dace3 ;\par
-    background-color: #f7f7f7;\par
-\}\par
-.btn:active \{\par
-    background-color: #3e8e41;                             press effect\par
-    box-shadow: 5px 5px #666;\par
-    transform: translateY(4px);\par
-  \}\par
+ .s-inner > figure > img \{\par
+height: 100%;\par
+box-sizing: border-box;\par
+max-width: 100%;\par
+max-height: 100%;\par
+width: 100%;\par
+ \}\par
+{{\field{\*\fldinst{HYPERLINK https://stackoverflow.com/questions/35703139/css-image-expanding-over-parent-div-size }}{\fldrslt{https://stackoverflow.com/questions/35703139/css-image-expanding-over-parent-div-size\ul0\cf0}}}}\highlight1\f0\fs16\par
+\highlight5\par
 \par
 \highlight1 .nav-menu \{\par
     background:#060b26;                                                                 #hide#sidebar\par
@@ -189,32 +200,13 @@ or\par
 \cf2\b\fs20     left:0;\par
 \cf0\b0\fs16     transition:2000ms;\par
 \}\par
-\highlight5\par
-    letter-spacing: 5px;\par
-    text-transform: uppercase;                                                              TEXT TO UPPERCASE && SPACE BETWEEN LETTERS\par
-    line-height: 1.6                                                                                    \par
-\highlight0 ----------------------------------------------------------------------------------------------------------------------------------------------\par
-.\highlight4 a1 \{\par
-    display: flex;\par
-    flex-direction: column;\par
-    text-align: center;\par
-    max-width: 300px;\par
-    width: 100%;                                                                                                  IMAGE CARD                                \par
-    border: solid 3px;\par
-\}\par
-img \{\par
-    width: 300px;\par
-    height: 200px;\par
-\}\par
-.card-body \{\par
-    background: red;\par
-\}\par
-\highlight5\par
+\highlight3\par
+\par
  white-space: nowrap;                                                                                            TEXT OVERFLOW WITH ...\par
     overflow: hidden;\par
     text-overflow: ellipsis;\par
 \par
-\highlight6 ::-webkit-scrollbar \{                                                                       \highlight1\b\fs20 SCROLLBAR\highlight6\b0\fs16\par
+\highlight4 ::-webkit-scrollbar \{                                                                      # \highlight1\b\fs20 SCROLLBAR\highlight4\b0\fs16\par
     width: 35px;\par
 \}\par
 ::-webkit-scrollbar-track \{\par
@@ -232,10 +224,14 @@ img \{\par
     background: yellow;\par
 \}\par
 \par
-\highlight1 container\highlight6 ::-webkit-scrollbar-thumb:hover \{               to certin div container\par
+\highlight1 container\highlight4 ::-webkit-scrollbar-thumb:hover \{               to certin div container\par
     background: yellow;\par
 \}\par
-\par
+body::-webkit-scrollbar\{display:none\}                                                                   #scrollbar hide                    Chrome, Safari, Opera\par
+body \{\par
+\tab -ms-overflow-style: none;                              IE Explorer\par
+\tab scrollbar-width: none;                                         FireFox\par
+\}\par
 \par
 \highlight1\fs44 #animation                                                   \par
 \highlight0\fs16 .prf \{\par
@@ -276,6 +272,20 @@ img \{\par
       transform: rotate(-360deg);\par
     \}\par
   \}\par
+\highlight5 div \{\par
+  background-color: red;                                        #basic\par
+  color: white;\par
+  font-weight: bold;\par
+  width: 48px;\par
+  height: 48px;  \par
+  transform: rotate(360deg);\par
+  transition: transform 0.5s;\par
+\}\par
+\par
+div:active \{\par
+  transform: rotate(0deg);\par
+  transition:  0s;\par
+\}\par
 \highlight0  .glw \{\par
       animation-name: g;                                                                                                     #glow\par
       animation-duration: 3s;\par
@@ -313,7 +323,7 @@ img \{\par
         box-shadow: 0 0 13px 3px blue;\par
     \}\par
 \} \par
-\highlight4\b\fs20     box-shadow: 0 0 800px 90px green;        #box-shadow     1)x  2)y 3) blur-intensity   4)radius of blur\par
+\highlight5\b\fs20     box-shadow: 0 0 800px 90px green;        #box-shadow     1)x  2)y 3) blur-intensity   4)radius of blur\par
     text-shadow: 0 0 10px blue,  0 0 75px red;           #text shadow 1)x 2)y 3) radius razmazki 4) color\par
 or        text-shadow: 0 0 4px red, 0 0 4px red, 0 0 4px red;            to intense shadow\par
 \highlight1 .glw \{\par
@@ -332,44 +342,8 @@ or        text-shadow: 0 0 4px red, 0 0 4px red, 0 0 4px red;            to inte
       text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;\par
     \}\par
   \} \b0\par
-\highlight5\fs44 #form                                                   \par
-\highlight1\fs16 css\par
-\highlight0\par
-.f1 \{\par
-\tab position: relative;\par
-\tab width: 50%;\par
-\}\par
-.f1 .i1\{\par
-\tab width: 100%;\par
-\tab outline: none;\par
-\tab border:none;\par
-\tab border-bottom: 1px solid #777;\par
-\}\par
-.f1 .i1:focus\{\par
-\tab border-color: blue;\par
-\tab border-width: medium medium 2px;\par
-\}\par
-.f1 .lbl \{\par
-\tab position: absolute;\par
-\tab pointer-events: none;\par
-\tab left: 10px;\par
-\tab transition: 0.2s ease all;\par
-\}\par
-\par
-.f1 input:focus ~ .lbl,\par
-.f1 input:not(:focus):valid ~ .lbl\{\par
-\tab top: -12px;\par
-\tab left: 10px;\par
-\tab font-size: 13px;\par
-    color:red;\par
-\}\par
-\highlight1 html\par
-\highlight0   <div className="f1">\par
-      <input className="i1" required/>\par
-      <span className="lbl">Your email address</span>                   \highlight1 // ORDER MATTERS!!!\highlight0\par
-    </div>\par
-\par
-\highlight5 import React,\{useState, useRef\} from 'react'\par
+\highlight0\fs16\par
+\highlight3 import React,\{useState, useRef\} from 'react'\par
 import \{RiCloseCircleFill\} from 'react-icons/ri'                                                        REACT VARIANT FLOATING INPUT\par
 const Registration = () => \{\par
     const [name, setName] = useState()\par
@@ -421,7 +395,7 @@ input\{\par
     transition: 0.5s ease all;\par
 \}\par
 \highlight0\par
-\highlight3\fs44 navbar      scroll                                              \highlight0\fs16\par
+\highlight6\fs44 navbar      scroll                                              \highlight0\fs16\par
 \par
 .cont \{\par
     width:100%;\par
@@ -489,7 +463,7 @@ section#home \{\par
                 ppppppppppppppp iii h t 6 g 7ppppppppppppppppppppppppp\par
             </p>\par
             </section>\par
-\highlight5\b0\fs24 #MODAL#CONFIRM                                                                             \par
+\highlight3\b0\fs24 #MODAL#CONFIRM                                                                             \par
 \highlight0\fs16 <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">\par
   Launch demo modal\par
 </button>\par
@@ -507,5 +481,208 @@ section#home \{\par
     </div>\par
   </div>\par
 </div>\par
+\par
+\highlight2\b\fs20 #check:checked  ~ ul\{\par
+\tab left:0\par
+\tab\}\par
+   #check: \{display:none\}\par
+<input type='checkbox' id='check'/>\par
+  <label className='checkbtn' for='check'>x</label>\par
+  <div>Logo 2</div>\par
+\par
+\highlight5 #circle      #button                                                             \par
+\highlight0\b0\fs16\par
+.center\{\par
+    position: absolute;\par
+    top:50%;\par
+    left: 50%;\par
+    transform: translate(-50%,-50%);\par
+\}\par
+.loading\{\par
+    position: relative;\par
+    width: 100px;\par
+    height: 100px;\par
+    display: flex;\par
+    align-items: center;\par
+    justify-content: center;\par
+    border: 1px solid red;\par
+\}\par
+.loading span\{\par
+    position: absolute;\par
+    animation: animate 2s linear infinite;\par
+    border-radius: 50%;\par
+\}\par
+.press\{\par
+    height:60px;\par
+    width: 60px;\par
+    background:rgba(246, 71, 71, 1);\par
+    color:white;\par
+    border-radius:50%;\par
+    display:flex;\par
+    justify-content: center;\par
+    align-items: center;\par
+    /* z-index:1000;\par
+    pointer-events: all; */\par
+\}\par
+\par
+\b .loading:hover span\{\par
+    display:none;\par
+\}\par
+.loading:hover .press\{\par
+    transform: scale(1.1);\par
+\}\par
+\b0\par
+@keyframes animate \{\par
+    0%\{\par
+        height:60px;\par
+        width: 60px;\par
+        /* border: 1px solid rgba(246, 71, 71, 1); */\par
+        box-shadow: inset 0 0 20px rgba(246, 71, 71, 1);\par
+    \}\par
+    100%\{\par
+        width: 100%;\par
+        height: 100%;\par
+        /* border: 5px solid rgba(246, 71, 71, .1); */\par
+        box-shadow: inset 0 0 50px rgba(246, 71, 71, 0.1);\par
+    \}\par
+\}\par
+<div className="center">\par
+<div onClick=\{()=>alert('hhhhhhh')\} className="loading">\par
+  <div className='press'>press</div>\par
+    <span></span>\par
+</div>\par
+</div>\highlight2\b\fs20\par
+\highlight0\fs16 @keyframes press\{                                            #vibration variant\par
+    0%\{\par
+        transform: translateY(0px);\par
+    \}\par
+    5%\{\par
+        transform: translateY(3px);\}\par
+    10%\{\par
+        transform: translateY(0px);\par
+    \}\par
+    15%\{\par
+        transform: translateY(3px);\par
+    \}\par
+    20%\{\par
+        transform: translateY(0px);\par
+    \}\par
+    \par
+    100%\{\par
+        transform: translateY(0px);\par
+    \}\par
+\}\par
+\highlight5\fs28 #floatinglabel                                                        \par
+\highlight0\b0\fs16 .form__label\{\par
+    display:block;\par
+    position: absolute;\par
+    transform: translateY(-1.5rem)\par
+\}\par
+.form__input:focus ~ .form__label,\par
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label\{\par
+    transform:translateY(-3em)\par
+\}\b\par
+    <input type="text" id="email" \highlight2 className="form__input"\highlight0  auto\f1\lang1049\'d1\f0\lang9 omplete="none" placeholder=" "/>\par
+    <label for="email" className="form__label">Email</label>\par
+\highlight5\fs28 #spinner                                                        \par
+\highlight0\b0\fs16 #spin \{\par
+    border: 3px solid white;\par
+    border-top: 3px solid pink;\par
+    border-bottom: 3px solid pink;\par
+    border-radius: 50%;\par
+    height: 20px;\par
+    width: 20px;\par
+    animation: .5s spn infinite linear;\par
+\}\par
+\par
+@keyframes spn\{\par
+    to\{\par
+        transform: rotate(360deg);\par
+    \}\par
+\}\par
+\b import React from 'react'\par
+import './spinner.css'\par
+const Spinner = () => \{\par
+    return (\par
+      <div id='spin' >\par
+      </div>\par
+    )\par
+\}\par
+\par
+export default Spinner\par
+\highlight5\fs28\par
+\par
+#dots                                                       \par
+\highlight0\b0\fs16 .dots div \{\par
+    height: 3px;\par
+    width: 3px;\par
+    border-radius: 50%;\par
+    background: green;\par
+    display: inline-block;\par
+    margin: .2rem;\par
+    animation: scaling .8s ease-in-out infinite;\par
+\}\par
+\par
+@keyframes scaling\{\par
+    0%\{\par
+        opacity: 0;\par
+    \}\par
+    100%\{\par
+        opacity: 1;\par
+    \}\par
+  \}\par
+  \par
+  .dots div:nth-child(1)\{\par
+    animation-delay:0.2s;\par
+  \}\par
+  .dots div:nth-child(2)\{\par
+    animation-delay:0.4s;\par
+  \}\par
+  .dots div:nth-child(3)\{\par
+    animation-delay:0.6s;\par
+  \}\par
+  \par
+\b  <div className='dots'>\par
+            <div></div>\par
+            <div></div>\par
+            <div></div>\par
+        </div>\par
+\par
+\highlight5\b0 div \{\par
+  -webkit-user-select: none; /* Safari */                                                                      \fs28   #highlight\fs16\par
+  -ms-user-select: none; /* IE 10 and IE 11 */\par
+  user-select: none; /* Standard syntax */\par
+\}\par
+\par
+ \highlight1                <NavLink className ='x' activeClassName='x-active' exact to='/admin/masters'>\f1\lang1049\'cc\'e0\'f1\'f2\'e5\'f0\'e0</NavLink>\f0\lang1033             #activelink\f1\lang1049\par
+.x-active\{\par
+    color: red;\par
+\}\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=rD6662y-eWc }}{\fldrslt{https://www.youtube.com/watch?v=rD6662y-eWc\ul0\cf0}}}}\f1\fs16\par
+\par
+\highlight5\f0\fs32\lang1033 #overlay           \par
+\highlight0\fs16 #grid variant\par
+ .container \{\par
+    display: grid;\par
+  \}\par
+  \par
+  .content, .overlay \{\par
+    grid-area: 1 / 1;\par
+  \}\par
+\par
+  .overlay\{\par
+      opacity: 0\par
+  \}\par
+    <div className="container">\par
+  <div className="content">This is the content</div>\par
+  <div className="overlay">Overlay - must be placed under content in the HTML</div>\par
+</div>\par
+\par
+or\par
+\par
+<div> <------Relative\par
+  <div/> <------Relative\par
+  <div/> <------Absolute\par
+<div/>\fs4\lang9\par
 }
  
