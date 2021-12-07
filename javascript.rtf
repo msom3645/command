@@ -150,8 +150,21 @@ f.bind(user, 123)()               \par
 f.call(user,123)   \par
 f.apply(user, [123])\par
 \par
-=============================\cf1\fs36 Promise\cf6\fs16 =\par
-const stage1 = ms => \{\par
+=============================\cf1\fs36 Promise\cf6\fs16 =#async\par
+\highlight3 const s1 = async() => \{\par
+    const \{data\} = await axios.get('http://localhost:5000/api/pages/main', \{headers: \{'token':`Bearer $\{user.token\}`\}\})\par
+       console.log(data)\par
+   \}\par
+   const s2 = () => \{\par
+       console.log(2)\par
+   \}\par
+   \par
+const r = async()=> \{\par
+    await s1()\par
+    s2()\par
+\}\par
+r()\par
+\highlight0 const stage1 = ms => \{\par
     return new Promise((rej, res)=>\{\par
         if(ms>2000)\{\par
             setTimeout(()=>\{\par
