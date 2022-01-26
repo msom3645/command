@@ -1,5 +1,5 @@
 {\rtf1\ansi\ansicpg1251\deff0\nouicompat\deflang1049{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fnil\fcharset0 Calibri;}{\f2\fnil\fcharset204 Calibri;}}
-{\colortbl ;\red255\green0\blue0;\red0\green255\blue255;\red255\green0\blue255;\red255\green255\blue0;\red0\green255\blue0;\red0\green0\blue255;\red192\green80\blue77;\red155\green0\blue211;\red0\green176\blue80;}
+{\colortbl ;\red255\green0\blue0;\red0\green255\blue255;\red255\green0\blue255;\red0\green0\blue255;\red255\green255\blue0;\red0\green255\blue0;\red192\green80\blue77;\red155\green0\blue211;\red0\green176\blue80;}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\f0\fs22\lang1033 @echo off\par
 cd salon\\frontend\par
@@ -16,7 +16,19 @@ Prettier, ES7 React/Redux, autoCloseTag, Bracket Pair colonizer, aurorenameTag, 
 \highlight3 npx create-react-app frontend\highlight0\par
 npm i \b\fs18 bcrypt \b0 cors \fs16 mongoose mongodb express-async-handler express axios dotenv jsonwebtoken nodemailer uuid \b --save-dev nodemon\b0\par
 \par
-\highlight4 const x = () => \{\par
+VS CODE   File > Preferences > Keyboard Shortcuts  {{\field{\*\fldinst{HYPERLINK https://newbedev.com/what-is-the-shortcut-in-visual-studio-code-for-console-log }}{\fldrslt{https://newbedev.com/what-is-the-shortcut-in-visual-studio-code-for-console-log\ul0\cf0}}}}\f1\fs16\par
+\highlight2 [\par
+    \{\par
+        "key": "ctrl+p",\par
+        "command": "editor.action.insertSnippet",\par
+        "when": "editorTextFocus",\par
+        "args": \{\par
+          "snippet": "console.log($\{TM_SELECTED_TEXT\}$1)"\par
+        \}\par
+      \}\par
+]\par
+\highlight0\par
+\highlight5 const x = () => \{\par
       const a = 'aaa'\par
       const b = 'bbb'\par
       return [a,b]\par
@@ -24,7 +36,7 @@ npm i \b\fs18 bcrypt \b0 cors \fs16 mongoose mongodb express-async-handler expre
     const [a, b] = x()\par
     console.log(a)\par
 \par
-\highlight5 const x = 'uu'\par
+\highlight6 const x = 'uu'\par
         const a = eval("x")\par
         console.log(a)                \par
 \par
@@ -45,7 +57,7 @@ Math.floor(1000 + Math.random() * 9000)                                         
   var copyText = document.getElementById("rand2")\par
   navigator.clipboard.writeText(copyText.innerHTML);\par
 \}\par
-\highlight5\b\par
+\highlight6\b\par
 [...Array(5).keys()].map(e=> \{                                                           #range\par
     console.log(e) \par
 \})\par
@@ -55,12 +67,12 @@ Math.floor(1000 + Math.random() * 9000)                                         
 \}   \par
 <div id="a" \highlight1\fs24 onmouseover\highlight2\fs16 ="chbg('red')" onmouseout="chbg('white')">This is element a</div>\par
 <div id="b">This is element b</div>\par
-\highlight5\par
+\highlight6\par
 \fs22 req.headers.host                              get #url node js\par
 const \{password, username, ...info\} = user._doc                        #except node\par
         console.log(info)\par
 \par
-\highlight4\fs20 React.useEffect(() => \{                                             #leaving page\par
+\highlight5\fs20 React.useEffect(() => \{                                             #leaving page\par
     return () => \{\par
       alert('llllll')\par
       clearTimeout(t)\par
@@ -69,7 +81,7 @@ const \{password, username, ...info\} = user._doc                        #except
   \par
   return (\par
     <div className="slider">\par
-\highlight5\fs22\par
+\highlight6\fs22\par
 \highlight2\fs14 let t\par
           const timer = ()=>\{\par
            window.clearTimeout(t)\par
@@ -78,12 +90,29 @@ const \{password, username, ...info\} = user._doc                        #except
           setErr('')\par
            \}, 2000)\par
                  \}\par
-           timer()\highlight5\fs22\par
-\highlight4\fs16 const countDown = () => \{\f2\lang1049                           \f1\lang1033 #countdown\lang9\par
+           timer()\highlight6\fs22\par
+\highlight5\fs16 const countDown = () => \{\f2\lang1049                           \f1\lang1033 #countdown\lang9\par
         setCount(count-1)\par
        \} \par
     count > 1 && setTimeout(countDown, 1000)\par
 \highlight3\b0\par
+const [count, setCount] = useState(10);                                    #count timer countdown\par
+const timer = () => \{\par
+    console.log(count)\par
+    setCount(count-1)\par
+\}\par
+\par
+useEffect(\par
+    () => \{\par
+        if (count <= 0) \{\par
+            return;\par
+        \}\par
+        const id = setInterval(timer, 1000);\par
+        return () => clearInterval(id);\par
+    \},\par
+    [count]\par
+);\par
+\par
 \highlight2 const f = () => \{\par
         alert(0)\par
     \}\par
@@ -97,30 +126,30 @@ const \{password, username, ...info\} = user._doc                        #except
     \}\par
     document.addEventListener('keydown', keyF)\par
 \highlight3\par
-\highlight4\fs20 #NODE js\par
+\highlight5\fs20 #NODE js\par
 {\fs16{\field{\*\fldinst{HYPERLINK https://youtu.be/243pQXC5Ebs?t=2554 }}{\fldrslt{https://youtu.be/243pQXC5Ebs?t=2554\ul0\cf0}}}}\f1\fs16\par
 p\highlight0 ath.join('__dirname, '..')\par
 path.parse(someurl)\par
 f..mkdirSync(__dirname, 'dir1','dir2', \{recursive: true\})        // many folders\par
 \highlight2\fs22 #USECONTEXT\par
-\highlight0\fs16 import \{ createContext \} from "react";                      \highlight4 context.js\highlight0\par
+\highlight0\fs16 import \{ createContext \} from "react";                      \highlight5 context.js\highlight0\par
 export const Context = createContext(null)\par
 \par
 <Context.Provider value=\{[err, setErr]\}>\par
     <BrowserRouter>\par
         \par
-        \{err && <h1>\{err\}</h1>\}                                                    \highlight4 app.js\highlight0\par
+        \{err && <h1>\{err\}</h1>\}                                                    \highlight5 app.js\highlight0\par
       <Switch>\par
         <Route path='/admin-panel/add-service' component=\{AddServicePage\} />\par
       </Switch>\par
     </BrowserRouter>\par
       </Context.Provider>\par
 \par
-import \{Context\} from '../Context'                                                  \highlight4 AddServicePage\highlight0\par
+import \{Context\} from '../Context'                                                  \highlight5 AddServicePage\highlight0\par
 const AddServicePage = () => \{\par
     const [err, setErr] = useContext(Context)\par
 \fs10\par
-\highlight4\fs16 frontend/src/screens/ProductScreen.js\par
+\highlight5\fs16 frontend/src/screens/ProductScreen.js\par
 \highlight0 import React, \{useEffect, useState\} from 'react'\par
 import Rating from '../components/Rating'\par
 import \{useDispatch, useSelector\} from 'react-redux'\par
@@ -173,10 +202,10 @@ const ProductScreen = (props) => \{\par
     )\par
 \}\par
 \par
-export default ProductScreen\highlight4\par
+export default ProductScreen\highlight5\par
 \highlight0\par
-\highlight5\fs36 #Router\par
-\highlight4\fs16 App.js\par
+\highlight6\fs36 #Router\par
+\highlight5\fs16 App.js\par
 \highlight0 import Header from './components/Header'\par
 import Footer from './components/Footer'\par
 import \{ Container \} from 'react-bootstrap'\par
@@ -189,7 +218,7 @@ const App = () => \{\par
 \b     <Router>\par
 \b0 <Header/>\par
 <main className='py-3' > \par
-  <Container>\highlight4\par
+  <Container>\highlight5\par
     <Route path='/' component=\{HomeScreen\} exact />\par
     <Route path='/product/:id' component=\{ProductScreen\} />\highlight0\par
   </Container>\par
@@ -201,7 +230,7 @@ const App = () => \{\par
 export default App;\par
 \par
 \par
-\highlight4 Product.js\par
+\highlight5 Product.js\par
 \highlight0 import React from 'react'\par
 import \{ Card \} from 'react-bootstrap'\par
 import Rating from './Rating'\par
@@ -209,10 +238,10 @@ import Rating from './Rating'\par
 \highlight0\par
 const Product = (\{ product \}) => \{\par
     return (\par
-        <Card className='my-3 p-3 rounded' >\highlight5\par
+        <Card className='my-3 p-3 rounded' >\highlight6\par
         <Link to=\highlight0\{`/product/$\{product._id\}`\} >                                      // Link to=     instead    a href\par
             <Card.Img src=\{product.image\} \highlight1 style=\{\{ height: '200px'\}\} \highlight0 />\par
- \highlight5         </Link>\par
+ \highlight6         </Link>\par
 \highlight0             <Card.Body \highlight1 style=\{\{height:'150px'\}\}\highlight0  >\par
             <a href=\{`/product/$\{product._id\}`\} >\par
                 <Card.Title as='div' >\par
@@ -234,7 +263,7 @@ const Product = (\{ product \}) => \{\par
 export default Product\par
 \par
 const ProductScreen = (\{\highlight3 match\highlight0\}) => \{\par
-    const product = products.find(p => p._id === match.params.\highlight3 id\highlight0 )      // \highlight4     <Route path='/product/:id' component=\{ProductScreen\} />                   id  from here    \highlight0\par
+    const product = products.find(p => p._id === match.params.\highlight3 id\highlight0 )      // \highlight5     <Route path='/product/:id' component=\{ProductScreen\} />                   id  from here    \highlight0\par
 \par
 \par
     return (\par
@@ -246,7 +275,7 @@ const ProductScreen = (\{\highlight3 match\highlight0\}) => \{\par
 \par
 export default ProductScreen\par
 \par
-\highlight4\fs36 API\par
+\highlight5\fs36 API\par
 \fs16 root/                                                 npm init\par
 \highlight0\par
 const express = require('express')\par
@@ -262,7 +291,7 @@ app.get('/api/products', (req, res) =>\{\par
 app.get('/api/products/:idd', (req, res) => \{\par
     const product = products.find(p => p._id === req.params.idd)\par
     res.json(product)\par
-\})\highlight4\fs36\par
+\})\highlight5\fs36\par
 \highlight0\fs16 app.listen(5000, console.log('Server running on port 5000'))\par
 \par
 // PUT \cf1 Update \cf0 single product    =>  /admin/product/:id                    // router.route('/admin/product/:id').put(updateProduct)\par
@@ -290,7 +319,7 @@ exports.deleteProduct = async (req, res, next) => \{\par
     res.status(200).json(\{success:true, message:'Product is deleted'\})\par
 \}\par
 \par
-\highlight4\b\fs24 package.json / frontend\par
+\highlight5\b\fs24 package.json / frontend\par
 \highlight2\b0\fs16   "name": "frontend",\par
 \b\fs24   "proxy":"{{\field{\*\fldinst{HYPERLINK http://127.0.0.1:5000 }}{\fldrslt{http://127.0.0.1:5000\ul0\cf0}}}}\f1\fs24 ", \b0\fs16              \i - to conect frontend running on 3000 and backend running on 5000       \highlight1 5000 + api/products/1\par
 \highlight0\par
@@ -299,23 +328,23 @@ npm i cors\par
 const cors = require('cors')\par
 app.use(cors()\par
 \i0\par
-\highlight4 =================================================================================\par
-\highlight5\fs36 DOTENV\par
+\highlight5 =================================================================================\par
+\highlight6\fs36 DOTENV\par
 \highlight0\fs16 npm i dotenv\par
-\highlight4 backend/server.js\par
+\highlight5 backend/server.js\par
 \highlight0 const dotenv = require('dotenv')\par
 dotenv.config()    \par
 const PORT = process.env.PORT|| 5000\par
-\highlight4 root/.env                                   \par
+\highlight5 root/.env                                   \par
 \highlight0 NODE_ENV = development\par
 PORT = 5000\par
-\highlight4 ================================================================================\highlight0\par
+\highlight5 ================================================================================\highlight0\par
 \par
 \par
 \par
 \par
 \fs32 create \fs40 backend \fs32 folder beside frontend ----------------------------\par
-\fs16 in root where frontend and backend located \highlight4 npm init                 entry point  SERVER.js\par
+\fs16 in root where frontend and backend located \highlight5 npm init                 entry point  SERVER.js\par
 \par
 \highlight2 PROXY:\par
   "name": "frontend",\par
@@ -329,18 +358,18 @@ PORT = 5000\par
     "client": "npm start --prefix frontend",\par
     "dev": "concurrently \\"npm run server\\" \\"npm run client\\""                          \i - get backend and frontend running concurrently\i0\par
   \},\par
-\highlight4\par
+\highlight5\par
 \highlight2\fs24 npm run dev\par
-\highlight4\fs16\par
+\highlight5\fs16\par
 \highlight0 ====================================================\par
-\highlight6   "main": "server.js",\par
+\highlight4   "main": "server.js",\par
   "type":"module",                                                   \i\fs20 to change  module export\par
-\highlight4\i0\fs16\par
+\highlight5\i0\fs16\par
 frontend/src/screens/HomeScreen.js\par
 \highlight0 import React, \{useState, useEffect\} from 'react'\par
 import \{Row, Col\} from 'react-bootstrap'\par
 import Product from '../components/Product'\par
-import \highlight5\b\fs44 axios \highlight0\b0\fs16 from 'axios'\par
+import \highlight6\b\fs44 axios \highlight0\b0\fs16 from 'axios'\par
 \cf1\b import \{Link, useHistory\} from 'react-router-dom'\par
 \highlight2 const history= useHistory()\par
 \cf0\b0 const PostData = () => \{                                                                                                                       \b\fs20 //FETCH VARIANT\b0\fs16\par
@@ -375,30 +404,12 @@ const HomeScreen = () => \{\par
         </>\par
     )\}\par
 export default HomeScreen\par
-\highlight4\par
-\highlight5\fs44 #MONGO..\par
-\highlight2\fs16 exports.adminServicesPage = async(req, res) => \{                                  #create\par
-        try\{\par
-        const data = new ServicesPage(\{\par
-            img:req.body.img,\par
-            title1: req.body.title1,\par
-            title2: req.body.title2,\par
-            desc: req.body.desc,\par
-            card: \{\par
-                titlecard: req.body.titlecard,\par
-                desccard: req.body.desccard,\par
-                price: req.body.price,\par
-                duration: req.body.duration,\par
-                workhours: req.body.workhours\par
-            \}\par
-        \})\par
-        const done = await data.save()\par
-        console.log(done)\par
-    \}catch(e)\{\par
-        res.status(500).send(\{message: e.message\})\par
-    \}\par
-\}\fs4\par
-\highlight4\fs16 backend/config/db.js\par
+\highlight5\par
+\highlight6\fs44 #MONGO..#mongoose\par
+{\highlight2\fs16{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=DZBGEVgL2eEbackend/config/db.js }}{\fldrslt{https://www.youtube.com/watch?v=DZBGEVgL2eE\highlight5 backend/config/db.js\ul0\cf0}}}}\highlight5\f1\fs16\par
+\par
+User.find(\{name:'Jax'\})\par
+User.where('age').gt(12).ls(21).where('name').equals('Jax').limit(2).select('age')\par
 \highlight0 import mongoose from 'mongoose'\par
 \par
 const connectDB = async () => \{\par
@@ -426,7 +437,7 @@ mongoose.connection.on('error', (err)=>\{\par
     console.log('err connecting', err)\par
 \})\par
 \par
-\highlight5 const express = require('express')                                                                   var 3 start\par
+\highlight6 const express = require('express')                                                                   var 3 start\par
 const cors = require('cors')\par
  const mongoose = require('mongoose')\par
 const router = require('./router')\par
@@ -456,7 +467,7 @@ start()\par
 \highlight3 mongoose.connect(process.env.URI, \{useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true\})\par
 .then(console.log('connected to MongoDB'))                                                                            //var 3\par
 .catch((err)=> console.log(err))\par
-\highlight4 backend/server.js\par
+\highlight5 backend/server.js\par
 \highlight0 import express from 'express'\par
 import products from './data/products.js'\par
 import dotenv from 'dotenv'\par
@@ -481,7 +492,7 @@ app.get('/api/products/:id', (req, res) => \{\par
 \})\par
 const PORT = process.env.PORT || 5000\par
 app.listen(PORT, console.log(`Server running in $\{process.env.NODE_ENV\} mode on port $\{PORT\}`))\par
-\highlight4 USERMODEL\par
+\highlight5 USERMODEL\par
 const validator = require('validator')\par
 \highlight2 const userSchema = new mongoose.Schema(\{\par
     name:\{\par
@@ -493,6 +504,7 @@ const validator = require('validator')\par
         type:String,\par
         required:[true, "Please enter your email.."],\par
         unique:true,\par
+lowercase: true,\par
         validate:[validator.isEmail, 'Please, enter valid email address']\par
     \},\par
     password:\{\par
@@ -541,7 +553,7 @@ userSchema.methods.getResetPasswordToken = function()\{\par
 \par
 const User = mongoose.model('User', userSchema)\par
 module.exports = User\par
-\highlight4 backend/models/userModel.js\par
+\highlight5 backend/models/userModel.js\par
 \highlight0 import mongoose from "mongoose";\par
 \par
 const userSchema = mongoose.Schema(\{\par
@@ -568,7 +580,7 @@ const userSchema = mongoose.Schema(\{\par
 const User = mongoose.model('User', userSchema)\par
 \par
 export default User\par
-\highlight4 backend/models/productModel.js\par
+\highlight5 backend/models/productModel.js\par
 \highlight0 import mongoose from "mongoose";\par
 \par
 const reviewSchema = mongoose.Schema(\{\par
@@ -628,7 +640,7 @@ const productSchema = mongoose.Schema(\{\par
 \}, \{timestamps: true \} )\par
 const Product = mongoose.model('\highlight3 Product\highlight0 ', productSchema)         // \highlight3 Product \highlight0 - name of collection\par
 export default Product\par
-\highlight4 backend/models/orderModel.js\par
+\highlight5 backend/models/orderModel.js\par
 \highlight0 import mongoose from "mongoose";\par
 \par
 const orderSchema = mongoose.Schema(\{\par
@@ -720,7 +732,7 @@ export default Order \par
     \},\par
 \b0\par
 \highlight0\par
-\highlight4 backend/data/users.js\par
+\highlight5 backend/data/users.js\par
 \highlight0 import bcrypt from 'bcryptjs'\par
 \par
 const users = [\par
@@ -742,7 +754,7 @@ const users = [\par
     \}\par
 ]\par
 export default users\par
-\highlight4\par
+\highlight5\par
 backend/seeder.js\par
     "data:import": "node backend/seeder",                                                      npm run data:import\par
     "data:destroy": "node backend/seeder -d"\par
@@ -820,7 +832,7 @@ module.exports = userRouter\par
 router.post('/product/new').post(newProduct)\par
 \highlight0\par
 \par
-\highlight4 root/package.json                                                \par
+\highlight5 root/package.json                                                \par
 \highlight0   "scripts": \{\par
     "start": "node backend/server",\par
     "server": "nodemon backend/server",\par
@@ -830,7 +842,7 @@ router.post('/product/new').post(newProduct)\par
     "data:destroy": "node backend/seeder -d"\par
   \},\par
 \par
-\highlight4 backend/routes/productRoutes.js\par
+\highlight5 backend/routes/productRoutes.js\par
 \highlight2 npm i express-async-handler\par
 \highlight0 import express from 'express'\par
 const router = express.Router()\par
@@ -853,7 +865,7 @@ router.get('/:id',\highlight2 asyncHandler\highlight0 (async (req, res) => \{\pa
     \}\par
 \}) )\par
 export default router\par
-\highlight4 backend/server.js\par
+\highlight5 backend/server.js\par
 \highlight0 const express = require('express')\par
 const app = express()\par
 const connectDB = require('./config/db')\par
@@ -868,12 +880,12 @@ app.get('/', (req, res) => \{\par
 \highlight0 const port = process.env.PORT || 5000\par
 app.listen(port, console.log('server running on port 5000'))\par
 \par
-\highlight4\fs22 backend/server.js                                                                           \b error middleware\b0            4/9\par
+\highlight5\fs22 backend/server.js                                                                           \b error middleware\b0            4/9\par
 \highlight0\fs16 // ERRORS\par
 app.use(notFound)\par
 app.use(errorHandler)          //  bellow app.get\par
 \par
-\highlight4 backend/middleware/errorMiddleware.js                                                                          \par
+\highlight5 backend/middleware/errorMiddleware.js                                                                          \par
 \highlight0 const notFound = (req, res, next) => \{\par
     const error = new Error(`Not Found = $\{req.originalUrl\}`)\par
     res.status(404)\par
@@ -888,7 +900,7 @@ const errorHandler = (err, req, res, next) => \{\par
     \})\par
 \}\par
 export \{ notFound, errorHandler \}\par
-\highlight4 backend/routes/productRoutes.js                                                                          \par
+\highlight5 backend/routes/productRoutes.js                                                                          \par
 \highlight0 router.get('/:id', asyncHandler(async(req, res)=> \{\par
     const product = await Product.findById(req.params.id)\par
     if (product)\{\par
@@ -898,10 +910,10 @@ export \{ notFound, errorHandler \}\par
 \cf1\fs22         throw new Error('Product not Found..')\par
 \cf0\fs16     \}\par
 \}))\par
-\highlight5\fs40 #REDUX TRAVERSY   5\par
+\highlight6\fs40 #REDUX TRAVERSY   5\par
 \highlight2\fs16 npm i redux react-redux redux-thunk --save redux-devtools-extension                     FRONTEND PACKAGE.JSON\fs40\par
 \highlight0\fs16\par
-\highlight4 frontend/src/store.js\par
+\highlight5 frontend/src/store.js\par
 \highlight0 import \{createStore, combineReducers, applyMiddleware\} from 'redux'\par
 import thunk from 'redux-thunk'\par
 import \{composeWithDevTools\} from 'redux-devtools-extension'\par
@@ -937,7 +949,7 @@ const store = createStore(\par
   composeEnhancer(applyMiddleware(thunk))\par
 );\par
 export default store\par
-\highlight4 frontend/src/index.js\par
+\highlight5 frontend/src/index.js\par
 \highlight0 import React from 'react';\par
 import ReactDOM from 'react-dom';\par
 import './index.css';\par
@@ -954,7 +966,7 @@ ReactDOM.render(\par
 );\par
 reportWebVitals();\par
 \par
-\highlight4 frontend/src/reducers/productReducers.js\par
+\highlight5 frontend/src/reducers/productReducers.js\par
 \highlight0 import \{PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL,\par
     PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL\par
 \} from '../constants/productConstants'\par
@@ -985,14 +997,14 @@ export const productDetailsReducer = (state=\{product:\{ reviews:[] \}\}, action
     \}\par
 \}\par
 \par
-\highlight4 frontend/src/constants/productConstants.js\par
+\highlight5 frontend/src/constants/productConstants.js\par
 \highlight0 export const PRODUCT_LIST_REQUEST = 'PRODUCT_LIST_REQUEST'\par
 export const PRODUCT_LIST_SUCCESS = 'PRODUCT_LIST_SUCCESS'\par
 export const PRODUCT_LIST_FAIL = 'PRODUCT_LIST_FAIL'\par
 export const PRODUCT_DETAILS_REQUEST = 'PRODUCT_DETAILS_REQUEST'\par
 export const PRODUCT_DETAILS_SUCCESS = 'PRODUCT_DETAILS_SUCCESS'\par
 export const PRODUCT_DETAILS_FAIL = 'PRODUCT_DETAILS_FAIL'\par
-\highlight4 frontend/src/actions/productActions.js\par
+\highlight5 frontend/src/actions/productActions.js\par
 \par
 \highlight0 import \{PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL,\par
     PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL\par
@@ -1036,7 +1048,7 @@ export const listProductDetails = (id) => async(dispatch) => \{\par
         \})\par
     \}\par
 \}\par
-\highlight4\par
+\highlight5\par
 \par
 frontend/src/screens/HomeScreen.js\par
 \highlight0 import React, \{useState, useEffect\} from 'react'\par
@@ -1068,7 +1080,7 @@ const HomeScreen = () => \{\par
         </>\par
     )\}\par
 export default HomeScreen\par
-\highlight4 frontend/src/screens/ProductScreen.js\par
+\highlight5 frontend/src/screens/ProductScreen.js\par
 \highlight0 import React, \{useState, useEffect\} from 'react'\par
 import \{Link\} from 'react-router-dom'\par
 import \{Row, Col, Image, ListGroup, Card, Button\} from 'react-bootstrap'\par
@@ -1144,11 +1156,32 @@ const ProductScreen = (\{match\}) => \{\par
 \}\par
 \par
 export default ProductScreen\par
-\highlight4\par
+\highlight5\par
 #PROMISE\par
 \highlight0 const path = require('path')\par
 const fs = require('fs')\par
 \par
+\highlight5 const s1 = () => \{\par
+    return new Promise((res, rej)=>\{        \par
+        setTimeout(()=>\{\par
+            console.log(1)\par
+            res()\par
+        \},1000)\par
+    \})\par
+\}\par
+\par
+const s2 = () => \{\par
+    return new Promise((res, rej)=>\{\par
+        console.log(2)\par
+        res()\par
+    \})\par
+\}\par
+\par
+const x = async() =>\{\par
+    await s1()\par
+    await s2()\par
+\}\par
+\highlight0\par
 let n \par
 const s1 =() => \{\par
     return new Promise((res, rej)=>\{\par
@@ -1211,10 +1244,10 @@ const m = async() => \{\par
 \}\par
 m()\par
 \highlight1\b\fs28 #AUTH..\par
-\highlight4\b0\fs16 backend/index.js                                                     COOKIES\par
+\highlight5\b0\fs16 backend/index.js                                                     COOKIES\par
 \highlight0 const cookieParser = require('cookie-parser')\par
 app.use(cookieParser())\par
-\highlight4 backend/utils/jwtToken.js                                                     COOKIES\par
+\highlight5 backend/utils/jwtToken.js                                                     COOKIES\par
 \highlight2 const jwt = require('jsonwebtoken')\par
 const sendToken = (user, statusCode, res) => \{\par
     const token = jwt.sign(\{user\}, 'secret', \{expiresIn:'30d'\})\par
@@ -1231,7 +1264,7 @@ const sendToken = (user, statusCode, res) => \{\par
     \})\par
 \}\par
 module.exports = sendToken\par
-\highlight4 backend/controllers/userController.js\par
+\highlight5 backend/controllers/userController.js\par
 \highlight0 const asyncHandler = require('express-async-handler')\par
 const User = require('../models/userModel')\par
 const generateToken = require('../utils/generateToken')\par
@@ -1292,7 +1325,7 @@ const generateToken = require('../utils/generateToken')\par
 // access Public\par
 \b const \highlight2\fs20 registerUser \highlight0\fs16 = asyncHandler(async(req, res)=> \{\par
 \b0     const \{name, email, password\} = req.body\par
-\cf1 if(!/^(([^<>()\\[\\]{{\field{\*\fldinst{HYPERLINK "\\\\\\\\.,;:\\\\s@"}}{\fldrslt{\ul\cf6\cf6\ul\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]\{1,3\}\\.[0-9]\{1,3\}\\.[0-9]\{1,3\}\\.[0-9]\{1,3\}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]\{2,\}))$/.test(email}}}}\f1\fs16 ))\{\par
+\cf1 if(!/^(([^<>()\\[\\]{{\field{\*\fldinst{HYPERLINK "\\\\\\\\.,;:\\\\s@"}}{\fldrslt{\ul\cf4\cf4\ul\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]\{1,3\}\\.[0-9]\{1,3\}\\.[0-9]\{1,3\}\\.[0-9]\{1,3\}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]\{2,\}))$/.test(email}}}}\f1\fs16 ))\{\par
             return M.toast(\{html:'Enter correct email address'\})\par
         \}\par
 \cf0     const userExists = await User.findOne(\{email\})\par
@@ -1317,7 +1350,7 @@ const generateToken = require('../utils/generateToken')\par
         throw new Error('Invalid user data..')\par
     \}\par
 \})\par
-\highlight4\b\fs22 LOGOUT FRONTEND\par
+\highlight5\b\fs22 LOGOUT FRONTEND\par
 \highlight3\b0\fs16 export const signout = () => (dispatch) => \{\par
   localStorage.removeItem('userInfo');\par
   localStorage.removeItem('cartItems');\par
@@ -1362,7 +1395,7 @@ const \b updateUserProfile\b0 =asyncHandler(async(req, res) => \{\par
     \}\par
 \})\par
 module.exports = \{authUser, getUserProfile, registerUser, updateUserProfile \}\par
-\highlight4 backend/models/userModels.js\par
+\highlight5 backend/models/userModels.js\par
 \highlight0 userSchema.methods.matchPassword = async function(enteredPassword)\{\par
     return \b await \b0 bcrypt.compare(enteredPassword, this.password)\}\par
 \par
@@ -1373,7 +1406,7 @@ userSchema.pre('save', async function (next)\{ \par
     const salt = await bcrypt.genSalt(10)\par
     this.password = await bcrypt.hash(this.password, salt)\par
 \})\par
-\highlight4 backend/utils/generateToken.js\par
+\highlight5 backend/utils/generateToken.js\par
 \highlight0 const jwt = require('jsonwebtoken')\par
 const generateToken = (id) => \{\par
     return jwt.sign(\{id\}, process.env.JWT_SECRET, \{expiresIn:'30d'\})\}       \par
@@ -1389,7 +1422,7 @@ exports.\highlight2\b\fs24 logout \highlight0\b0\fs16 = async(req, res, next) =>
     \})\par
 \}\par
 \b\fs20 router.route('/logout').get(logout)\par
-\highlight4\b0\fs16 backend/MiddleWare/authMiddleWare.js                                                       #\b PROTECT                                                                                     \b0\par
+\highlight5\b0\fs16 backend/MiddleWare/authMiddleWare.js                                                       #\b PROTECT                                                                                     \b0\par
 \highlight0\b const jwt = require('jsonwebtoken')\par
 const asyncHandler = require('express-async-handler')\par
 const User = require('../models/userModel')\par
@@ -1416,7 +1449,7 @@ const protect = asyncHandler(async(req, res, next) => \{\par
     \}\par
 \})\par
 module.exports = protect\par
-\cf7\highlight4\b0\par
+\cf7\highlight5\b0\par
 \highlight0 const jwt = require('jsonwebtoken')                                                // VARIANT 2\par
 const mongoose = require('mongoose')\par
 const User = mongoose.model('User')\par
@@ -1480,7 +1513,7 @@ exports.protect = async(req, res, next) => \{\par
         props.history.push('/shiping')\par
     \}\par
 \cf0\highlight1             window.location.reload()                                    #reload\highlight2\par
-\cf7\highlight5 import React from 'react'\par
+\cf7\highlight6 import React from 'react'\par
 import \{Redirect\} from 'react-router-dom'                                                                      protect frontend 2\par
 \par
 const Profile = () => \{\par
@@ -1498,7 +1531,7 @@ const Profile = () => \{\par
 \}\par
 export default Profile\par
 \highlight2\par
-\cf0\highlight4 frontend/src/index.js\par
+\cf0\highlight5 frontend/src/index.js\par
 \highlight0 import React from 'react';\par
 import \{Provider\} from 'react-redux'\par
 \b import store from './store'\par
@@ -1512,9 +1545,9 @@ ReactDOM.render(\par
 \b </Provider>,\par
 \b0   document.getElementById('root')\par
 );\par
-\highlight4 frontend/src/reducers/userReducers.js\par
+\highlight5 frontend/src/reducers/userReducers.js\par
 \highlight0\par
-\highlight4 frontend/src/store\par
+\highlight5 frontend/src/store\par
 \highlight0 import \{createStore, compose, applyMiddleware, combineReducers\} from 'redux'\par
 import thunk from 'redux-thunk'\par
 import \{ productListReducer, productListDetailsReducer \} from './reducers/productReducer'\par
@@ -1541,75 +1574,11 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;\
 const store = createStore(reducer, initialState, composeEnhancer(applyMiddleware(thunk)))\par
 export default store\par
 \par
-\highlight4\par
-frontend/src/actions/userActions.js\par
-\par
-frontend/src/screens/LoginScreen.js\par
-\par
-frontend/src/screens/RegisterScreen.js\par
-\par
-\highlight0\b  if(!/^(([^<>()\\[\\]{{\field{\*\fldinst{HYPERLINK "\\\\\\\\.,;:\\\\s@"}}{\fldrslt{\ul\cf6\cf6\ul\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]\{1,3\}\\.[0-9]\{1,3\}\\.[0-9]\{1,3\}\\.[0-9]\{1,3\}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]\{2,\}))$/.test(email}}}}\f1\fs16 ))\{\par
-            return M.toast(\{html:'Enter correct email address'\})\par
-        \}\par
-\highlight4\b0\par
-frontend/src/screens/ProfileScreen.js\par
-\par
-frontend/src/components/header.js\par
-\highlight0 import React from 'react'\par
-import \{Container, NavDropdown, Navbar, Nav\} from 'react-bootstrap'\par
-import \{LinkContainer\} from 'react-router-bootstrap'\par
-import \{useDispatch, useSelector\} from 'react-redux'\par
-import \{logout\} from '../actions/userActions'\par
-const Headers = () => \{\par
-  const dispatch = useDispatch()\par
-  const userLogin=useSelector(state => state.userLogin)\par
-  const \{userInfo\} = userLogin\par
-  const logoutHandler = ()=> \{\par
-    dispatch(logout())\par
-  \}\par
-    return (\par
-        <header>\par
-        <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect >\par
-<Container>\par
-<LinkContainer to='/'>\par
-<Navbar.Brand> ProShop</Navbar.Brand>\par
-</LinkContainer>\par
-<Navbar.Toggle aria-controls="basic-navbar-nav" />\par
-<Navbar.Collapse id="basic-navbar-nav">\par
-  <Nav className="ml-auto">\par
-    <LinkContainer to='/cart'>\par
-    <Nav.Link> <i className='fas fa-shopping-cart'></i>Cart</Nav.Link>\par
-    </LinkContainer>\par
-      \{userInfo ? (\par
-        <NavDropdown title=\{userInfo.name\} id='username'>\par
-          <LinkContainer to='/profile'>\par
-            <NavDropdown.Item>\par
-              Profile\par
-            </NavDropdown.Item>\par
-          </LinkContainer>\par
-          <NavDropdown.Item onClick=\{logoutHandler\}>\par
-            LogOut\par
-          </NavDropdown.Item>\par
-        </NavDropdown>\par
-      ):    <LinkContainer to='/login'>\par
-    <Nav.Link>  <i className='fas fa-user'></i>   Login</Nav.Link>\par
-    </LinkContainer>\par
-\}\par
-  </Nav>\par
-</Navbar.Collapse>\par
-</Container>\par
-</Navbar>\par
-      </header>\par
-    )\par
-\}\par
-export default Header\highlight4\par
-\highlight3 #photospreview <img onClick=\{() => remove(e)\} key=\{i\} src=\{URL.createObjectURL(e)\} /> \par
-\highlight2 const path = __dirname.split('backend')[0] + 'frontend{{\field{\*\fldinst{HYPERLINK "\\\\\\\\public\\\\\\\\uploads'"}}{\fldrslt{\\\\public\\\\uploads'\ul0\cf0}}}}\f1\fs16  \par
-  fs.readdirSync(path)                  #listfiles\par
-\highlight5\b\fs24 #FILES#UPLOAD                                                                                                     \par
+\highlight5\par
+\highlight6\b\fs24 #FILES#UPLOAD                                                                                                     \par
 1.#express-fileupload\par
 \highlight0\b0\fs16  npm i express-fileupload                               {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=b6Oe2puTdMQ }}{\fldrslt{https://www.youtube.com/watch?v=b6Oe2puTdMQ\ul0\cf0}}}}\f1\fs16          \highlight1 36min PROGRESS BAR\highlight0\par
-\highlight4 serves.js  \par
+\highlight5 serves.js  \par
 \highlight0 const fileUpload = require('express-fileupload')\par
 const fs = require('fs')\par
 app.use(fileUpload(\{))\par
@@ -1618,7 +1587,7 @@ exports.newproduct = async(req, res)=>\{\par
         return res.status(400).json(\{message:'No file uploaded..'\})\par
     \}\par
     const file = req.files.file\par
-    const path = __dirname.split('backend')[0] + 'frontend{{\field{\*\fldinst{HYPERLINK "\\\\\\\\public\\\\\\\\uploads\\\\\\\\'"}}{\fldrslt{\\\\public\\\\uploads\\\\'\ul0\cf0}}}}\f1\fs16  + file.name\highlight5\par
+    const path = __dirname.split('backend')[0] + 'frontend{{\field{\*\fldinst{HYPERLINK "\\\\\\\\public\\\\\\\\uploads\\\\\\\\'"}}{\fldrslt{\\\\public\\\\uploads\\\\'\ul0\cf0}}}}\f1\fs16  + file.name\highlight6\par
     if(fs.existsSync(path))\{\par
         return res.status(400).send(\{message:'File Already exists'\})                             //check if file exists\par
         \}\par
@@ -1645,7 +1614,7 @@ exports.newproduct = async(req, res)=>\{\par
             \}\par
         \}\par
         \}\par
-\highlight4\b frontend/screen.js  \par
+\highlight5\b frontend/screen.js  \par
 \highlight0\b0 import React, \{useState\} from 'react'\par
 import axios from 'axios'\par
 import Progress from '../components/Progress'\par
@@ -1707,7 +1676,7 @@ or\par
     )\par
 \}\par
 export default CreatePost\par
-\highlight4 frontend/components/progress.js  \par
+\highlight5 frontend/components/progress.js  \par
 \highlight0 import React from 'react'\par
 import PropTypes from 'prop-types'\par
 const Progress = (\{value, max\}) => \{\par
@@ -1725,7 +1694,7 @@ Progress.defaultProps = \{\par
 \}\par
 export default Progress\par
 \highlight3\b\fs22 INSTAGRAM VARIANT                                          \par
-\highlight4\b0\fs16 frontend/components/CreatePost.js  \par
+\highlight5\b0\fs16 frontend/components/CreatePost.js  \par
 \highlight0 import React, \{useState\} from 'react'\par
 import \{useHistory\} from 'react-router-dom'\par
 import axios from 'axios'\par
@@ -1775,7 +1744,7 @@ const CreatePost = () => \{\par
     )\par
 \}\par
 export default CreatePost\par
-\highlight4 backend/routes/posts.js  \par
+\highlight5 backend/routes/posts.js  \par
 \highlight0 router.post('/createpost',async (req, res) => \{\par
     const \{title, body\} = req.body\par
     if(!title || !body)\{\par
@@ -1800,10 +1769,10 @@ export default CreatePost\par
        console.log(error,'errrrrrrrrrrrrrr')\par
    \}\par
 \})\par
-\highlight5\f1\fs22\lang1033 2.#multer                                                                                       \par
+\highlight6\f1\fs22\lang1033 2.#multer                                                                                       \par
 \highlight0\b\lang9\par
 \b0\fs16\par
-\highlight5\b\fs28 #useREf                                                                                                                                \par
+\highlight6\b\fs28 #useREf                                                                                                                                \par
 \highlight0\b0\fs16\par
 \b import React,\{useState, useEffect, useRef\} from 'react'\par
 \b0 const Title = () => \{\par
@@ -1862,13 +1831,13 @@ export default Title\par
 
 \pard\sl276\slmult1\par
 
-\pard\sl240\slmult1\highlight5\b\fs24 NODEMAILER..                                                                                          \par
+\pard\sl240\slmult1\highlight6\b\fs24 #NODEMAILER..                                                                                          \par
 {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=Va9UKGs1bwI }}{\fldrslt{https://www.youtube.com/watch?v=Va9UKGs1bwI\ul0\cf0}}}}\f1\fs24\par
 {\fs20{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=9zEhGUIUwxY&list=PLurIMwd6GdCiv8ZhpqcwqpFM5Ez4JGago&index=3 }}{\fldrslt{https://www.youtube.com/watch?v=9zEhGUIUwxY&list=PLurIMwd6GdCiv8ZhpqcwqpFM5Ez4JGago&index=3\ul0\cf0}}}}\f1\fs20            //atach file  \fs24\par
-\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=Va9UKGs1bwI }}{\fldrslt{https://www.youtube.com/watch?v=Va9UKGs1bwI\ul0\cf0}}}}\f1\fs24                      // google\par
 
-\pard\sl276\slmult1\highlight4\b0\fs16 const nodemailer = require('nodemailer')\par
-\highlight1 Less secure app access  ON              on google account !!!\highlight4\par
+\pard\sl276\slmult1\highlight5\b0\fs16 const nodemailer = require('nodemailer')\par
+\highlight1 Less secure app access  ON              on google account !!!\highlight5\par
 \highlight2 let transporter = nodemailer.createTransport(\{                                                  //start\par
     service: 'gmail',\par
     auth: \{\par
@@ -1894,7 +1863,7 @@ const send = () => \{transporter.sendMail(mailOptions, (err, data) => \{\par
 \}\par
 module.exports = send\par
 \par
-\highlight4\par
+\highlight5\par
 backend/index.js\par
 \highlight0 app.use(express.urlencoded(\{extended:false\}))\par
 let user = undefined\par
@@ -1927,7 +1896,7 @@ app.get('/unsubscribe/:email', (req, res) => \{\par
     console.log( req.params.email, ' unsubscribed')\par
     res.send('Your email ' + req.params.email + ' unsubscribed')\par
  \par
-\highlight4 backend/nodemailer.js\par
+\highlight5 backend/nodemailer.js\par
 \highlight0 const nodemailer = require('nodemailer')\par
 const transporter = nodemailer.createTransport(\{\par
     host: 'smtp.yandex.ru',\par
@@ -1946,7 +1915,7 @@ const mailer = message => \{\par
     \})\par
 \}\par
 module.exports = mailer\par
-\highlight4 backend/registration.html  \par
+\highlight5 backend/registration.html  \par
 
 \pard\ri-1066\sl276\slmult1\highlight0 <div class="container">\par
         <div class="row justify-content-md-center">\par
@@ -1970,7 +1939,7 @@ module.exports = mailer\par
                   </div>\par
       </div\par
 \par
-\highlight5\fs20 EMAIL VERIFICATION                                                                                                         \par
+\highlight6\fs20 EMAIL VERIFICATION                                                                                                         \par
 \par
 \highlight2\fs16 router.post('/signup',async(req, res) => \{\par
 \highlight0     const \{username, email, password\} = req.body\par
@@ -1992,7 +1961,7 @@ module.exports = mailer\par
         html:`http://localhost:5000/verify/$\{req.body.email\}/$\{token\}`\par
     \})\par
     res.status(200).json(\{message:'Confirm Registration by email'\})\par
-    // try\{                                                                                                                    \highlight5 if create model in register\highlight0\par
+    // try\{                                                                                                                    \highlight6 if create model in register\highlight0\par
     //     await User.create(\{\par
     //         name:username,\par
     //         email:email,\par
@@ -2022,7 +1991,7 @@ module.exports = mailer\par
     \}\par
 \})\par
 
-\pard\sl276\slmult1\highlight4 backend/nodemailer.js  \highlight0\par
+\pard\sl276\slmult1\highlight5 backend/nodemailer.js  \highlight0\par
 const nodemailer = require('nodemailer')\par
 const transporter = nodemailer.createTransport(\{\par
     host: 'smtp.yandex.ru',\par
@@ -2042,9 +2011,9 @@ const \highlight3 mailer \highlight0 = message => \{\par
 \}\par
 module.exports = mailer\par
 
-\pard\ri-1066\sl276\slmult1\highlight5\b\fs20 RESET PASSWORD                                                                                                                                       \par
+\pard\ri-1066\sl276\slmult1\highlight6\b\fs20 RESET PASSWORD                                                                                                                                       \par
 
-\pard\sl276\slmult1\highlight4\b0\fs16 backend/reset-password.js  \par
+\pard\sl276\slmult1\highlight5\b0\fs16 backend/reset-password.js  \par
 \highlight0 router.post('/reset-password', async (req, res) => \{\par
         try\{\par
             const user = await User.findOne(\{email:req.body.email\})\par
@@ -2064,7 +2033,7 @@ module.exports = mailer\par
             res.json(\{err\})\par
         \}\par
 \})\par
-\highlight4 frontend/reset-password.js  \par
+\highlight5 frontend/reset-password.js  \par
 \highlight0 import React, \{useState\} from 'react'\par
 import axios from 'axios'\par
 const ResetPassword = () => \{\par
@@ -2087,7 +2056,7 @@ const ResetPassword = () => \{\par
 \}\par
 export default ResetPassword\par
 \par
-\highlight4 backend/reset-password.js  \highlight0\par
+\highlight5 backend/reset-password.js  \highlight0\par
 
 \pard\ri-1066\sl276\slmult1 router.post('/reset-password/:token', async(req, res) => \{\par
     const user = await User.findOne(\{resetToken:req.params.token\})\par
@@ -2116,7 +2085,7 @@ export default ResetPassword\par
     \}\par
 \})\par
 
-\pard\sl276\slmult1\highlight4 frontend/reset-password.js  \highlight0\par
+\pard\sl276\slmult1\highlight5 frontend/reset-password.js  \highlight0\par
 
 \pard\ri-1066\sl276\slmult1 import React, \{useState\} from 'react'\par
 import axios from 'axios'\par
@@ -2139,9 +2108,9 @@ const ResetPassword = () => \{\par
     )\par
 \}\par
 export default ResetPassword\par
-\highlight5\b\fs28 SEARCH                                                                                  \par
+\highlight6\b\fs28 SEARCH                                                                                  \par
 
-\pard\sl276\slmult1\highlight4\b0\fs16 backend/router  \par
+\pard\sl276\slmult1\highlight5\b0\fs16 backend/router  \par
 \highlight0 //  Get all products => /api/v1/products?keyword=apple\par
 exports.getProducts =async (req, res, next) => \{\par
     try\{ \par
@@ -2158,7 +2127,7 @@ exports.getProducts =async (req, res, next) => \{\par
         res.status(400).json(\{err, success:false, message:'not found..'\})\par
     \}\par
 \}\par
-\highlight4 backend/utils  \highlight5\b\fs28\par
+\highlight5 backend/utils  \highlight6\b\fs28\par
 
 \pard\ri-1066\sl276\slmult1\highlight0\b0\fs16 class APIFeatures \{\par
     constructor(query, queryStr)\{\par
@@ -2188,7 +2157,7 @@ exports.getProducts =async (req, res, next) => \{\par
     \}\par
 \}\par
 module.exports = APIFeatures\par
-\highlight5\b\fs28\par
+\highlight6\b\fs28\par
 #SLIDER                                                                                 \par
 \par
 \highlight0\fs16 const Slider = (\{list\}) => \{\par
@@ -2220,7 +2189,7 @@ module.exports = APIFeatures\par
   \}\par
   const l = () => \{\par
     setNum(prev => prev===0? len-1: prev-1)\par
-  \}\highlight5\fs22\par
+  \}\highlight6\fs22\par
 \highlight0\fs16   return (\par
     <div className="slider">\par
       <img src=\{`/uploads/image-show/$\{list[num]?.img\}`\} alt="" />\par
@@ -2301,7 +2270,7 @@ return (\par
     )\par
 \}\par
 export default Scroll\par
-\highlight5 #INPUT#CHECKBOX                                                                                                                                              \par
+\highlight6 #INPUT#CHECKBOX                                                                                                                                              \par
 \highlight0 // to find out if it's checked or not; returns true or false\par
 const checked = e.target.checked;\par
 \par
@@ -2382,7 +2351,7 @@ import axios from 'axios'\par
 import \{useSelector\} from 'react-redux'\par
 \par
 \b const Table = () => \{\par
-  const token = useSelector(state=>state.loginReducer.user.token)\f2\lang1049                                        \highlight4  \f1\lang1033 axios variant\highlight0\lang9\par
+  const token = useSelector(state=>state.loginReducer.user.token)\f2\lang1049                                        \highlight5  \f1\lang1033 axios variant\highlight0\lang9\par
   const [users, setUsers] = useState([])\par
   const [all, setAll] = useState(false)\par
   useEffect(()=> \{\par
@@ -2455,7 +2424,7 @@ const tooggleItem = (id)=>\{\par
 \}\par
 \par
 export default Table\par
-\highlight5\b0\fs20 #PAGINATION                                                                                                                                                                         \par
+\highlight6\b0\fs20 #PAGINATION                                                                                                                                                                         \par
 \highlight0\fs16 import React, \{useState, useEffect\} from 'react'\par
 import axios from 'axios'\par
 const Pagination = () => \{\par
@@ -2546,10 +2515,10 @@ const Pagination = () => \{\par
         </div>\par
     )\par
 \}\par
-export default Pagination\highlight5\par
+export default Pagination\highlight6\par
 #BOOTSTRAP-TABLE-PAGINATOR                                                                                                                   \par
 \highlight0 npm i react-bootstrap-table2-paginator react-bootstrap-table-next\par
-\highlight5 #\f2\lang1049\'c4\'c8\'cd\'c0\'cc\'c8\'d7\'c5\'d1\'ca\'c0\'df \'cf\'c0\'c3\'c8\'cd\'c0\'d6\'c8\'df \f1\lang9                                                                                                            \par
+\highlight6 #\f2\lang1049\'c4\'c8\'cd\'c0\'cc\'c8\'d7\'c5\'d1\'ca\'c0\'df \'cf\'c0\'c3\'c8\'cd\'c0\'d6\'c8\'df \f1\lang9                                                                                                            \par
 {\highlight0{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=J2MWOhV8T6o }}{\fldrslt{https://www.youtube.com/watch?v=J2MWOhV8T6o\ul0\cf0}}}}\highlight0\f1\fs16\par
 import React, \{useEffect, useState\} from 'react'\par
 import axios from 'axios'\par
@@ -2578,7 +2547,7 @@ const HomeScreen = () => \{\par
             console.log('scroll !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')\par
             setFetching(true)\par
         \}\par
-\b         console.log('scrollHeight',e.target.documentElement.scrollHeight)   \highlight5 #scroll\highlight0\par
+\b         console.log('scrollHeight',e.target.documentElement.scrollHeight)   \highlight6 #scroll\highlight0\par
         console.log('scrollTop',e.target.documentElement.scrollTop)\par
         console.log('innerHeight',window.innerHeight)\par
 \b0     \}\par
@@ -2596,7 +2565,7 @@ const HomeScreen = () => \{\par
 \}\par
 \par
 export default HomeScreen\par
-\highlight5 const x = document.getElementById('scroll4')                                #scroll position of element\par
+\highlight6 const x = document.getElementById('scroll4')                                #scroll position of element\par
     console.log(x && x.offsetTop)\fs22\par
 \highlight2 #scrollspy                                                                                                                 \par
 \highlight0\fs16\par
@@ -2659,7 +2628,7 @@ html:\par
           <a href='#four'>Four</a>\par
         </nav>\par
 \highlight2\fs22\par
-\highlight5\fs24 /* #flip cart */                                                                                                         \fs16\par
+\highlight6\fs24 /* #flip cart */                                                                                                         \fs16\par
 \highlight0 .card-container\{\par
     width: 200px;\par
     height: 300px;\par
@@ -2726,9 +2695,9 @@ transform: rotateY(180deg);\par
 <div onClick=\{()=> setFlip(e=>!e)\} style=\{\{width:'250px'\}\} className=\{flip?'card':'card2'\}>\par
          \{flip? <div> flip 1</div>:\par
           <div> flip2</div>\}\par
-\highlight5\b\fs24 #MAPS                                                                                                   \highlight0\b0\fs16\par
+\highlight6\b\fs24 #MAPS                                                                                                   \highlight0\b0\fs16\par
 
-\pard\sl240\slmult1\highlight4 1. Go to google developer \b API CONSOLE                                                  GOOGLE API KEYS\b0\par
+\pard\sl240\slmult1\highlight5 1. Go to google developer \b API CONSOLE                                                  GOOGLE API KEYS\b0\par
 2. Click on  \b  +ENABLE API SERVICESS\b0  \par
 3.Choose  \b JavaScript Maps Api\b0   and click \b Enable\par
 \b0 4. Click on \b Credentials  \b0 => \b   +CREATE CREDENTIALS\par
@@ -2747,11 +2716,11 @@ transform: rotateY(180deg);\par
 \par
 \par
 \par
-\highlight5 YANDEX \f2\lang1049       -     \'ff\'ed\'e4\'e5\'ea\'f1 \'ea\'ee\'ed\'f1\'f2\'f0\'f3\'ea\'f2\'ee\'f0\highlight2\f1\lang1033\par
-\highlight4\par
+\highlight6 YANDEX \f2\lang1049       -     \'ff\'ed\'e4\'e5\'ea\'f1 \'ea\'ee\'ed\'f1\'f2\'f0\'f3\'ea\'f2\'ee\'f0\highlight2\f1\lang1033\par
+\highlight5\par
 \lang9\par
 
-\pard\ri-1066\sl276\slmult1\highlight5\fs28 #listadd                           {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=c9oC5qjIiWY }}{\fldrslt{https://www.youtube.com/watch?v=c9oC5qjIiWY\ul0\cf0}}}}\f1\fs28\par
+\pard\ri-1066\sl276\slmult1\highlight6\fs28 #listadd                           {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=c9oC5qjIiWY }}{\fldrslt{https://www.youtube.com/watch?v=c9oC5qjIiWY\ul0\cf0}}}}\f1\fs28\par
 \highlight0\fs16     const [list, setList] = useState([\par
         \{firstName:'u', lastName:'',\},\par
         \{firstName:'u', lastName:'',\},\par
@@ -2849,13 +2818,13 @@ const [list, setList] = useState([\{\par
         </div>\par
     )\par
 \par
-\highlight5\fs28 #preview#image                                                                      \par
+\highlight6\fs28 #preview#image                                                                      \par
 {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=wiRtugNSVjU }}{\fldrslt{https://www.youtube.com/watch?v=wiRtugNSVjU\ul0\cf0}}}}\highlight0\f1\fs16\par
 const hndlChange = (e) => \{\par
 setErr(false)\par
 const selected = e.target.files[0]\par
 const exts = ['image/png', 'image/jpg', 'image/jpeg']\par
-\highlight4                                                       or                                      \par
+\highlight5                                                       or                                      \par
         setPhoto(URL.createObjectURL(e.target.files[0]))                                                       \lang1033 // by http link variant\lang9\par
 \tab\tab\tab or                                 \highlight0\par
 if(selected && exts.includes(selected.type))\{\par
@@ -2873,7 +2842,7 @@ if(selected && exts.includes(selected.type))\{\par
 <input accept='image/*' required  onChange=\{hndlChange\} type='file' id='uphoto' />\par
 \par
 \par
-\highlight5\fs20 #COMPRESS                              {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=1WNQxjKHdxw }}{\fldrslt{https://www.youtube.com/watch?v=1WNQxjKHdxw\ul0\cf0}}}}\f1\fs20\par
+\highlight6\fs20 #COMPRESS                              {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=1WNQxjKHdxw }}{\fldrslt{https://www.youtube.com/watch?v=1WNQxjKHdxw\ul0\cf0}}}}\f1\fs20\par
 npm install browser-image-compression --save\par
 \highlight0\fs16 const hndlPhoto = async(e) => \{\par
     setErr(false)\par
@@ -2915,7 +2884,7 @@ node js\par
 npm imagemin imagemin-jpegtran imagemin-pngquant\f2\lang1049\par
 \par
 \par
-\highlight5\f1\fs20\lang1033 #LAZY STORAGE                                                                                                                               \par
+\highlight6\f1\fs20\lang1033 #LAZY STORAGE                                                                                                                               \par
 npm i --save react-lazy-load-image-component\par
 {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=0-Ze5dEgVFk }}{\fldrslt{https://www.youtube.com/watch?v=0-Ze5dEgVFk\ul0\cf0}}}}\f1\fs20\par
 \highlight0\fs16 import \{ LazyLoadImage \} from 'react-lazy-load-image-component';\par
@@ -2923,13 +2892,13 @@ import 'react-lazy-load-image-component/src/effects/blur.css';\f2\lang1049\par
   \{masters && masters.map(e => (\par
                    <div key=\{e._id\} className='m-rows'>\par
 \par
-                    <\highlight4 LazyLoadImage\highlight0\par
+                    <\highlight5 LazyLoadImage\highlight0\par
                     effect='blur'\par
                     height="30px"\par
                     width="30px"\par
                     placeholderSrc='./uploads/manicure_c.jpg'\par
                     src= \{e.photo\} alt='photo'/>\par
-\highlight5\f1\fs20\lang1033 #PHONE#MASK                                                                                                                               \par
+\highlight6\f1\fs20\lang1033 #PHONE#MASK                                                                                                                               \par
 npm install react-input-mask --save\par
 \highlight0\fs16 import InputMask from "react-input-mask"\par
     const [phone, setPhone] = useState('')\par
@@ -2940,7 +2909,7 @@ npm install react-input-mask --save\par
         alwaysShowMask =\{true\}\par
         autoFocus\par
       />\par
-\highlight5\fs20 #\f2\lang1049\'e7\'e0\'ec\'fb\'ea\'e0\'ed\'e8\'e5                                                                                                                                                                                                      \par
+\highlight6\fs20 #\f2\lang1049\'e7\'e0\'ec\'fb\'ea\'e0\'ed\'e8\'e5                                                                                                                                                                                                      \par
 \highlight0\f1\fs16\lang1033 const r = (s) => \{\par
     let x = 0\par
     return  () => \{\par
