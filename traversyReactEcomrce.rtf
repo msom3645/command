@@ -410,8 +410,15 @@ export default HomeScreen\par
 \par
 User.find(\{name:'Jax'\})\par
 User.where('age').gt(12).ls(21).where('name').equals('Jax').limit(2).select('age')\par
-\highlight0 import mongoose from 'mongoose'\par
 \par
+\highlight2 cons updated = await Post.findByIdAndUpdate(id, post, \{new:true\})\par
+res.send(updated\}\par
+\par
+\highlight5\par
+\highlight2 cons deleted = await Post.findByIdAndDelete(id,)\par
+res.send(deleted)\par
+\highlight5\par
+\highlight0 import mongoose from 'mongoose\par
 const connectDB = async () => \{\par
     try \{\par
         const conn = await mongoose.connect(process.env.MONGO_URI, \{\par
@@ -2840,7 +2847,11 @@ if(selected && exts.includes(selected.type))\{\par
 \}\par
 \par
 <input accept='image/*' required  onChange=\{hndlChange\} type='file' id='uphoto' />\par
-\par
+\highlight1 reader.readAsDataURL(img)\par
+            reader.onloadend = () =>\{                                                               #READER\par
+                console.log(reader.result)\par
+            \}\par
+\highlight0\par
 \par
 \highlight6\fs20 #COMPRESS                              {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=1WNQxjKHdxw }}{\fldrslt{https://www.youtube.com/watch?v=1WNQxjKHdxw\ul0\cf0}}}}\f1\fs20\par
 npm install browser-image-compression --save\par
