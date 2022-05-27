@@ -13,8 +13,19 @@ npm i redux-devtools-extension \highlight1 --save-dev  \highlight2              
 \par
 Prettier, ES7 React/Redux, autoCloseTag, Bracket Pair colonizer, aurorenameTag,     Python tabnine\par
 \par
-\highlight3 npx create-react-app frontend\highlight0\par
-npm i \b\fs18 bcrypt \b0 cors \fs16 mongoose mongodb express-async-handler express axios dotenv jsonwebtoken nodemailer uuid \b --save-dev nodemon\b0\par
+\highlight3 npx create-react-app frontend\par
+\b npx create-react-app . --template redux\par
+\par
+npm i @types/react-redux redux react-redux redux-thunk                                       old redux\par
+\par
+npx create-react-app my-app --template typescript\par
+\par
+VS Code ES7+ React/Redux/React-Native/JS snippets                                                 VS CODE\par
+\highlight0\b0\par
+npm i \b\fs18 bcrypt \b0 cors \fs16 mongoose mongodb express-async-handler express axios dotenv jsonwebtoken nodemailer uuid \b --save-dev nodemon\par
+\par
+node\par
+require('crypto').randomBytes(64).toString('hex')\b0\par
 \par
 VS CODE   File > Preferences > Keyboard Shortcuts  {{\field{\*\fldinst{HYPERLINK https://newbedev.com/what-is-the-shortcut-in-visual-studio-code-for-console-log }}{\fldrslt{https://newbedev.com/what-is-the-shortcut-in-visual-studio-code-for-console-log\ul0\cf0}}}}\f1\fs16\par
 \highlight2 [\par
@@ -36,19 +47,7 @@ VS CODE   File > Preferences > Keyboard Shortcuts  {{\field{\*\fldinst{HYPERLINK
     const [a, b] = x()\par
     console.log(a)\par
 \par
-\highlight6 const x = 'uu'\par
-        const a = eval("x")\par
-        console.log(a)                \par
-\par
-exports.findId = async(req, res) => \{\par
-    const model = eval(req.body.model)\par
-    try\{\par
-        const data = await model.findById(req.body.id) \par
-        res.status(200).send(data)\par
-    \}catch(e)\{\par
-        res.status(500).send(\{messsage: e.message\})\par
-    \}\par
-\}\par
+{\highlight6{\field{\*\fldinst{HYPERLINK https://github.com/gitdagray/node_js_resources }}{\fldrslt{https://github.com/gitdagray/node_js_resources\ul0\cf0}}}}\highlight6\f1\fs16                                                                   #NODE\par
 \highlight0\par
 \highlight2     console.log(Math.random().toString(36).substr(2, 5))                                                        #random\par
 Math.floor(1000 + Math.random() * 9000)                                                                #4 digit\par
@@ -409,15 +408,75 @@ export default HomeScreen\par
 {\highlight2\fs16{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=DZBGEVgL2eEbackend/config/db.js }}{\fldrslt{https://www.youtube.com/watch?v=DZBGEVgL2eE\highlight5 backend/config/db.js\ul0\cf0}}}}\highlight5\f1\fs16\par
 \par
 User.find(\{name:'Jax'\})\par
-User.where('age').gt(12).ls(21).where('name').equals('Jax').limit(2).select('age')\par
+User.\highlight3 where\highlight5 ('age').\highlight3 gt\highlight5 (12).\highlight3 ls\highlight5 (21).\highlight3 where\highlight5 ('name').\highlight3 equals\highlight5 ('Jax').\highlight3 limit\highlight5 (2).\highlight3 select\highlight5 ('age').\highlight3 populate\highlight5 ('BestFriend')\par
 \par
 \highlight2 cons updated = await Post.findByIdAndUpdate(id, post, \{new:true\})\par
 res.send(updated\}\par
 \par
 \highlight5\par
-\highlight2 cons deleted = await Post.findByIdAndDelete(id,)\par
-res.send(deleted)\par
-\highlight5\par
+\highlight2       const stories = await Story.find(\{ age: 27 \})\par
+\par
+\highlight5 const StorySchema = new mongoose.Schema(\{\par
+type: String,\par
+minLength: 10,\par
+maxLength: 20,\par
+    trim: true,\par
+    default: 'public',\par
+    enum: ['public', 'private'],\par
+    type: mongoose.Schema.Types.ObjectId,\par
+    ref: 'User',\par
+    default: Date.now(),\par
+lowercase: true,\par
+  \},\par
+createdAt: \{\par
+    type: Date,\par
+    default: () => Date.now(),\par
+immutable: true\par
+  \},\par
+age: \{\par
+    type: Number,\par
+min: 18,\par
+max: 100,\par
+validate: \{                                                                                                                       !!! only if create method\par
+validator: v => v % 2 === 0,\par
+message: props => `$\{props.value\} is not an even number`\par
+\}\par
+  \},\par
+\})\par
+\par
+StorySchema .\b methods\b0 .sayHello = function()\{\par
+\tab console.log(`Hello. My name is $\{\b this.name\b0\}`)                                                    try\{ user.sayHello()           \par
+\}\par
+\par
+StorySchema .\b statics\b0 .findByName = function(name)\{                                                                   await Story.findByName('Kyle')  \par
+\tab return this.where(\{name: new Regex(name:'i')\})\par
+{{\field{\*\fldinst{HYPERLINK https://youtu.be/DZBGEVgL2eE?t=1594 }}{\fldrslt{https://youtu.be/DZBGEVgL2eE?t=1594\ul0\cf0}}}}\f1\fs16\par
+\}\par
+                                    or                                  \par
+StorySchema .\b query\b0 .ByName = function(name)\{                                                                   await Story.find().ByName('Kyle')  \par
+\tab return this.where(\{name: new Regex(name:'i')\})\par
+\}\par
+\highlight3\par
+StorySchema .\b virtual\b0 ('namedEmail').get. function()\{                                        await Story.findOne(\{name:'Jax',email:'test@tt.ru'\}) \par
+\tab return `$\{this.name  <$\{this.email\}>  \}`                                      DO NOT WRITE IN TO DATABASE\par
+\tab\tab\tab\tab\tab\tab\tab\b user.namedEmail\b0\tab\par
+\highlight5\}\par
+\par
+StorySchema .\b pre(\b0 'save', function(next)\{                                   do before 'save'\par
+\tab this.updateAt = Date.now()\par
+\tab next()\par
+\}\b )\par
+\par
+\b0 StorySchema .\b post(\b0 'remove', function(doc,next)\{                                   do before 'save'\par
+\tab doc.sayHello()\par
+\tab next()\par
+\}\b )\b0\par
+\par
+\}\par
+\par
+\par
+module.exports = mongoose.model('Story', StorySchema)\par
+\par
 \highlight0 import mongoose from 'mongoose\par
 const connectDB = async () => \{\par
     try \{\par
@@ -1165,6 +1224,7 @@ const ProductScreen = (\{match\}) => \{\par
 export default ProductScreen\par
 \highlight5\par
 #PROMISE\par
+\highlight1     reject(Error('Your cofee'))\highlight5\par
 \highlight0 const path = require('path')\par
 const fs = require('fs')\par
 \par
@@ -1250,6 +1310,51 @@ const m = async() => \{\par
     \}\par
 \}\par
 m()\par
+\highlight5\fs28 #callback\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=DHvZLI7Db8E }}{\fldrslt{https://www.youtube.com/watch?v=DHvZLI7Db8E\ul0\cf0}}}}\f1\fs28\par
+\highlight0\fs16 const x = false\par
+    const x2 = false\par
+    \par
+    const f = (callback, errorCallback) => \{\par
+        if(x)\{\par
+            errorCallback(\{\par
+                name:'user',\par
+                error: 'x is false'\par
+            \})\par
+        \}else if(x2)\{\par
+            errorCallback(\{\par
+                name:'user2',\par
+                error: 'x2 is false'\par
+            \})\par
+        \}else\{\par
+            callback('Success')\par
+        \}\par
+    \}\par
+    f((message)=>\{console.log(message)\}, (message)=> \{console.log(message.error + ' and ' + message.name)\})\par
+\highlight5\b                                       or PROMISE DECISION\highlight0\par
+\b0 const x = true\par
+    const x2 = false\par
+    \par
+    const f =() =>  new Promise ((resolve, reject) => \{\par
+        if(x)\{\par
+            \highlight5 reject\highlight0 (\{\par
+                name:'user',\par
+                error: 'x is false'\par
+            \})\par
+        \}else if(x2)\{\par
+            \highlight5 reject\highlight0 (\{\par
+                name:'user2',\par
+                error: 'x2 is false'\par
+            \})\par
+        \}else\{\par
+            \highlight5 resolve\highlight0 ('Success')\par
+        \}\par
+    \par
+    \}) \par
+    \par
+    f().then(\par
+        (message)=>\{console.log(message)\}\par
+    ).catch((message)=> \{console.log(message.error + ' and ' + message.name)\})\par
 \highlight1\b\fs28 #AUTH..\par
 \highlight5\b0\fs16 backend/index.js                                                     COOKIES\par
 \highlight0 const cookieParser = require('cookie-parser')\par
@@ -1538,6 +1643,23 @@ const Profile = () => \{\par
 \}\par
 export default Profile\par
 \highlight2\par
+\par
+module.exports = \{                                                                                                              # google protect\par
+    ensureAuth: (req, res, next) => \{\par
+        if(req.isAuthenticated())\{\par
+            return next()\par
+        \}else\{\par
+            res.redirect('/')\par
+        \}\par
+    \},\par
+    ensureGuest: (req, res, next) => \{\par
+        if(req.isAuthenticated())\{\par
+            res.redirect('/dashboard')\par
+        \}else\{\par
+            return next()\par
+        \}\par
+    \}\par
+\} \par
 \cf0\highlight5 frontend/src/index.js\par
 \highlight0 import React from 'react';\par
 import \{Provider\} from 'react-redux'\par
@@ -2432,6 +2554,7 @@ const tooggleItem = (id)=>\{\par
 \par
 export default Table\par
 \highlight6\b0\fs20 #PAGINATION                                                                                                                                                                         \par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=6DtBw3PaeHs }}{\fldrslt{https://www.youtube.com/watch?v=6DtBw3PaeHs\ul0\cf0}}}}\f1\fs20\par
 \highlight0\fs16 import React, \{useState, useEffect\} from 'react'\par
 import axios from 'axios'\par
 const Pagination = () => \{\par

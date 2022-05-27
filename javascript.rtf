@@ -1,10 +1,30 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Fira Code Light;}}
-{\colortbl ;\red255\green0\blue0;\red0\green255\blue0;\red255\green255\blue0;\red0\green0\blue255;\red232\green191\blue106;\red0\green0\blue0;\red186\green186\blue186;\red165\green194\blue97;\red169\green183\blue198;\red0\green77\blue187;\red0\green255\blue255;}
+{\colortbl ;\red255\green0\blue0;\red0\green255\blue255;\red0\green255\blue0;\red255\green255\blue0;\red0\green0\blue255;\red232\green191\blue106;\red0\green0\blue0;}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
-\pard\box\brdrdash\brdrw0 \sl276\slmult1\cf1\highlight2\f0\fs36       if(inputText.trim().length>0)                input  validation\par
+\pard\box\brdrdash\brdrw0 \sl276\slmult1\cf1\highlight2\f0\fs20       if(inputText.trim().length>0)                input  validation\par
 completed: !item.completed              toggle   true to false\par
-\highlight0 # Spread operator\fs20\par
-\cf0\fs16   const x1 = [1,2,3]\par
+\highlight3 console.log(window)\par
+console.log(globalThis)\par
+\highlight2 Object.getOwnPropertyNames(obj)\par
+\highlight0\fs36 # Performance\highlight2\fs20\par
+const s1 = performance.now()\par
+const s2 = performance.now()\par
+console.log(s1 -s2)\highlight3\par
+\highlight0\fs36 # Errors\fs20\par
+\cf0\fs16 const someError = () => \{\par
+  throw new Error("Some Error");\par
+\};\par
+\par
+try \{\par
+  someError();\par
+\} catch (e) \{\par
+  console.log(e);\par
+  console.log(e.message);\par
+  console.error(e.message);\par
+\}\par
+console.log("Continue ...");    //    if    try/catch   \cf1 code will continue\cf0\par
+\cf1\fs36 # Spread operator\fs20\par
+\cf0\fs16   const x1 = [1,2,3]                \par
   const x2 = x1\par
   x2.push(4)\par
   console.log(x1);        [1,2,3,4]\par
@@ -14,28 +34,56 @@ completed: !item.completed              toggle   true to false\par
   const x2 = [...x1]\par
   x2.push(4)\par
   console.log(x1);           [1,2,3]\par
-  console.log(x2);         \highlight3    [1,2,3,4]\par
+  console.log(x2);         \highlight4    [1,2,3,4]\par
+\par
+\par
+\cf1\highlight0\fs36 # primitive types vs reference\fs20\par
+\cf0\highlight4\fs16\par
+\highlight0 let primitive = 5\par
+let copyPrimitive1 = primitive\par
+let copyPrimitive2 = primitive\par
+primitive = 99\par
+console.log(copyPrimitive1)                   // 5\par
+console.log(copyPrimitive2)                   //  5\par
+console.log(primitive)                              //  99\par
+\par
+\par
+const referenceType = \{'a':1\}\par
+const copyreference1 = referenceType\par
+const copyreference2 = referenceType\par
+referenceType['a'] = 2\par
+console.log(copyreference1)               // \{'a':2\}\par
+console.log(copyreference2)               // \{'a':2\}\par
+console.log(referenceType)                 // \{'a':2\}\par
+\highlight4\par
+//New object copy\par
+const x = \{\par
+    name:"ann",\par
+    age:33\par
+\}\par
+const x2 = Object.assign(\{\}, x)\par
+// or const x2 = \{...x\}\par
+// or FULL VARIANT const x2 = JSON.parse(JSON.stringify(x1))\par
+//https://youtu.be/CxgOKJh4zWE?t=9661\par
+x2.name = 'ken'\par
+console.log(x.name)\par
+console.log(x2.name)\par
 \par
 \highlight0 =========================\par
-\highlight3\par
-\highlight0  const user1 = \{ \par
-    name: 'Jen', \par
-    age: 22, \par
-  \}; \par
-  \par
-  const user2 = \{ \par
-    name: "Andrew", \par
-    location: "Philadelphia"\par
-  \}; \par
-  \par
-  const mergedUsers = \{...user1, ...user2\};    \par
-  console.log(mergedUsers\highlight3 )                         \{name: "Andrew", age: 22, location: "Philadelphia"\}\par
+\highlight4\par
+\highlight0 const arr = [\par
+  [1, 2, 3],\par
+  [4, 5, 6],\par
+  [7, 8, 9],\par
+];\par
+\par
+console.log(arr.map(e=> []))     //  [ [ ], [ ], [ ] ]\par
 
-\pard\box\brdrdash\brdrw0 \sa200\sl276\slmult1\cf1\highlight0\fs36 #prototype\par
+\pard\box\brdrdash\brdrw0 \sa200\sl276\slmult1\cf1\fs36 #prototype\par
 
-\pard\box\brdrdash\brdrw0 \sl276\slmult1 {\cf0\fs16{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=aQkgUUmUJy4 }}{\fldrslt{https://www.youtube.com/watch?v=aQkgUUmUJy4\ul0\cf0}}}}\cf5\f0\fs16\par
+\pard\box\brdrdash\brdrw0 \sl276\slmult1 {\cf0\fs16{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=aQkgUUmUJy4 }}{\fldrslt{https://www.youtube.com/watch?v=aQkgUUmUJy4\ul0\cf0}}}}\cf6\f0\fs16\par
     \par
-\cf6 const a1 = \{\par
+\cf7 const a1 = \{\par
     name:'ann',                         // var 1\par
     city:'tver'\par
 \}\par
@@ -76,9 +124,51 @@ Array.prototype.multiply = function(n)\{                 // now multiply FOR ALL
 console.log(array.multiply(2))\par
 \par
 \par
-\cf5 const lena = Object.create(a1)               // inherit from a1\par
-\cf6 ------------------------------------------------------------------------------------------------ old variant\par
-{\cf0{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=cTlxzxsFbDQ }}{\fldrslt{https://www.youtube.com/watch?v=cTlxzxsFbDQ\ul0\cf0}}}}\cf5\f0\fs16\par
+\cf6 const lena = Object.create(a1)               // inherit from a1\par
+\cf0\highlight2 function f1(name)\{\par
+    const obj = \{\}\par
+    obj.name = name\par
+    obj.greet = function()\{\par
+        console.log('Hello ' + this.name)\par
+    \}\par
+    return obj\par
+\}\par
+\par
+const ff1 = f1('Frank')\par
+ff1.greet()\par
+\par
+\cf1 //  THE SAME\par
+\cf0\par
+function F2(name)\{\par
+    this.name = name\par
+    this.greet = ()=> \{\par
+        console.log('Hello ' + this.name)\par
+    \}\par
+\}\par
+\par
+const ff2 = new F2('Ann')\par
+ff2.greet()\par
+\par
+// Create prototype\par
+const a1 = \{\par
+    name:'ann',                         \par
+    city:'tver'\par
+\}\par
+\par
+\highlight4 const a2 = Object.create(a1)                                 // var 1\par
+console.log(a2.name)\par
+console.log(a2.__proto__)\par
+\par
+Object.setPrototypeOf(a1,\{prototype1:'prototipe of a1'\})      // var 2\par
+console.log(a1.prototype1)\par
+console.log(a1.__proto__)\par
+\par
+const a4 = \{name:'jax', __proto__: \{city:'pskov'\}\}           // var 3\par
+console.log(a4.city)\par
+console.log(a4.__proto__)\par
+\cf6\highlight0\par
+\cf7 ------------------------------------------------------------------------------------------------ old variant\par
+{\cf0{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=cTlxzxsFbDQ }}{\fldrslt{https://www.youtube.com/watch?v=cTlxzxsFbDQ\ul0\cf0}}}}\cf6\f0\fs16\par
 \cf0 const Base1 = function(options)\{                       // create Base class\par
     this.name = options.name\par
     this.city = options.city\par
@@ -113,30 +203,30 @@ guest1.greeting()\par
 console.log(guest1.hasTail)\f1\lang9\line\cf1\f0\lang1033 ---------------------------------------------------------------------- end old variant\par
 \par
 \fs40 #class\par
-\cf6\fs16 class Animal\{                                        // \cf1 define class            \cf6\par
+\cf7\fs16 class Animal\{                                        // \cf1 define class            \cf7\par
     constructor(options)\{\par
-        this.name = options.name                     // \cf1 define args\cf6\par
+        this.name = options.name                     // \cf1 define args\cf7\par
         this.age = options.age                        \par
     \}          \par
-    voice()\{console.log('Base voice of ' + this.name)\}   // \cf1 add function\cf6\par
+    voice()\{console.log('Base voice of ' + this.name)\}   // \cf1 add function\cf7\par
 \}\par
     \par
 \par
-const example1 = new Animal(\{name:'ann', age:4\})        // \cf1 create instance\cf6\par
+const example1 = new Animal(\{name:'ann', age:4\})        // \cf1 create instance\cf7\par
 \par
 example1.voice()\par
     \par
     \par
     \par
-class Cat extends Animal\{                              // i\cf1 nherit from animal\cf6\par
+class Cat extends Animal\{                              // i\cf1 nherit from animal\cf7\par
     constructor(options)\{\par
         super(options)\par
-        this.hasTail = options.hasTail                            // \cf1 add new args\cf6\par
+        this.hasTail = options.hasTail                            // \cf1 add new args\cf7\par
     \}\par
 \}\par
 ---------------------------------------------------------------------------end class\par
 \cf1\b\fs32 #BIND\par
-\cf6\b0\fs16 const user = \{\par
+\cf7\b0\fs16 const user = \{\par
     name:'ann',\par
     city:'tver'\par
 \}\par
@@ -150,21 +240,31 @@ f.bind(user, 123)()               \par
 f.call(user,123)   \par
 f.apply(user, [123])\par
 \par
-=============================\cf1\fs36 Promise\cf6\fs16 =#async\par
-\highlight3 const s1 = async() => \{\par
-    const \{data\} = await axios.get('http://localhost:5000/api/pages/main', \{headers: \{'token':`Bearer $\{user.token\}`\}\})\par
-       console.log(data)\par
-   \}\par
-   const s2 = () => \{\par
-       console.log(2)\par
-   \}\par
-   \par
-const r = async()=> \{\par
-    await s1()\par
-    s2()\par
+=============================#\cf1\fs36 Promise\cf7\fs16 =#async\par
+\highlight4 let flag = true\par
+const s1 = () => \par
+  new Promise((resolve, reject) => \{\par
+    setTimeout(()=>\{\par
+      console.log(1)\par
+      flag = false\par
+      resolve()\par
+    \}, 2000)\par
+\par
+  \})\par
+\par
+const s2 = () => \{\par
+  if(flag)\{\par
+    console.log(2)\par
+  \}\par
+  return\par
 \}\par
-r()\par
-\highlight0 const stage1 = ms => \{\par
+\par
+const s3 = async() => \{\par
+  await s1()\par
+  s2()\par
+\}\par
+\highlight0\par
+onst stage1 = ms => \{\par
     return new Promise((rej, res)=>\{\par
         if(ms>2000)\{\par
             setTimeout(()=>\{\par
@@ -202,403 +302,29 @@ async function a1()\{\par
 a1()\par
 ==============================\par
 \par
-\cf5\f1\lang9\line\f0\lang1033 -----------\f1\lang9\line <button \cf7 type=\cf8 "button" \cf7 onclick=\cf8 "document.getElementById('text1').innerHTML = 'tEXT HAS CHANGED ANOTHER TIME'"\cf5 >\cf9 cLICK TO\line     CHANGE2\line\cf5 </button>\line\line <br>\line\line\line <button \cf7 onclick=\cf8 "document.getElementById('pic1').src='\{% static 'app1/images/logo.png' %\}'"\cf5 >\cf9 Turn On\cf5 </button>\line <img \cf7 id=\cf8 "pic1" \cf7 style=\cf8 "\cf9 width:100px;\cf8 " \cf7 src=\cf8 "\{% static 'app1/images/logo.png' %\}"\cf5 >\line <button \cf7 onclick=\cf8 "document.getElementById('pic1').src='\{% static 'app1/images/default.jpg' %\}'"\cf5 >\cf9 Turn off\cf5 </button>\line\line <br>\line\line <p \cf7 id=\cf8 "fonts"\cf5 >\cf9 JS can change font styles\cf5 </p>\line <button \cf7 type=\cf8 "button" \cf7 onclick=\cf8 "document.getElementById('fonts').style.fontSize='35px'"\cf5 >\cf9 Change Font\cf5 </button>\line\line <button \cf7 type=\cf8 "button" \cf7 onclick=\cf8 "document.getElementById('fonts').style.display = 'none'"\cf5 >\cf9 HIDE\cf5 </button>\line <button \cf7 type=\cf8 "button" \cf7 onclick=\cf8 "document.getElementById('fonts').style.display = 'block'"\cf5 >\cf9 SHOW\cf5 </button>\line <br>\line\line <p \cf7 id=\cf8 "demo"\cf5 ></p>\line <p \cf7 id=\cf8 "demo2"\cf5 ></p>\line <script>\cf9 document.getElementById('demo').innerHTML = 'My first JavaScript ' \cf5 </script>\line <script>\cf9 document.getElementById('demo2').innerHTML = 5+6 \cf5 </script>\line\line <script>\cf9 document.write(7+7)\cf5 </script>\line\line <script>\cf9 alert(5+7)\cf5 </script>\line\line <script>\cf9 console.log(2+2)\cf5 </script>\line\line <button \cf7 onclick=\cf8 "\cf9 window.print()\cf8 "\cf5 >\cf9 Print this page\cf5 </button>\line <br>\line\line <p \cf7 id=\cf8 "variables"\cf5 ></p>\line <script>\line\cf9 var x, y, z;\line x = 5;\line y = 6;\line z = x + y;\line document.getElementById('variables').innerHTML = z;\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "demo3"\cf5 ></p>\line\line <script>\line\cf9 var carName;\line document.getElementById("demo3").innerHTML = carName;   /* undifined variable*/\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d4"\cf5 ></p>\line\line <script>\line\cf9 var z, x;\line x = 45;\line x++;\line var z = x;\line     document.getElementById('d4').innerHTML = z;        /* INCREMENT */\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d5"\cf5 ></p>\line\line <script>\line\cf9 var person = \{\line   firstName : "John",\line   lastName  : "Doe",\line   age     : 50,\line   eyeColor  : "blue"\line\};\line\line document.getElementById("d5").innerHTML =\line person.firstName + ' is ' + person.age + ' old';\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d6"\cf5 ></p>\line <script>\line     \cf9 var car = '';\line     var n = 5;\line     var xx;\line     car = undefined;                                         /* to convert to undefined */\line     document.getElementById('d5').innerHTML = typeof car + '<br>' + typeof n + '<br>' + typeof xx + '<br>' + car;\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d7"\cf5 ></p>\line\line <script>\line     \cf9 var x = myFunction(2, 7);\line     document.getElementById('d7').innerHTML = x;\line     function myFunction(x,y)\{\line     return x*y;\line     \}\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d8"\cf5 ></p>\line\line <script>\line     \cf9 var person = \cf0\{\f0\lang1033                                                        /* function Declaration */\f1\lang9\line\cf9     firstName: 'John',\line     lastName: 'Doe',\line     id: 556,\line     fullname: function ()\{\line     return this.firstName + ' ' + this.lastName;\line     \}\line     \};\line     document.getElementById('d8').innerHTML = person.fullname();\line\par
 
-\pard\box\brdrdash\brdrw0 \sl240\slmult1 const fullname= function (name\cf0\highlight1 )\{\f0\lang1033                                    /* function Expression   ONLY AFTER FUNCTION */\f1\lang9\par
-\cf9\highlight0     return name \}\par
-console.log(fullname('Max\f0\lang1033 im\f1\lang9 '))\par
-
-\pard\box\brdrdash\brdrw0 \sa200\sl276\slmult1\par
-\line\cf5 </script>\line\line\line <button \cf7 onclick=\cf8 "\cf9 this.innerHTML = Date()\cf8 "\cf5 >\cf9 The time is?\cf5 </button>\line\line\line <p \cf7 id=\cf8 "d9"\cf5 ></p>\line\line <script>\line     \cf9 var a = "Please locate where 'locate' occurs!";\line     var b = a.indexOf('locate');\line     var x = a.length;\line     var z = a.lastIndexOf('locate',15);\line     document.getElementById('d9').innerHTML = b +\line      ' length ' +  x + '<br>' + z;\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d10"\cf5 ></p>\line\line <script>\line     \cf9 var a = 'Apple, Banana, Kiwi';\line     var b = a.slice(6, 13);                       /* substring(7, 13); */\line     var z = a.slice(6);\line     var f = a.slice(-12, -6);\line     var s = a.substr(6,3);                        /* 3 letters of word */\line     document.getElementById('d10').innerHTML = b + '<br>' + z + '<br>' + f + '<br>' + s;\line\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d11"\cf5 >\cf9 Visit microsoft, rain, rain\cf5 </p>\line <button \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Click to Replace\cf5 </button>\line\line <script>\line     \cf9 function myF()\{\line     var s = document.getElementById('d11').innerHTML;\line     var n = s.replace(/MICROSOFT/i, 'w3School');                       /* //i  caseinsensetive*/\line     document.getElementById('d11').innerHTML = n;                      /* var n = s.replace(/MICROSOFT/g, 'w3School');       ALL INSTANCES*/\line     \}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d12"\cf5 >\cf9 text to upper text\cf5 </p>\line <button \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 to Upper\cf5 </button>\line <script>\line\cf9 function myF()\{\line     var t = document.getElementById('d12').innerHTML;\line     document.getElementById('d12').innerHTML = t.toUpperCase();\line     \}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d13"\cf5 ></p>\line\line <script>\line     \cf9 var text1 = 'Hello';\line     var text2 = 'World';\line     var text3 = text1.concat(' ', text2);\line     document.getElementById('d13').innerHTML = text3;\line\line\line\cf5 </script>\line\line\line <button \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Trim it(strip())\cf5 </button>\line <script>\line     \cf9 function myF()\{\line     var str = '   Hello word   ';\line     alert(str.trim())\line     \}\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d14"\cf5 ></p>\line <script>\line     \cf9 str = 'Hello';\line     document.getElementById('d14').innerHTML = str.charAt(0);      /*index letter*/\line\line\cf5 </script>\line\line <button \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Split Function\cf5 </button>\line <p \cf7 id=\cf8 "d14"\cf5 ></p>\line <script>\line     \cf9 function myF()\{\line     s1 = 'a, b, c, d, e';\line     s2 = s1.split(',');\line     document.getElementById('d14').innerHTML =s2;             /* to get array(list) */\line     \}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d15"\cf5 ></p>\line\line <script>\line     \cf9 var x = 9.656;\line     document.getElementById('d15').innerHTML =\line     x.toFixed(0) + '<br>' + x.toFixed(2) + '<br>' + x.toFixed(4);\line\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d16"\cf5 ></p>\line <script>\line     \cf9 var x = 9.56;\line     document.getElementById('d16').innerHTML =\line     x.toPrecision() + '<br>' + x.toPrecision(2) + '<br>' + x.toPrecision(6);\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d17"\cf5 ></p>\line\line <script>\line\cf9 document.getElementById("demo").innerHTML =    /* sttring to number */\line   Number(true) + "<br>" +\line   Number(false) + "<br>" +\line   Number("10") + "<br>" +\line   Number("  10") + "<br>" +\line   Number("10  ") + "<br>" +\line   Number(" 10  ") + "<br>" +\line   Number("10.33") + "<br>" +\line   Number("10,33") + "<br>" +\line   Number("10 33") + "<br>" +\line   Number("John");\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d18"\cf5 ></p>\line\line <script>\line     \cf9 var fruits, text, flen, i;\line     fruits = ['banana', 'apple', 'kiwi'];\line     flen = fruits.length;\line     text = '<ul>';\line     for(i=0; i<flen; i++)\{\line     text += '<li>' + fruits[i];\line     \}\line     text+='</ul>'\line     document.getElementById('d18').innerHTML = text;\line\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d19"\cf5 ></p>\line\line <script>\line     \cf9 var x = [1,2,3];\line     x.push(11);                                                   /* append to list */\line     x[x.length] = 12;\line     x[2] = 'apple';\line     document.getElementById('d19').innerHTML = x;\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d20"\cf5 ></p>\line\line <script>\line\cf9 var fruits = ["Banana", "Orange", "Apple", "Mango"];                         /* type of lis Aray or Object*/\line document.getElementById("d20").innerHTML = fruits instanceof Array;\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d21"\cf5 ></p>\line <p \cf7 id=\cf8 "d22"\cf5 ></p>\line <script>\line     \cf9 var x = ['banana', 'apple', 'kiwi'];\line     var j = ['bananas', 'apple', 'kiwi'];\line     document.getElementById('d21').innerHTML = x.toString();                         /* list to string */\line     document.getElementById('d22').innerHTML = x.join('-');\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d23"\cf5 ></p>\line <p \cf7 id=\cf8 "d24"\cf5 ></p>\line <p \cf7 id=\cf8 "d25"\cf5 ></p>\line <p \cf7 id=\cf8 "d26"\cf5 ></p>\line <script>\line         \cf9 var x = ['banana', 'apple', 'kiwi'];\line         document.getElementById('d23').innerHTML = x.shift();                      /* remove first item */\line         document.getElementById('d24').innerHTML = x;\line         document.getElementById('d25').innerHTML = x.unshift('lemon');              /* add first item */\line         document.getElementById('d26').innerHTML = x;\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d27"\cf5 ></p>\line\line <button \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Append\cf5 </button>\line <script>\line     \cf9 var x = ['banana', 'apple', 'kiwi', 'roses'];\line     document.getElementById('d27').innerHTML = x;\line\line     function myF()\{\line     x[x.length]='potato';\line     document.getElementById('d27').innerHTML = x;                     /* append to list */\line     \}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d28"\cf5 ></p>\line <p \cf7 id=\cf8 "d29"\cf5 ></p>\line <p \cf7 id=\cf8 "d30"\cf5 ></p>\line\line <button \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Change by Splicing\cf5 </button>\line\par
-
-\pard\box\brdrdash\brdrw0 \sl276\slmult1\cf0 let r = [1,2,3,4]\par
-r.forEach((e, index) => \{\par
-    if(e===1)\{\f0\lang1033                                                                    # SPLICE\f1\lang9\par
-    r.splice(index,2);\par
-    \}\par
-\})\par
-console.log(r);\par
-
-\pard\box\brdrdash\brdrw0 \sa200\sl276\slmult1\cf5\par
-\line <script>\line     \cf9 var x = [1,2,3];\line     document.getElementById('d28').innerHTML = x;\line\line     function myF()\{\line     var removed = x.splice(2,1, 111, 333);                               /* The first parameter (2) defines the position where new elements should be added , the second - how many items to DELETE */\line     document.getElementById('d29').innerHTML = x;\line     document.getElementById('d30').innerHTML = removed;\line     \}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d31"\cf5 ></p>\line\line <button \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 REMOVE\cf5 </button>\line\line <script>\line     \cf9 var x = [1,2,3,4];\line     document.getElementById('d31').innerHTML = x;\line     function myF()\{\line     x.splice(1,1);\line     document.getElementById('d31').innerHTML = x;\line     \}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d32"\cf5 ></p>\line\line <script>\line     \cf9 var a1 = [1,2,3];\line     var a2 = [4,5,6];\line     var a3 = [7,8,9];\line\line     var conc = a1.concat(a2,a3,'string');\line     document.getElementById('d32').innerHTML = conc;                           /* push faster  concate to create new variable*/\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d33"\cf5 ></p>\line\line <script>\line     \cf9 var x = [1,2,3,4,5];\line     var n = x.slice(1);\line     document.getElementById('d33').innerHTML = n;\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d34"\cf5 ></p>\line\line <button \cf7 class=\cf8 "w3-button w3-aqua w3-round" \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Sort It\cf5 </button>\line\line <script>\line     \cf9 var x = ['d','c','a','b'];\line     document.getElementById('d34').innerHTML = x;\line     function myF()\{\line     x.sort().reverse();\line     document.getElementById('d34').innerHTML = x;\line     \}\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d35"\cf5 ></p>\line <button \cf7 class=\cf8 "w3-button w3-aqua w3-round w3-border" \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Sort Numbers\cf5 </button>\line <script>\line     \cf9 var x = [567,3, 45,99];\line     document.getElementById('d35').innerHTML = x;\line     function myF()\{\line     x.sort(function(a,b)\{return a-b\});                      /* x.sort(function(a,b)\{return b-a\}); */\line     document.getElementById('d35').innerHTML = x;\line     \}\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d36"\cf5 ></p>\line <button \cf7 class=\cf8 "w3-button w3-teal w3-round w3-small w3-hover-red" \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Random\cf5 </button>\line <script>\line     \cf9 var x = [1,2,3,4,5];\line     document.getElementById('d36').innerHTML = x;\line     function myF()\{\line     x.sort(function(a,b)\{return 0.5 - Math.random()\})                                /* random */\line     document.getElementById('d36').innerHTML = x;\line     \}\line\line\cf5 </script>\line\line <p>\cf9 The lowest number is \cf5 <span \cf7 id=\cf8 "d37"\cf5 ></span></p>\line\line <script>\line     \cf9 var n = [4,7,1,37];\line     document.getElementById('d37').innerHTML = arrayMin(n);                       /* min max*/\line     function arrayMin(arr)\{\line     return Math.min.apply(null, arr);\line     \}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d38"\cf5 ></p>\line\line <button \cf7 class=\cf8 "w3-button w3-orange w3-round w3-tiny w3-hover-black" \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Sort List Dict\cf5 </button>\line\line <script>\line     \cf9 var cars = [\{type:"Volvo", year:2016\},\line   \{type:"Saab", year:2001\},\line   \{type:"BMW", year:2010\}\line ];\line\line displayCars();\line\line function myF()\{\line cars.sort(function(a,b)\{return a.year - b.year\});                         /* sort dict by value */\line displayCars();\}\line\line function displayCars()\{\line document.getElementById('d38').innerHTML =\line cars[0].type + ' ' + cars[0].year + '<br>' +\line cars[1].type + ' ' + cars[1].year + '<br>' +\line cars[2].type + ' ' + cars[2].year;\line\}\line\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d39"\cf5 ></p>\line <button \cf7 class=\cf8 "w3-button w3-large w3-teal w3-hover-green" \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Sort by Key\cf5 </button>\line\line <script>\line      \cf9 var cars = [\{type:"Volvo", year:2016\},\line   \{type:"Saab", year:2001\},\line   \{type:"BMW", year:2010\}\line ];\line displayCars()\line\line function myF()\{                                                   /* sort by key */\line cars.sort(function(a,b)\{\line var x = a.type.toLowerCase();\line var y = b.type.toLowerCase();\line if (x<y)\{return -1\};\line if (x>y)\{return 1\};\line return 0;\line\});\line displayCars();\}\line\line function displayCars()\{\line document.getElementById('d39').innerHTML =\line cars[0].type + ' ' + cars[0].year + '<br>' +\line cars[1].type + ' ' + cars[1].year + '<br>' +\line cars[2].type + ' ' + cars[2].year;\line\}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d40"\cf5 ></p>\line\line <script>\line     \cf9 var txt = '';\line     var numbers = [1,2,3,4];\line     numbers.forEach(myF);                                              /* iteration */\line     document.getElementById('d40').innerHTML = txt;\line     function myF(value)\{\line     txt =  txt + value + '<br>';\line     \}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d41"\cf5 ></p>\line\line <script>\line     \cf9 var numbers = [1,2,3,4];\line     var numbers2 = numbers.map(myF);\line     document.getElementById('d41').innerHTML = numbers2;           /* \cf0\b\fs24 map \cf9\b0\fs16 */\line     function myF(value, index, itself)\{\line     return value*2;\}\par
-
-\pard\box\brdrdash\brdrw0 \sl276\slmult1\cf0\b const cars = [1,2,3]\par
-const xx = cars.map(zz=>zz*2)\f0\lang1033                                                   \f1\lang9\par
-console.log(xx)\line\cf9\b0\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d42"\cf5 ></p>\line <script>\line     \cf9 var x = [1,2,3,4];\line     var s = x.filter(myF);\line     document.getElementById('d42').innerHTML = s;                \fs18 /* \cf0\b\fs28 filter \cf9\b0\fs18 */\fs16\line     function myF(value)\{\line     return value<=2;\line     \}\par
-\par
-\cf0\b const n = [25,100,4]\par
-const n1 = n.filter(i=>i<26)\par
-console.log(n1)\line\cf9\b0\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d43"\cf5 ></p>\line <script>\line     \cf9 var x = [1,2,3,4];\line     var sum = x.reduce(myF);\line     document.getElementById('d43').innerHTML = 'Sum is ' + sum;              /* reduce     reduse it to a SINGLE value      var sum = numbers.reduce(myFunction, 100); \line     function myF(total, value)\{                                              /* var sum = numbers.reduce(myFunction, 100);  if initial value */\line     return total*value;\line     \}\par
-\par
-
-\pard\box\brdrdash\brdrw0 \sl240\slmult1\cf0\b const x = [1,2,3,4]\par
+\pard\box\brdrdash\brdrw0 \sl240\slmult1\cf6\f1\lang9\line\f0\lang1033 -----------\f1\lang9\line\cf0\b const x = [1,2,3,4]\par
 const x1 = x.reduce((i,v)=>i*v)\f0\lang1033                                                                       /*\fs28 reduce\fs16 */\f1\lang9\par
-console.log(x1)\par
-    $\{cartItems.reduce((acc, item) => acc+item.price*item.qty, 0).toFixed(2)\}\cf9\b0\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d44"\cf5 ></p>\line\line <script>\line     \cf9 var x = [2,3,4,5];\line     var y = x.every(myF);\line     document.getElementById('d44').innerHTML = y;                          /*  if all array values pass a test    or some if some*/\line     function myF(value, index, array)\{\line     return value >1;\line     \}\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d45"\cf5 ></p>\line <script>\line     \cf9 var x = [1,2,3,4];\line     var f = x.find(myF);\line     document.getElementById('d45').innerHTML = 'First item > 2 is ' + f;      /* find condition   or findIndex() to find index  */\line     function myF(value)\{\line     return value>2;\line     \}\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d46"\cf5 ></p>\line <p \cf7 id=\cf8 "d47"\cf5 ></p>\line <script>\line\cf9 var d = new Date();\line var d1 = new Date(2018, 11, 24);                    /* months  from 0 to 11 */\line document.getElementById('d46').innerHTML = d;\line document.getElementById('d47').innerHTML = d1;\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d48"\cf5 ></p>\line <p \cf7 id=\cf8 "d49"\cf5 ></p>\line <script>\line     \cf9 var t = new Date('18 october, 2020 11:12:00');   /* convert date */\line     var d = new Date(1000000000000);\line     document.getElementById('d48').innerHTML = t;\line     document.getElementById('d49').innerHTML = d;   /* date in mls from 1970 */\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d50"\cf5 ></p>\line <p \cf7 id=\cf8 "d51"\cf5 ></p>\line <p \cf7 id=\cf8 "d52"\cf5 ></p>\line <script>\line     \cf9 var d = new Date();\line     document.getElementById('d50').innerHTML = d.toGMTString();\line     document.getElementById('d51').innerHTML = d.toDateString();               /* Date string format */\line     document.getElementById('d52').innerHTML = d.toISOString();               /* Date ISO format */\line\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d53"\cf5 ></p>\line <script>\line     \cf9 var d = new Date();\line     document.getElementById('d53').innerHTML = d.getFullYear();          /* get full year, month ... */\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "demo"\cf5 ></p>\line <script>\line\cf9 var d = new Date();\line var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];     /* months 0 - 11  */\line document.getElementById("demo").innerHTML = months[d.getMonth()];\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d54"\cf5 ></p>\line\line <script>\line\cf9 var today, someday, text;\line     today = new Date();\line     someday = new Date();\line     someday.setFullYear(2100, 0, 14);                                                       /* setFullYear() */\line     if (today < someday)\{\line     text = 'Today is before 2100';\}else\{\line     text = 'Today is after 2100';\}\line     document.getElementById('d54').innerHTML = text + ' Someday = ' + someday;\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d55"\cf5 ></p>\line <script>\line     \cf9 document.getElementById('d55').innerHTML = Math.min(1,2,3,4);                        /* full math methods    {\cf0{\field{\*\fldinst{HYPERLINK https://www.w3schools.com/js/js_math.asp }}{\fldrslt{https://www.w3schools.com/js/js_math.asp\ul0\cf0}}}}\f1\fs16  */\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d56"\cf5 ></p>\line <script>\line     \cf9 document.getElementById('d55').innerHTML = Math.floor(Math.random()*100) + 1;              /* random */\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d57"\cf5 ></p>\line <script>\line     \cf9 document.getElementById('d57').innerHTML = Boolean(5>7);                                   /* Boolean */\line\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d58"\cf5 ></p>\line <p \cf7 id=\cf8 "d59"\cf5 ></p>\line <p \cf7 id=\cf8 "d60"\cf5 ></p>\line <script>\line     \cf9 var x =5;\line     var z = 10;\line     document.getElementById('d58').innerHTML =  (7> x && z >7);\line     document.getElementById('d59').innerHTML =  (7> x || z >77);\line     document.getElementById('d60').innerHTML =  !(7> x ) + '<br>' + !(x==z);         /*   !   is not  */\line\line\cf5 </script>\line\line <input \cf7 id=\cf8 "age" \cf7 value=\cf8 "18"\cf5 >\line <button \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Age\cf5 </button>\line <p \cf7 id=\cf8 "d61"\cf5 ></p>\line <script>\line     \cf9 var age, votable;\line     function myF()\{\line     age = Number(document.getElementById('age').value);\line     if (isNaN(age))\{                                                         /* isNaN  - not a number */\line     votable = 'input numbers only'\}\line     else\{\line     votable = (age<18)? 'Too young':'Old enough';\line     \}\line     document.getElementById('d61').innerHTML = votable;\line     \}\line\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d62"\cf5 ></p>\line\line <script>\line\cf9 var day;\line switch (new Date().getDay()) \{                             /* switch */\line   case 0:\line     day = "Sunday";\line     break;\line   case 1:\line     day = "Monday";\line     break;\line   case 2:\line     day = "Tuesday";\line     break;\line   case 3:\line     day = "Wednesday";\line     break;\line   case 4:\line     day = "Thursday";\line     break;\line   case 5:\line     day = "Friday";\line     break;\line   case  6:\line     day = "Saturday";\line\}\line document.getElementById("d62").innerHTML = "Today is " + day;\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d63"\cf5 ></p>\line\line <script>\line\cf9 var text;\line switch (new Date().getDay()) \{                                 /* default */\line   case 6:\line     text = "Today is Saturday";\line     break;\line   case 0:\line     text = "Today is Sunday";\line     break;\line   default:\line     text = "Looking forward to the Weekend";\line\}\line document.getElementById("d63").innerHTML = text;\line\cf5 </script>\line\line <p \cf7 id=\cf8 "d64"\cf5 ></p>\line\line <script>\line\cf9 var text;\line switch (new Date().getDay()) \{\line   case 4:\line   case 5:\line     text = "Soon it is Weekend";\line     break;\line   case 0:\line   case 6:\line     text = "It is Weekend";\line     break;\line   default:\line     text = "Looking forward to the Weekend";\line\}\line document.getElementById("d64").innerHTML = text;\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d65"\cf5 ></p>\line <script>\line     \cf9 var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];\line     var text = '';\line     var i;\line     for(i=0; i < cars.length; i++)\{\line     text+=cars[i] + '<br>';\line     \}\line     document.getElementById('d64').innerHTML = text;\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d66"\cf5 ></p>\line\line <script>\line\cf9 var txt = "";                                                /* for */\line var person = \{fname:"John", lname:"Doe", age:25\};\line var x;\line for (x in person) \{\line   txt += person[x] + " ";\line\}\line document.getElementById("d66").innerHTML = txt;\line\cf5 </script>\line\line\line <script>\line\cf9 var cars = ['BMW', 'Volvo', 'Mini'];                        /* loop */\line var x;\line\line for (x of cars) \{\line   document.write(x + "<br >");\line\}\line\cf5 </script>\par
 
-\pard\box\brdrdash\brdrw0 \sa200\sl276\slmult1\line let cars = 'qw-er:ty'                      /* \f0\lang1033 slugify\f1\lang9  */\par
-let xx\par
-for (xx of cars) \{\par
-  if([':','-'].includes(xx))\{cars = cars.replace(xx, '_')\}\par
-\}\par
-console.log(cars)\line\line\line <script>\line\cf9 var txt = 'JavaScript';\line var x;\line\line for (x of txt) \{\line   document.write(x + "<br >");\line\}\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d68"\cf5 ></p>\line\line <script>\line\cf9 var text = "";\line var i = 0;\line while (i < 10) \{\line   text += "<br>The number is " + i;\line   i++;\line\}\line document.getElementById("d68").innerHTML = text;\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d682"\cf5 ></p>\line\line <script>\line\cf9 var text = ""\line var i = 0;\line\line do \{\line   text += "<br>The number is " + i;                  /*  var2*/\line   i++;\line\}\line while (i < 10);\line\line document.getElementById("d682").innerHTML = text;\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d699"\cf5 ></p>\line\line <script>\line\cf9 var text = "";\line var i;\line for (i = 0; i < 10; i++) \{\line   if (i === 3) \{ break; \}\line   text += "The number is " + i + "<br>";                            /*break*/\line\}\line document.getElementById("d699").innerHTML = text;\line\cf5 </script>\line\line\line <p \cf7 id=\cf8 "d69"\cf5 ></p>\line\line <script>\line\cf9 var text = "";\line var i;\line for (i = 0; i < 5; i++) \{\line   if (i === 3) \{ continue; \}                                  /*continue*/\line   text += "The number is " + i + "<br>";\line\}\line document.getElementById("d69").innerHTML = text;\line     \cf5 </script>\line\line     \line <p \cf7 id=\cf8 "d70"\cf5 ></p>\line     <script>\line     \cf9 var x;\line         var te = '';\line         \line         for(x=0; x<10; x++)\{\line             if(x===5)\{continue;\}\line             te+='<br>'+' number is ' +x;\line         \}\line         document.getElementById('d70').innerHTML = te;\line     \cf5 </script>\line     \line\line <p \cf7 id=\cf8 "demo"\cf5 ></p>\line\line <script>\line\cf9 var myDate = new Date();\line document.getElementById("demo").innerHTML = isDate(myDate);      /* type of data variable            TYPE CONVERSIONS    {\cf0{\field{\*\fldinst{HYPERLINK https://www.w3schools.com/js/js_type_conversion.asp }}{\fldrslt{https://www.w3schools.com/js/js_type_conversion.asp\ul0\cf0}}}}\f1\fs16          */\line\line function isDate(myDate) \{\line   return myDate.constructor === Date;\line\}\line\cf5 </script>\line     \line <p \cf7 id=\cf8 "demo"\cf5 ></p>                   \line\line <script>\line\cf9 var x = 123;\line document.getElementById("demo").innerHTML =\line   String(x) + "<br>" +                                            /* number to string */\line   String(123) + "<br>" +\line   String(100 + 23);\line\cf5 </script>\line     \line     \line\line <p \cf7 id=\cf8 "demo"\cf5 ></p>\line\line <script>\line\cf9 var str = "Visit W3Schools!"; \line var n = str.search("W3Schools");                                  /* search */\line var n = str.search(/w3Schools/i);                                 /* case insensive   True or False*/\line var res = str.replace(/microsoft/i, "W3Schools");                /* replace caseinsensive */\line      \line\line document.getElementById("demo").innerHTML = n;\line\cf5 </script>\line\line <p \cf7 id=\cf8 "p01"\cf5 >\cf9 This is text\cf5 </p>\line <p \cf7 id=\cf8 'd01'\cf5 ></p>\line\line <script>\line\cf9 text = document.getElementById('p01').innerHTML;\line document.getElementById('d01').innerHTML = /ext/.test(text);      /*to find text*/\line\cf5 </script>\line     \line     \line <p \cf7 id=\cf8 "demo"\cf5 ></p>\line\line <script>\line\cf9 var obj = /e/.exec("The best things in life are free!");\line document.getElementById("demo").innerHTML =\line "Found " + obj[0] + " in position " + obj.index + " in the text: " + obj.input;       /* FIND */\line\cf5 </script>\line     \line <p \cf7 id=\cf8 "demo5"\cf5 ></p>\line\line <script>\line\cf9 try \{\line   adddlert("Welcome guest!");\line\}\line catch(err) \{\line   document.getElementById("demo5").innerHTML = err.message;\line\}\line\cf5 </script>    \line     \line   \line\line     \line <p>\cf9 Please input a number between 5 and 10:\cf5 </p>\line\line <input \cf7 id=\cf8 "demo" \cf7 type=\cf8 "text"\cf5 >\line <button \cf7 type=\cf8 "button" \cf7 onclick=\cf8 "\cf9 myFunction()\cf8 "\cf5 >\cf9 Test Input\cf5 </button>\line <p \cf7 id=\cf8 "p01"\cf5 ></p>\line\line <script>\line\cf9 function myFunction() \{\line   var message, x;\line   message = document.getElementById("p01");\line   message.innerHTML = "";\line   x = document.getElementById("demo").value;\line   try \{\line     if(x == "") throw "empty";\line     if(isNaN(x)) throw "not a number";\line     x = Number(x);\line     if(x < 5) throw "too low";\line     if(x > 10) throw "too high";\line   \}\line   catch(err) \{\line     message.innerHTML = "Input is " + err;\line   \}\line\}\line\cf5 </script>\line     \line\line <p \cf7 id=\cf8 "d22"\cf5 ></p>\line <input \cf7 id=\cf8 "d1" \cf7 type=\cf8 "text"\cf5 >\line <button \cf7 type=\cf8 "button" \cf7 onclick=\cf8 "\cf9 myF()\cf8 "\cf5 >\cf9 Test\cf5 </button>\line <script>\line     \cf9 function myF()\{\line         var a, b;\line         a = document.getElementById('d22');\line         a.innerHTML = 'asd';\line         \line     \}\line     \line     \line     \cf5 </script>\line\line\line <input \cf7 id=\cf8 "demo" \cf7 type=\cf8 "text"\cf5 >\line <button \cf7 type=\cf8 "button" \cf7 onclick=\cf8 "\cf9 myFunction()\cf8 "\cf5 >\cf9 Test Input\cf5 </button>\line\line <p \cf7 id=\cf8 "p01"\cf5 ></p>\line\line <script>\line\cf9 function myFunction() \{\line   var message, x;\line   message = document.getElementById("p01");\line   message.innerHTML = "";\line   x = document.getElementById("demo").value;                     /* try throw */\line   try \{\line     if(x == "")  throw "is empty";\line     if(isNaN(x)) throw "is not a number";\line     x = Number(x);\line     if(x > 10)   throw "is too high";\line     if(x < 5)  throw "is too low";\line   \}\line   catch(err) \{\line     message.innerHTML = "Input " + err;\line   \}\line   finally \{\line     document.getElementById("demo").value = "";\line   \}\line\}\line\cf5 </script>\par
+\pard\sa200\sl276\slmult1 console.log(x1)\par
+const x = document.querySelectorAll('img')\par
+\cf1\b0\f0\fs36\lang1033 #LAZY lOADING\cf0\b\f1\fs16\lang9\par
 
-\pard\box\brdrdash\brdrw0 \sl240\slmult1 const xx = '45'                                   // convert\par
-console.log(+xx +5)\par
-console.log(parseInt(xx) +5\cf0\b\fs18 )\f0\lang1033                     // 3wer + 7yu  = 10 \cf5\b0\f1\fs16\lang9\par
-console.log(parseFloat(xx)+5)\par
-const xxx = 5\par
-console.log(String(xxx)+0)   // 50\line console.log((0.2+0.4).toFixed(3))     //  0.600\par
-console.log(Math.round(9.23))         // 9\par
-    \par
-    \par
-console.log(Math.PI) \f0\lang1033           \f1\lang9   //3.14                              // Math\par
-console.log(Math.sqrt(25))  \f0\lang1033           \f1\lang9 //5 \par
-console.log(Math.pow(5, 3)) \f0\lang1033         \f1\lang9  //125\par
-console.log(Math.max.apply(Math, [2,6,1]))   \f0\lang1033          \f1\lang9 // max list\par
-\par
-\par
-const a1 = true\par
-if (a1)\{\par
-    console.log('in process')         // var1      \par
-\}\par
-else \{\par
-    console.log('is ready')\par
-\}\par
-    \par
-a1 ? console.log('in process') : console.log('is ready')           // var2\par
-typeof a1 === 'string'?console.log('yes'):console.log('no')    //\par
-\par
-const x = 45\par
-console.log(`$\{x>2? 'yes':'no'\}`)\f0\lang1033      //$\par
-\par
----\par
-\fs20 let counter = 0\par
-\par
-const interval = setInterval(function()\{                       //counter\par
-                             if (counter === 55)\par
-\{clearInterval(interval)\}\par
-    else \{\par
-        console.log(++counter)\par
-    \}\par
-                             \}, 172)\f1\lang9\par
-\fs16\par
-\f0\lang1033 ---\fs18\par
-const greet = (name, name2) => console.log('Hello', name + ' and '+  name2)         //arrow\par
-greet('Ann', 'lena')\f1\lang9\par
-\f0\fs16\lang1033 ---\par
-\fs18 function a1(name)\{\par
-    return function (last_name)\{              //enclosure        to protect data\par
-        console.log(last_name+name)\par
-    \}\par
-\}\par
-a1('Lena')('morozova')\par
-const x = a1('lena2')\par
-x('morozova2')\f1\lang9\line\fs16     \par
-\cf0\f0\fs36\lang1033 #dictionary\par
-\par
-\fs18 const d = \{'name':'ann', 'age':99, 'country':'usa'\}\par
-const \{name = 'jax, country\} =  d\par
-const f = name + ' from ' + country\par
-console.log(f)\par
-- - -\par
-delete d['age']      \par
-console.log(d)\par
-- - -\par
-const d1 = Object.keys(d)\par
-for (i of d1)                                                                                         //dict.keys\par
-    \{console.log(i, d[i])\}\f1\fs16\lang9\line     \f0\lang1033 - - -\par
-\fs20 const d = \{'name':'ann', 'age':9, 'country':'usa', f(a)\{console.log(d[a])\}\}          //method inside dict\par
-d.f('age')\par
-\fs16\par
-\par
-\cf1\fs40 #eventListeners\par
-\cf0\b\fs18     function a()\{\par
-        document.getElementById('d1').append('hello')\par
-    \}\par
-      \par
-    function a1()\{\par
-        document.getElementById('d1').append('2')\par
-    \}\par
-    \par
-    let x1 = setTimeout(a, 2000)                                        // time before\par
-    let x2 = setInterval(a1, 2000)                                    // set interval\par
-    setTimeout(()=>clearTimeout(x2), 10000)       // stop interval after 10000 ms\fs16\par
-\b0\fs20 ---\par
-\f1\lang9\par
-\line\fs16 <p id="a2" >Click anywhere in the document to change its background color.</p>\par
-<script>\par
-const pp = document.getElementById('a2');         // define \f0\lang1033 id\f1\lang9\par
-\f0\lang1033 pp\f1\lang9 .addEventListener('click', function()\{      // add event\f0\lang1033         \par
-or   window\f1\lang9 .addEventListener('click', function()\{    \f0\lang1033         \par
-                         \f1\lang9\par
-    pp.style.color='red';                     \f0\lang1033             \f1\lang9     // define action in function\par
+\pard\sl276\slmult1\b0 const x = document.querySelectorAll('img')\par
+const observer = new IntersectionObserver(entries => \{\par
+    entries.forEach(entry => \{\par
+        if(entry.isIntersecting && entry.target.className === 'service-img')\{\par
+            const imgUrl = entry.target.getAttribute("data-src")\par
+            if(imgUrl)\{\par
+                entry.target.src = imgUrl\par
+                observer.unobserve(entry.target)\par
+            \} \par
+        \}\par
     \});\par
-</script>\par
+\},\{ threshold:1, rootMargin:'0px' \})\par
 \par
-\par
-<style>\par
-    .mystyle \{\par
-  width: 300px;\par
-  height: 50px;\par
-  background-color: coral;\par
-  color: white;\par
-  font-size: 25px;\par
-\}\par
-</style>\par
- window.addEventListener('click', function()\{\par
-     document.getElementById('a1').classList.\b\fs24 add\b0\fs16 ('mystyle2\fs22 ')\f0\lang1033                # add style\f1\lang9\par
-\fs16       \})\par
-\par
-window.addEventListener('dblclick', function()\{\par
-    document.getElementById('a1').classList.\b\fs24 remove\b0\fs16 ('mystyle2\fs20 ')\f0\lang1033                   # remove style\f1\fs16\lang9\par
-\fs18\})\line\line console.log(window.\b\fs22 scrollY\b0 )\f0\lang1033                                                                     # position of scroll\f1\lang9\line\cf1\fs32\line\f0\lang1033 #localStorage\fs36 --- - - - - - - -\par
-\cf0\fs18   var test1 = \b\fs20 ''                                                                                // define empty variable\par
-\b0\fs18         try \{\par
-            test1 = localStorage.getItem('item1')                       \b\fs20 // get wariable from f12/application/local storage\par
-\b0\fs18         \}catch\{\}\par
-            if(test1 == 'ok')\{\par
-                document.write('I was here!');\par
-            \}\par
-            else\{\par
-                localStorage.setItem('item1', 'ok\b ')                   // write variable into  f12/application/local storage\par
-            \}                                                                                    // f12/CLEAR STORAGE  CLEAR SITE DATA             -       TO CLEAN !!!\par
-\par
-            localStorage.clear()                                                  // delete storage data\par
-\par
-\par
-\par
-\par
-\highlight3 function saveLocalTodos(t)\{\par
-    if (!localStorage.todos)\{\par
-\par
-        localStorage.setItem('todos', '[]')     \par
-        \}\par
-    \par
-        let x = JSON.parse(localStorage.getItem('todos'))\par
-\par
-        x.push(t)\par
-        \par
-        localStorage.setItem('todos', JSON.stringify(x))\par
-            \}\par
-\highlight0\par
-\par
-\f1\lang9\line\f0\lang1033 #hrefs\b0 --- - - - - - - \f1\lang9\line\fs16\line   a1 = ()=>document.location.assign('https://mail.ru\b\fs20 ')\f0\lang1033                              //hrefs\b0\f1\fs16\lang9\par
-  a2 = ()=>document.location.replace('https://ya.ru')\f0\lang1033                             \b\fs22 // no return variant\b0\f1\fs16\lang9\par
-  a3 = ()=>document.location.href = "{{\field{\*\fldinst{HYPERLINK https://yandex.com }}{\fldrslt{https://yandex.com\ul0\cf0}}}}\f1\fs16 "\par
-\par
-\par
-\par
-\f0\fs18\lang1033 ------------#ajax\par
-\cf10         // {\cf0{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=eKCD9djJQKc }}{\fldrslt{https://www.youtube.com/watch?v=eKCD9djJQKc\ul0\cf0}}}}\f0\fs18\par
-        const rurl = '{\cf0{\field{\*\fldinst{HYPERLINK https://jsonplaceholder.typicode.com/users }}{\fldrslt{https://jsonplaceholder.typicode.com/users\ul0\cf0}}}}\f0\fs18 '                       // url of REST API\par
-//        const rurl = '{\cf0{\field{\*\fldinst{HYPERLINK https://api.github.com/search/repositories?q=language:python&sort=stars }}{\fldrslt{https://api.github.com/search/repositories?q=language:python&sort=stars\ul0\cf0}}}}\f0\fs18 '\par
-\par
-        function sendRequest(method, url, body=null)\{\par
-            return new Promise((resolve, reject)=>\{\par
-        const xhr = new \b\fs28 XMLHttpRequest\b0\fs18 ()\par
-        xhr.open(method, rurl)\par
-        xhr.response = 'json'                                             // type of data. string by default\par
-        xhr.setRequestHeader('Content-Type','application/json')  // for POST\par
-        xhr.onload = ()=>\{\par
-            if(xhr.status >= 400)\{\par
-                reject(xhr.response)\par
-            \}else\{\par
-            resolve(xhr.response)\}\par
-        \}\par
-        xhr.onerror = () => reject(xhr.response)            // inform if errors\par
-//        xhr.send()                                        // get variant\par
-          xhr.send(JSON.stringify(body))   // post variant\par
-            \})\par
-        \}\par
-//        sendRequest('GET', rurl)                   // get variant\par
-//        .then(data => console.log(data))\par
-//        .catch(err=>console.log(err))\par
-         sendRequest('POST', rurl, body=\{name:'Ola', age:26\})\par
-        .then(data => console.log(data))\par
-        .catch(err=> console.log(err))\f1\lang9\line\fs16\par
-\f0\lang1033 - - - - -\f1\lang9\par
-\par
-\cf1\f0\fs44\lang1033 #charts.js\par
-\cf0\fs16 <script>\par
-var ctx = document.getElementById('m1').getContext('2d');\par
-var chart = new Chart(ctx, \{\par
-    type: 'bar',\par
-    data: \{\par
-        labels: ['January', 'February', 'March'],\par
-        datasets: [\par
-            \{\par
-            label: 'My First dataset',\par
-            backgroundColor: 'red',\par
-            borderColor: 'rgb(255, 99, 132)',\par
-            data: [55, -10, 25,],\},\par
-            \{\par
-      \par
-            label: 'My First dataset',\par
-            backgroundColor: 'green',\par
-            borderColor: 'rgb(255, 99, 132)',\par
-            data: [55, -10, 25,]\par
-        \}]\par
-    \},\par
-options: \{\par
-        scales: \{\par
-            yAxes: [\{\par
-                ticks: \{\par
-                    beginAtZero: true\par
-                \}\par
-            \}]\par
-        \}, responsive:false\par
-    \}\par
-\});\par
-</script>\f1\lang9\line\f0\lang1033\------------- - - - - - \f1\lang9\line\par
-const x2 = ()=>\{\par
-  for(i of x)\{\par
-    let b = document.createElement('button')\par
-    b.innerHTML = 'add'\par
-    b\highlight3 .setAttribute\highlight0 ('type', 'file')\par
-    b.setAttribute('class', 'butr')\par
-    b.setAttribute('onclick', 'f()')\par
-    let n = document.createElement('div')\par
-    let t = document.createTextNode(i)\par
-    n.setAttribute('class', 'n1')\par
-    n.\highlight3 appendChild\highlight0 (t)\par
-    n.appendChild(b)\par
-    d.appendChild(n)\par
-  \}\par
-\}\line\f0\lang1033 ===============================================================================\f1\lang9\line\line\cf1\f0\fs36\lang1033 transition\cf0\f1\fs16\lang9\par
-p \{\par
-    background: red;\par
-    opacity:0.9;\par
-    transition: background 2s;\par
-\}\par
-\par
-\par
-.m \{\par
-    background: pink;\par
-    opacity: 0.4;\par
-\}\par
-\par
-\par
-\par
-<p id="x2" > Hello world</p>\par
-\par
-<button id="b1" > add </button>\par
-\par
-\par
-\par
-\par
-const b = document.getElementById('b1')\par
-b.addEventListener('click', f1)\par
-\par
-function f1(e)\{\par
-    const text1 = document.getElementById('x2')\par
-    text1.classList.toggle('m')\par
-    text1.addEventListener('transitionend', ()=>text1.remove())\f0\lang1033                        // after transition end - remove \f1\lang9\par
-\par
-\}\par
-\f0\lang1033 ================================================================\par
-\highlight11 <button autofocus id="b1"> add</button>\par
-\par
-b1.addEventListener('click', event => \{                                                                      SPACE ENTER \par
-    if (event.keyCode == 32 || 13 ) \{\par
-      console.log('Space pressed')\par
-    \}\par
-  \})\f1\lang9\line\highlight0\line\line\f0\lang1033 ===========\cf1\fs28 ECOMMERSE\par
-{\cf0\fs20{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=N3FDyheHVMM }}{\fldrslt{https://www.youtube.com/watch?v=N3FDyheHVMM\ul0\cf0}}}}\f0\fs20    13 min\par
-\cf0\highlight3\fs16 projectfolder \highlight0 =>   \highlight3 frontend  \highlight0 => npm init  (package.json will be created, folder \highlight3 frontend \highlight0 now \cf1\fs24 node project\cf0\fs16 )\par
-\cf1\fs28\par
-\cf0\fs16 npm install -D live-server\par
-inside package.json\par
-  "scripts": \{\par
-\b\fs20     "start": "live-server src --verbose",\par
-\b0\fs16     "test": "echo \\"Error: no test specified\\" && exit 1"\par
-\par
-\highlight2 npm start \par
-\par
-\cf1\highlight0\fs28 =====IMPORT\cf0\highlight2\f1\fs16\lang9\line\highlight0\b\f0\fs20\lang1033 1.      <script \highlight2 type="module\highlight0 " src="app.js"  ></script>                      in html\par
-2.     create app.js:\par
-\b0\fs16 import HomeScreen  from './screens/HomeScreen.js'\par
-const router = () => \{\par
-    const main = document.getElementById('main-container')\par
-    main.innerHTML = HomeScreen.render()\par
-\}\par
-window.addEventListener('load', router)\par
-\b\fs18 3. create HomeScreen:\par
-\b0\fs16 import data from '../data.js'\par
-\par
-const HomeScreen = \{\par
-    \par
-    render: () => \{\par
-        const \{products\} = data\par
-        return `\par
-        \par
-        <ul class="products" >\par
-       \par
-       $\{products.map(product => \par
-        `\par
-        <li>\par
-        <div class="product">\par
-\par
-            <a href="/#/product/$\{product._id\}">\par
-\par
-\par
-            <img src="/images/product-$\{product._id\}.jpg" alt="$\{product.name\}" />\par
-            </a>\par
-            <div class="product-name">\par
-                <a href="/#/product/$\{product._id\}">\par
-                    $\{product.name\}\par
-                    </a>\par
-            </div>\par
-            <div class="product-brand" >\par
-                $\{product.brand\}\par
-            </div>\par
-\par
-            <div class="product-price" >\par
-                $$\{product.price\}\par
-            </div>\par
-\par
-        </div>\par
-</li>            \par
-        `            \par
-        ).join('\\n')\}\par
-    </ul>` \par
-\}\par
-\}\par
-export default HomeScreen;\par
-\b\fs18 4. create Data.js\par
-\b0\fs16 export default \{\par
-    products: [\par
-        \{\par
-        _id: '1',\par
-        name: 'Hyskuin shirts Termal workout',\par
-        category : 'shirts',image: '/images/product-1.jpg',\par
-        price: 90,\par
-        brand: 'Hyskuin',\par
-        rating: 4.5,\par
-        numReviews: 10,\par
-        countInStock: 6\par
-    \},\par
-    \{\par
-    _id: '2',\par
-    name: 'Colubia Trousers',\par
-    category : 'shirts',image: '/images/product-1.jpg',\par
-    price: 608,\par
-    brand: 'Columbioa',\par
-    rating: 4.5,\par
-    numReviews: 10,\par
-    countInStock: 6\par
-\},\par
-\{\par
-_id: '3',\par
-name: 'Adidas Termal workout',\par
-category : 'gloves',image: '/images/product-1.jpg',\par
-price: 880,\par
-brand: 'Adidas',\par
-rating: 1.5,\par
-numReviews: 10,\par
-countInStock: :\par
-\highlight2\f1\lang9\line\par
-
-\pard\sa200\sl276\slmult1\highlight0\f0\fs32\par
+x.forEach(e => \{\par
+    observer.observe(e)\par
+\})\f0\fs32\par
 }
  
