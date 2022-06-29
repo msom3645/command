@@ -1,0 +1,100 @@
+{% extends 'app1/main.html' %}
+{% load static %}
+{% block content %}
+<p>checkout</p>
+{{ values | json_script:'values' }}
+{{ dates | json_script:'dates' }}
+<div style="max-width: 1200px; border: 2px solid black; display:flex;">
+    <button onclick="bars()">CHANGE</button>
+    <canvas id="myChart" width="400" height="200"></canvas>
+</div>
+<script>
+    let chartType = 'bar'
+    let colorB = 'red'
+    document.querySelector('button').style.background = colorB
+    const bars = () => {
+        colorB = 'pink'
+        let chartType = 'line'
+        console.log(chartType)
+    }
+let values = JSON.parse(document.getElementById('values').textContent);
+let dates = JSON.parse(document.getElementById('dates').textContent);
+
+
+const ctx = document.getElementById('myChart').getContext('2d');
+
+const myChart = new Chart(ctx, {
+    type: chartType,
+    data: {
+        labels: dates,
+        datasets: [{
+            label: '# of Votes',
+            data: values,
+            fill: true,
+            // color of  point
+            pointBackgroundColor: '#fff',
+            // size of  point
+            radius: 5,
+            //hover radius
+            hitRadius: 30,
+            // increase point
+            hoverRadius: 30,
+            // curve
+            tension: 0.1,
+
+            animations: {
+      tension: {
+        duration: 1000,
+        easing: 'linear',
+        from: 1,
+        to: 0,
+         // loop: true
+      },
+      radius: {
+        delay: 2000,
+        duration: 2000,
+        easing: 'linear',
+        from: 0,
+        to: 10,
+        // loop: true
+      },
+    },
+            
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+                
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        // responsive:true,
+        scales: {
+            y: {
+                ticks:{
+                    callback: function(value){
+                        return '$ ' + value
+                    }
+                },
+                // beginAtZero: true
+            }
+        }
+    }
+});
+
+</script>
+{% endblock content %}
+

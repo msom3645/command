@@ -1,0 +1,14 @@
+{% extends 'app1/main.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Store</h1>
+<img src="{% static 'images/cart.png' %}" alt='cart'/>
+<h1>
+
+    
+    {% for product in products %}
+    <img src="{{product.image.url}}" alt='image'/>
+    {% endfor %}
+</h1>
+{% endblock content %}
